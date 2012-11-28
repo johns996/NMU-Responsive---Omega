@@ -967,196 +967,186 @@ print '<h3><span style="color:red;">DEV</span></h3>';
 		}
 			
 	function CoursesSelect(){
-
-	var selectedItem_1 = document.myForm.select_1.selectedIndex;
-	var selectedText_1 = document.myForm.select_1.options[selectedItem_1].value;
-			if(selectedText_1=="College"){
-				document.myForm.course_name_1.disabled=false;
-				document.myForm.course_number_1.disabled=false;
-				document.myForm.course_credits_1.disabled=false;
-				document.myForm.course_term_1.disabled=false;
-			} 
-			else if (selectedText_1=="High School"){
-				document.myForm.course_name_1.disabled=false;
-				document.myForm.course_number_1.disabled=true;
-				document.myForm.course_number_1.value="";
-				document.myForm.course_credits_1.disabled=true;
-				document.myForm.course_credits_1.value="";
-				document.myForm.course_term_1.disabled=false;
-			}
-			else {
-				document.myForm.course_name_1.disabled=true;
-				document.myForm.course_name_1.value="";
-				document.myForm.course_number_1.disabled=true;
-				document.myForm.course_number_1.value="";
-				document.myForm.course_credits_1.disabled=true;
-				document.myForm.course_credits_1.value="";
-				document.myForm.course_term_1.disabled=true;
-				document.myForm.course_term_1.value="";
-			}
+				if($("#select1").val() == "College"){
+					$("#course_name_1, #course_number_1, #course_credits_1, #course_term_1").removeAttr("disabled");
+				} 
+				else if($("#select1").val() == "High School"){
+					$("#course_name_1, #course_term_1").removeAttr("disabled");
+					$("#course_number_1, #course_credits_1).attr("disabled", "disabled");
+					$("#course_number_1, #course_credits_1").val('');
+				}
+				else {
+					document.myForm.course_name_1.disabled=true;
+					document.myForm.course_name_1.value="";
+					document.myForm.course_number_1.disabled=true;
+					document.myForm.course_number_1.value="";
+					document.myForm.course_credits_1.disabled=true;
+					document.myForm.course_credits_1.value="";
+					document.myForm.course_term_1.disabled=true;
+					document.myForm.course_term_1.value="";
+				}
+				
+		var selectedItem_2 = document.myForm.select_2.selectedIndex;
+		var selectedText_2 = document.myForm.select_2.options[selectedItem_2].value;
+				if(selectedText_2=="College"){
+					document.myForm.course_name_2.disabled=false;
+					document.myForm.course_number_2.disabled=false;
+					document.myForm.course_credits_2.disabled=false;
+					document.myForm.course_term_2.disabled=false;
+				} 
+				else if (selectedText_2=="High School"){
+					document.myForm.course_name_2.disabled=false;
+					document.myForm.course_number_2.disabled=true;
+					document.myForm.course_number_2.value="";
+					document.myForm.course_credits_2.disabled=true;
+					document.myForm.course_credits_2.value="";
+					document.myForm.course_term_2.disabled=false;
+				}
+				else {
+					document.myForm.course_name_2.disabled=true;
+					document.myForm.course_name_2.value="";
+					document.myForm.course_number_2.disabled=true;
+					document.myForm.course_number_2.value="";
+					document.myForm.course_credits_2.disabled=true;
+					document.myForm.course_credits_2.value="";
+					document.myForm.course_term_2.disabled=true;
+					document.myForm.course_term_2.value="";
+				}
+				
+		var selectedItem_3 = document.myForm.select_3.selectedIndex;
+		var selectedText_3 = document.myForm.select_3.options[selectedItem_3].value;
+				if(selectedText_3=="College"){
+					document.myForm.course_name_3.disabled=false;
+					document.myForm.course_number_3.disabled=false;
+					document.myForm.course_credits_3.disabled=false;
+					document.myForm.course_term_3.disabled=false;
+				} 
+				else if (selectedText_3=="High School"){
+					document.myForm.course_name_3.disabled=false;
+					document.myForm.course_number_3.disabled=true;
+					document.myForm.course_number_3.value="";
+					document.myForm.course_credits_3.disabled=true;
+					document.myForm.course_credits_3.value="";
+					document.myForm.course_term_3.disabled=false;
+				}
+				else {
+					document.myForm.course_name_3.disabled=true;
+					document.myForm.course_name_3.value="";
+					document.myForm.course_number_3.disabled=true;
+					document.myForm.course_number_3.value="";
+					document.myForm.course_credits_3.disabled=true;
+					document.myForm.course_credits_3.value="";
+					document.myForm.course_term_3.disabled=true;
+					document.myForm.course_term_3.value="";
+				}
 			
-	var selectedItem_2 = document.myForm.select_2.selectedIndex;
-	var selectedText_2 = document.myForm.select_2.options[selectedItem_2].value;
-			if(selectedText_2=="College"){
-				document.myForm.course_name_2.disabled=false;
-				document.myForm.course_number_2.disabled=false;
-				document.myForm.course_credits_2.disabled=false;
-				document.myForm.course_term_2.disabled=false;
-			} 
-			else if (selectedText_2=="High School"){
-				document.myForm.course_name_2.disabled=false;
-				document.myForm.course_number_2.disabled=true;
-				document.myForm.course_number_2.value="";
-				document.myForm.course_credits_2.disabled=true;
-				document.myForm.course_credits_2.value="";
-				document.myForm.course_term_2.disabled=false;
-			}
-			else {
-				document.myForm.course_name_2.disabled=true;
-				document.myForm.course_name_2.value="";
-				document.myForm.course_number_2.disabled=true;
-				document.myForm.course_number_2.value="";
-				document.myForm.course_credits_2.disabled=true;
-				document.myForm.course_credits_2.value="";
-				document.myForm.course_term_2.disabled=true;
-				document.myForm.course_term_2.value="";
-			}
-			
-	var selectedItem_3 = document.myForm.select_3.selectedIndex;
-	var selectedText_3 = document.myForm.select_3.options[selectedItem_3].value;
-			if(selectedText_3=="College"){
-				document.myForm.course_name_3.disabled=false;
-				document.myForm.course_number_3.disabled=false;
-				document.myForm.course_credits_3.disabled=false;
-				document.myForm.course_term_3.disabled=false;
-			} 
-			else if (selectedText_3=="High School"){
-				document.myForm.course_name_3.disabled=false;
-				document.myForm.course_number_3.disabled=true;
-				document.myForm.course_number_3.value="";
-				document.myForm.course_credits_3.disabled=true;
-				document.myForm.course_credits_3.value="";
-				document.myForm.course_term_3.disabled=false;
-			}
-			else {
-				document.myForm.course_name_3.disabled=true;
-				document.myForm.course_name_3.value="";
-				document.myForm.course_number_3.disabled=true;
-				document.myForm.course_number_3.value="";
-				document.myForm.course_credits_3.disabled=true;
-				document.myForm.course_credits_3.value="";
-				document.myForm.course_term_3.disabled=true;
-				document.myForm.course_term_3.value="";
-			}
-		
-	var selectedItem_4 = document.myForm.select_4.selectedIndex;
-	var selectedText_4 = document.myForm.select_4.options[selectedItem_4].value;
-			if(selectedText_4=="College"){
-				document.myForm.course_name_4.disabled=false;
-				document.myForm.course_number_4.disabled=false;
-				document.myForm.course_credits_4.disabled=false;
-				document.myForm.course_term_4.disabled=false;
-			} 
-			else if (selectedText_4=="High School"){
-				document.myForm.course_name_4.disabled=false;
-				document.myForm.course_number_4.disabled=true;
-				document.myForm.course_number_4.value="";
-				document.myForm.course_credits_4.disabled=true;
-				document.myForm.course_credits_4.value="";
-				document.myForm.course_term_4.disabled=false;
-			}
-			else {
-				document.myForm.course_name_4.disabled=true;
-				document.myForm.course_name_4.value="";
-				document.myForm.course_number_4.disabled=true;
-				document.myForm.course_number_4.value="";
-				document.myForm.course_credits_4.disabled=true;
-				document.myForm.course_credits_4.value="";
-				document.myForm.course_term_4.disabled=true;
-				document.myForm.course_term_4.value="";
-			}
-			
-	var selectedItem_5 = document.myForm.select_5.selectedIndex;
-	var selectedText_5 = document.myForm.select_5.options[selectedItem_5].value;
-			if(selectedText_5=="College"){
-				document.myForm.course_name_5.disabled=false;
-				document.myForm.course_number_5.disabled=false;
-				document.myForm.course_credits_5.disabled=false;
-				document.myForm.course_term_5.disabled=false;
-			} 
-			else if (selectedText_5=="High School"){
-				document.myForm.course_name_5.disabled=false;
-				document.myForm.course_number_5.disabled=true;
-				document.myForm.course_number_5.value="";
-				document.myForm.course_credits_5.disabled=true;
-				document.myForm.course_credits_5.value="";
-				document.myForm.course_term_5.disabled=false;
-			}
-			else {
-				document.myForm.course_name_5.disabled=true;
-				document.myForm.course_name_5.value="";
-				document.myForm.course_number_5.disabled=true;
-				document.myForm.course_number_5.value="";
-				document.myForm.course_credits_5.disabled=true;
-				document.myForm.course_credits_5.value="";
-				document.myForm.course_term_5.disabled=true;
-				document.myForm.course_term_5.value="";
-			}
-			
-	var selectedItem_6 = document.myForm.select_6.selectedIndex;
-	var selectedText_6 = document.myForm.select_6.options[selectedItem_6].value;
-			if(selectedText_6=="College"){
-				document.myForm.course_name_6.disabled=false;
-				document.myForm.course_number_6.disabled=false;
-				document.myForm.course_credits_6.disabled=false;
-				document.myForm.course_term_6.disabled=false;
-			} 
-			else if (selectedText_6=="High School"){
-				document.myForm.course_name_6.disabled=false;
-				document.myForm.course_number_6.disabled=true;
-				document.myForm.course_number_6.value="";
-				document.myForm.course_credits_6.disabled=true;
-				document.myForm.course_credits_6.value="";
-				document.myForm.course_term_6.disabled=false;
-			}
-			else {
-				document.myForm.course_name_6.disabled=true;
-				document.myForm.course_name_6.value="";
-				document.myForm.course_number_6.disabled=true;
-				document.myForm.course_number_6.value="";
-				document.myForm.course_credits_6.disabled=true;
-				document.myForm.course_credits_6.value="";
-				document.myForm.course_term_6.disabled=true;
-				document.myForm.course_term_6.value="";
-			}
-			
-	var selectedItem_7 = document.myForm.select_7.selectedIndex;
-	var selectedText_7 = document.myForm.select_7.options[selectedItem_7].value;
-			if(selectedText_7=="College"){
-				document.myForm.course_name_7.disabled=false;
-				document.myForm.course_number_7.disabled=false;
-				document.myForm.course_credits_7.disabled=false;
-				document.myForm.course_term_7.disabled=false;
-			} 
-			else if (selectedText_7=="High School"){
-				document.myForm.course_name_7.disabled=false;
-				document.myForm.course_number_7.disabled=true;
-				document.myForm.course_number_7.value="";
-				document.myForm.course_credits_7.disabled=true;
-				document.myForm.course_credits_7.value="";
-				document.myForm.course_term_7.disabled=false;
-			}
-			else {
-				document.myForm.course_name_7.disabled=true;
-				document.myForm.course_name_7.value="";
-				document.myForm.course_number_7.disabled=true;
-				document.myForm.course_number_7.value="";
-				document.myForm.course_credits_7.disabled=true;
-				document.myForm.course_credits_7.value="";
-				document.myForm.course_term_7.disabled=true;
-				document.myForm.course_term_7.value="";
-			}
-	
+		var selectedItem_4 = document.myForm.select_4.selectedIndex;
+		var selectedText_4 = document.myForm.select_4.options[selectedItem_4].value;
+				if(selectedText_4=="College"){
+					document.myForm.course_name_4.disabled=false;
+					document.myForm.course_number_4.disabled=false;
+					document.myForm.course_credits_4.disabled=false;
+					document.myForm.course_term_4.disabled=false;
+				} 
+				else if (selectedText_4=="High School"){
+					document.myForm.course_name_4.disabled=false;
+					document.myForm.course_number_4.disabled=true;
+					document.myForm.course_number_4.value="";
+					document.myForm.course_credits_4.disabled=true;
+					document.myForm.course_credits_4.value="";
+					document.myForm.course_term_4.disabled=false;
+				}
+				else {
+					document.myForm.course_name_4.disabled=true;
+					document.myForm.course_name_4.value="";
+					document.myForm.course_number_4.disabled=true;
+					document.myForm.course_number_4.value="";
+					document.myForm.course_credits_4.disabled=true;
+					document.myForm.course_credits_4.value="";
+					document.myForm.course_term_4.disabled=true;
+					document.myForm.course_term_4.value="";
+				}
+				
+		var selectedItem_5 = document.myForm.select_5.selectedIndex;
+		var selectedText_5 = document.myForm.select_5.options[selectedItem_5].value;
+				if(selectedText_5=="College"){
+					document.myForm.course_name_5.disabled=false;
+					document.myForm.course_number_5.disabled=false;
+					document.myForm.course_credits_5.disabled=false;
+					document.myForm.course_term_5.disabled=false;
+				} 
+				else if (selectedText_5=="High School"){
+					document.myForm.course_name_5.disabled=false;
+					document.myForm.course_number_5.disabled=true;
+					document.myForm.course_number_5.value="";
+					document.myForm.course_credits_5.disabled=true;
+					document.myForm.course_credits_5.value="";
+					document.myForm.course_term_5.disabled=false;
+				}
+				else {
+					document.myForm.course_name_5.disabled=true;
+					document.myForm.course_name_5.value="";
+					document.myForm.course_number_5.disabled=true;
+					document.myForm.course_number_5.value="";
+					document.myForm.course_credits_5.disabled=true;
+					document.myForm.course_credits_5.value="";
+					document.myForm.course_term_5.disabled=true;
+					document.myForm.course_term_5.value="";
+				}
+				
+		var selectedItem_6 = document.myForm.select_6.selectedIndex;
+		var selectedText_6 = document.myForm.select_6.options[selectedItem_6].value;
+				if(selectedText_6=="College"){
+					document.myForm.course_name_6.disabled=false;
+					document.myForm.course_number_6.disabled=false;
+					document.myForm.course_credits_6.disabled=false;
+					document.myForm.course_term_6.disabled=false;
+				} 
+				else if (selectedText_6=="High School"){
+					document.myForm.course_name_6.disabled=false;
+					document.myForm.course_number_6.disabled=true;
+					document.myForm.course_number_6.value="";
+					document.myForm.course_credits_6.disabled=true;
+					document.myForm.course_credits_6.value="";
+					document.myForm.course_term_6.disabled=false;
+				}
+				else {
+					document.myForm.course_name_6.disabled=true;
+					document.myForm.course_name_6.value="";
+					document.myForm.course_number_6.disabled=true;
+					document.myForm.course_number_6.value="";
+					document.myForm.course_credits_6.disabled=true;
+					document.myForm.course_credits_6.value="";
+					document.myForm.course_term_6.disabled=true;
+					document.myForm.course_term_6.value="";
+				}
+				
+		var selectedItem_7 = document.myForm.select_7.selectedIndex;
+		var selectedText_7 = document.myForm.select_7.options[selectedItem_7].value;
+				if(selectedText_7=="College"){
+					document.myForm.course_name_7.disabled=false;
+					document.myForm.course_number_7.disabled=false;
+					document.myForm.course_credits_7.disabled=false;
+					document.myForm.course_term_7.disabled=false;
+				} 
+				else if (selectedText_7=="High School"){
+					document.myForm.course_name_7.disabled=false;
+					document.myForm.course_number_7.disabled=true;
+					document.myForm.course_number_7.value="";
+					document.myForm.course_credits_7.disabled=true;
+					document.myForm.course_credits_7.value="";
+					document.myForm.course_term_7.disabled=false;
+				}
+				else {
+					document.myForm.course_name_7.disabled=true;
+					document.myForm.course_name_7.value="";
+					document.myForm.course_number_7.disabled=true;
+					document.myForm.course_number_7.value="";
+					document.myForm.course_credits_7.disabled=true;
+					document.myForm.course_credits_7.value="";
+					document.myForm.course_term_7.disabled=true;
+					document.myForm.course_term_7.value="";
+				}
 		}
 		//-->
 		</script>';
