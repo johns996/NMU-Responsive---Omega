@@ -899,42 +899,43 @@ function Display_ApplicationPage7()
 		print '<link href="elements/application.css" rel="stylesheet" type="text/css" />
 		<script language="javaScript" type="text/javascript" src="elements/wz_tooltip.js"></script>
 		<script language="javascript" type="text/javascript">
-		<!--
-			window.onload = loadfields;
-			function loadfields(){
+			jQuery(document).ready(function() {
 				CoursesSelect();
 				CreditEval();
 				nonUsToggle();
-			}
+			
+				$("#select1, #select2, #select3, #select4, #select5, #select6, #select7").change(function() {
+					CoursesSelect();
+				});
+			});
 			
 			function nonUsToggle(){
-			HiddenDiv = document.getElementById("CreditEval");
-				if(document.myForm.non_us_school[0].checked){
-					HiddenDiv.style.display = "block";
-				}
-				else{
-					HiddenDiv.style.display = "none";
-				}
+				HiddenDiv = document.getElementById("CreditEval");
+					if(document.myForm.non_us_school[0].checked){
+						HiddenDiv.style.display = "block";
+					}
+					else{
+						HiddenDiv.style.display = "none";
+					}
 			}
 			
 			function CreditEval(){
 				try {
-				if(document.myForm.credit_eval_agency[0].checked || document.myForm.credit_eval_agency[1].checked || document.myForm.credit_eval_agency[2].checked){
-				document.myForm.credit_eval_month.disabled=false;
-				document.myForm.credit_eval_year.disabled=false;
-				}
-				else {
-				document.myForm.credit_eval_month.disabled=true;
-				document.myForm.credit_eval_year.disabled=true;
-				}
+					if(document.myForm.credit_eval_agency[0].checked || document.myForm.credit_eval_agency[1].checked || document.myForm.credit_eval_agency[2].checked){
+						document.myForm.credit_eval_month.disabled=false;
+						document.myForm.credit_eval_year.disabled=false;
+					}
+					else {
+						document.myForm.credit_eval_month.disabled=true;
+						document.myForm.credit_eval_year.disabled=true;
+					}
 				}
 				catch(err){
 				
 				}
 			}
 			
-	var courseids = new Array(\'HiddenCourseDiv1\',\'HiddenCourseDiv2\',\'HiddenCourseDiv3\', \'HiddenCourseDiv4\');
-
+		var courseids = new Array(\'HiddenCourseDiv1\',\'HiddenCourseDiv2\',\'HiddenCourseDiv3\', \'HiddenCourseDiv4\');
 		function showcourse()
 		{
 			for (var i = 0; i < courseids.length; i++)
@@ -951,216 +952,40 @@ function Display_ApplicationPage7()
 			AddButton.style.display = "none";
 			}
 		}
-			
-	function CoursesSelect(){
 
-	var selectedItem_1 = document.myForm.select_1.selectedIndex;
-	var selectedText_1 = document.myForm.select_1.options[selectedItem_1].value;
-			if(selectedText_1=="College"){
-				document.myForm.course_name_1.disabled=false;
-				document.myForm.course_number_1.disabled=false;
-				document.myForm.course_credits_1.disabled=false;
-				document.myForm.course_term_1.disabled=false;
-			} 
-			else if (selectedText_1=="High School"){
-				document.myForm.course_name_1.disabled=false;
-				document.myForm.course_number_1.disabled=true;
-				document.myForm.course_number_1.value="";
-				document.myForm.course_credits_1.disabled=true;
-				document.myForm.course_credits_1.value="";
-				document.myForm.course_term_1.disabled=false;
+		function CoursesSelect(){
+			for (var i=0;i<8;i++){
+				if($("#select"+i+"").val() == "College"){
+					$("#course_name_"+i+", #course_number_"+i+", #course_credits_"+i+", #course_term_"+i+"").removeAttr("disabled");
+					$("#course_number_"+i+", #course_credits_"+i+"").val("");
+				} 
+				else if($("#select"+i+"").val() == "High School"){
+					$("#course_name_"+i+", #course_term_"+i+"").removeAttr("disabled");
+					$("#course_number_"+i+", #course_credits_"+i+"").attr("disabled", "disabled");
+					$("#course_number_"+i+", #course_credits_"+i+"").val("N/A");
+				}
+				else {
+					$("#course_name_"+i+", #course_number_"+i+", #course_credits_"+i+", #course_term_"+i+"").attr("disabled", "disabled");
+					$("#course_name_"+i+", #course_number_"+i+", #course_credits_"+i+", #course_term_"+i+"").val("");
+				}
 			}
-			else {
-				document.myForm.course_name_1.disabled=true;
-				document.myForm.course_name_1.value="";
-				document.myForm.course_number_1.disabled=true;
-				document.myForm.course_number_1.value="";
-				document.myForm.course_credits_1.disabled=true;
-				document.myForm.course_credits_1.value="";
-				document.myForm.course_term_1.disabled=true;
-				document.myForm.course_term_1.value="";
-			}
-			
-	var selectedItem_2 = document.myForm.select_2.selectedIndex;
-	var selectedText_2 = document.myForm.select_2.options[selectedItem_2].value;
-			if(selectedText_2=="College"){
-				document.myForm.course_name_2.disabled=false;
-				document.myForm.course_number_2.disabled=false;
-				document.myForm.course_credits_2.disabled=false;
-				document.myForm.course_term_2.disabled=false;
-			} 
-			else if (selectedText_2=="High School"){
-				document.myForm.course_name_2.disabled=false;
-				document.myForm.course_number_2.disabled=true;
-				document.myForm.course_number_2.value="";
-				document.myForm.course_credits_2.disabled=true;
-				document.myForm.course_credits_2.value="";
-				document.myForm.course_term_2.disabled=false;
-			}
-			else {
-				document.myForm.course_name_2.disabled=true;
-				document.myForm.course_name_2.value="";
-				document.myForm.course_number_2.disabled=true;
-				document.myForm.course_number_2.value="";
-				document.myForm.course_credits_2.disabled=true;
-				document.myForm.course_credits_2.value="";
-				document.myForm.course_term_2.disabled=true;
-				document.myForm.course_term_2.value="";
-			}
-			
-	var selectedItem_3 = document.myForm.select_3.selectedIndex;
-	var selectedText_3 = document.myForm.select_3.options[selectedItem_3].value;
-			if(selectedText_3=="College"){
-				document.myForm.course_name_3.disabled=false;
-				document.myForm.course_number_3.disabled=false;
-				document.myForm.course_credits_3.disabled=false;
-				document.myForm.course_term_3.disabled=false;
-			} 
-			else if (selectedText_3=="High School"){
-				document.myForm.course_name_3.disabled=false;
-				document.myForm.course_number_3.disabled=true;
-				document.myForm.course_number_3.value="";
-				document.myForm.course_credits_3.disabled=true;
-				document.myForm.course_credits_3.value="";
-				document.myForm.course_term_3.disabled=false;
-			}
-			else {
-				document.myForm.course_name_3.disabled=true;
-				document.myForm.course_name_3.value="";
-				document.myForm.course_number_3.disabled=true;
-				document.myForm.course_number_3.value="";
-				document.myForm.course_credits_3.disabled=true;
-				document.myForm.course_credits_3.value="";
-				document.myForm.course_term_3.disabled=true;
-				document.myForm.course_term_3.value="";
-			}
-		
-	var selectedItem_4 = document.myForm.select_4.selectedIndex;
-	var selectedText_4 = document.myForm.select_4.options[selectedItem_4].value;
-			if(selectedText_4=="College"){
-				document.myForm.course_name_4.disabled=false;
-				document.myForm.course_number_4.disabled=false;
-				document.myForm.course_credits_4.disabled=false;
-				document.myForm.course_term_4.disabled=false;
-			} 
-			else if (selectedText_4=="High School"){
-				document.myForm.course_name_4.disabled=false;
-				document.myForm.course_number_4.disabled=true;
-				document.myForm.course_number_4.value="";
-				document.myForm.course_credits_4.disabled=true;
-				document.myForm.course_credits_4.value="";
-				document.myForm.course_term_4.disabled=false;
-			}
-			else {
-				document.myForm.course_name_4.disabled=true;
-				document.myForm.course_name_4.value="";
-				document.myForm.course_number_4.disabled=true;
-				document.myForm.course_number_4.value="";
-				document.myForm.course_credits_4.disabled=true;
-				document.myForm.course_credits_4.value="";
-				document.myForm.course_term_4.disabled=true;
-				document.myForm.course_term_4.value="";
-			}
-			
-	var selectedItem_5 = document.myForm.select_5.selectedIndex;
-	var selectedText_5 = document.myForm.select_5.options[selectedItem_5].value;
-			if(selectedText_5=="College"){
-				document.myForm.course_name_5.disabled=false;
-				document.myForm.course_number_5.disabled=false;
-				document.myForm.course_credits_5.disabled=false;
-				document.myForm.course_term_5.disabled=false;
-			} 
-			else if (selectedText_5=="High School"){
-				document.myForm.course_name_5.disabled=false;
-				document.myForm.course_number_5.disabled=true;
-				document.myForm.course_number_5.value="";
-				document.myForm.course_credits_5.disabled=true;
-				document.myForm.course_credits_5.value="";
-				document.myForm.course_term_5.disabled=false;
-			}
-			else {
-				document.myForm.course_name_5.disabled=true;
-				document.myForm.course_name_5.value="";
-				document.myForm.course_number_5.disabled=true;
-				document.myForm.course_number_5.value="";
-				document.myForm.course_credits_5.disabled=true;
-				document.myForm.course_credits_5.value="";
-				document.myForm.course_term_5.disabled=true;
-				document.myForm.course_term_5.value="";
-			}
-			
-	var selectedItem_6 = document.myForm.select_6.selectedIndex;
-	var selectedText_6 = document.myForm.select_6.options[selectedItem_6].value;
-			if(selectedText_6=="College"){
-				document.myForm.course_name_6.disabled=false;
-				document.myForm.course_number_6.disabled=false;
-				document.myForm.course_credits_6.disabled=false;
-				document.myForm.course_term_6.disabled=false;
-			} 
-			else if (selectedText_6=="High School"){
-				document.myForm.course_name_6.disabled=false;
-				document.myForm.course_number_6.disabled=true;
-				document.myForm.course_number_6.value="";
-				document.myForm.course_credits_6.disabled=true;
-				document.myForm.course_credits_6.value="";
-				document.myForm.course_term_6.disabled=false;
-			}
-			else {
-				document.myForm.course_name_6.disabled=true;
-				document.myForm.course_name_6.value="";
-				document.myForm.course_number_6.disabled=true;
-				document.myForm.course_number_6.value="";
-				document.myForm.course_credits_6.disabled=true;
-				document.myForm.course_credits_6.value="";
-				document.myForm.course_term_6.disabled=true;
-				document.myForm.course_term_6.value="";
-			}
-			
-	var selectedItem_7 = document.myForm.select_7.selectedIndex;
-	var selectedText_7 = document.myForm.select_7.options[selectedItem_7].value;
-			if(selectedText_7=="College"){
-				document.myForm.course_name_7.disabled=false;
-				document.myForm.course_number_7.disabled=false;
-				document.myForm.course_credits_7.disabled=false;
-				document.myForm.course_term_7.disabled=false;
-			} 
-			else if (selectedText_7=="High School"){
-				document.myForm.course_name_7.disabled=false;
-				document.myForm.course_number_7.disabled=true;
-				document.myForm.course_number_7.value="";
-				document.myForm.course_credits_7.disabled=true;
-				document.myForm.course_credits_7.value="";
-				document.myForm.course_term_7.disabled=false;
-			}
-			else {
-				document.myForm.course_name_7.disabled=true;
-				document.myForm.course_name_7.value="";
-				document.myForm.course_number_7.disabled=true;
-				document.myForm.course_number_7.value="";
-				document.myForm.course_credits_7.disabled=true;
-				document.myForm.course_credits_7.value="";
-				document.myForm.course_term_7.disabled=true;
-				document.myForm.course_term_7.value="";
-			}
-	
 		}
-		//-->
-		</script>';
+	</script>';
 		
 		//content
 		print '<p><span class="SectionText">Please list courses you are currently taking.</span></p>
 		<table border="0" cellpadding="5" bgcolor="#FFFFFF">
 			<tr>
-				<td width="140" class="FormLabel">Course Level</td>
-				<td width="170" class="FormLabel">Course name/title</td>
-				<td width="170" class="FormLabel">Course number</td>
-				<td width="170" class="FormLabel">Credits</td>
-				<td width="170" class="FormLabel">Term</td>
+				<td width="130" class="FormLabel">Course level</td>
+				<td width="170" class="FormLabel">Course name or title</td>
+				<td width="180" class="FormLabel">College course number</td>
+				<td width="170" class="FormLabel">College credits</td>
+				<td width="160" class="FormLabel">Term</td>
 			</tr>
 			<tr>
 				<td><label>';
 
-				print'<select name="select_1" id="select1" onClick="CoursesSelect();">				
+				print'<select name="select_1" id="select1">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1182,7 +1007,7 @@ function Display_ApplicationPage7()
 				<td>';
 			
 			
-				print'<select name="select_2" id="select2" onClick="CoursesSelect();">				
+				print'<select name="select_2" id="select2">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1203,7 +1028,7 @@ function Display_ApplicationPage7()
 			<tr>
 				<td>';
 
-				print'<select name="select_3" id="select3" onClick="CoursesSelect();">				
+				print'<select name="select_3" id="select3">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1222,7 +1047,7 @@ function Display_ApplicationPage7()
 			<tr>
 				<td>';
 
-				print'<select name="select_4" id="select4" onClick="CoursesSelect();">				
+				print'<select name="select_4" id="select4">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1247,7 +1072,7 @@ function Display_ApplicationPage7()
 			print '<tr id="HiddenCourseDiv1" style="display:'.$DisplayValue5.'">
 				<td>';
 
-				print'<select name="select_5" id="select5" onClick="CoursesSelect();">				
+				print'<select name="select_5" id="select5">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1272,7 +1097,7 @@ function Display_ApplicationPage7()
 			print '<tr id="HiddenCourseDiv2" style="display:'.$DisplayValue6.'">
 				<td>';
 
-				print'<select name="select_6" id="select_6" onClick="CoursesSelect();">				
+				print'<select name="select_6" id="select6">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
@@ -1297,7 +1122,7 @@ function Display_ApplicationPage7()
 			print '<tr id="HiddenCourseDiv3" style="display:'.$DisplayValue7.'">
 				<td>';
 
-				print'<select name="select_7" id="select_7" onClick="CoursesSelect();">				
+				print'<select name="select_7" id="select7">				
 					<option value=""></option>';
 					foreach ($cArray as $value){
 						print '<option value="'.$value.'"';
