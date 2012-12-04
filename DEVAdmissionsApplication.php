@@ -4880,6 +4880,9 @@ function SaveFormToDB_Page9()
 		$strMsg .= '<strong>Applicant\'s cell phone number:</strong> '.$_SESSION['contact_cell_phone_1'].'-'.$_SESSION['contact_cell_phone_2'].'-'.$_SESSION['contact_cell_phone_3'].'<br />';	
 		$strMsg .= '<strong>Applicant\'s zip code:</strong> '.$_SESSION['contact_zip'].'<br /><br />';
 		
+		$strMsg .= '<strong>Applicant\'s degree:</strong> '.$_SESSION['cert'].'<br />';
+		$strMsg .= '<strong>Applicant\'s major:</strong> '.$_SESSION['program'].'<br /><br />';
+		
 		$strMsg .= '<strong>Applicant\'s state:</strong> '.$_SESSION['state_2'].'<br />';
 		$strMsg .= '<strong>Transfer student:</strong> '.$_SESSION['transfer_student'].'<br /><br />';
 		
@@ -4901,11 +4904,12 @@ function SaveFormToDB_Page9()
 		$strMsg .= '<strong>Credential attained:</strong> '.$_SESSION['college_degree_attained_1'].'<br />'; 
 		$strMsg .= '<strong>Credential attained date:</strong> '.$_SESSION['college_degree_attained_mo_1'].' '.$_SESSION['college_degree_attained_yr_1']; 
 	
+	//this section is used to override counselors that may have been previously selected
 	if($_SESSION['cert'] == 'Post-Baccalaureate')
 	{
 		$strQuery = "SELECT admissions_counselors.counselor_email AS counselor_email
 		FROM (admissions_counselors INNER JOIN admissions_regions ON admissions_counselors.counselor_id = admissions_regions.region_counselor) 
-		WHERE admissions_regions.region_code='POST';";
+		WHERE admissions_regions.student_type='Post-Baccalaureate';";
 		
 		$aResult = $classSqlQuery->MySQL_Queries($strQuery);
 		
