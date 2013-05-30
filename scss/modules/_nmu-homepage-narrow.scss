@@ -1,0 +1,55 @@
+/* This SCSS file contains module styles for the main NMU homepage in narrow view
+	Modules:
+		Main Image
+		What's Happening
+		Upcoming Events
+		News
+		Box A/B
+		Emergency Alert
+*/
+
+@import "compass/css3/opacity";
+@import "base";
+
+.panels-flexible-nmu_home_panel {
+	width:600px;  //this width was set to the size of the main image component, allowing it to be centered on the page in the narrow grid
+	position: relative;
+}
+
+.panels-flexible-column-nmu_home_panel-11 {
+	width:300px;  //this is the size of the news panel, it needs to be shrunk to stack next to the events section.
+}
+
+/* main image component */
+#gallery_container {
+	width:600px;  //this is kept at its default size and centered
+	height:487px;
+}
+
+#image_caption {
+	bottom:1%;
+}
+
+/* events and news components */
+#NMUUpcomingEventsHP,
+#NMUFeaturedNews {
+		width:295px;
+}
+
+
+/* boxes */
+#NMUBoxA,
+#NMUBoxB {
+	position: absolute;
+	left: 380px;
+	width:200px;
+	height:120px;
+}
+
+#NMUBoxA {
+	bottom: 680px;
+}
+
+#NMUBoxB {
+	bottom: 550px;
+}

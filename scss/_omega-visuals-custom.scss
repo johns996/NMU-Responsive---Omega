@@ -1,0 +1,78 @@
+/*!
+ * Omega Visuals customized for NMU
+ *
+ * This file simply copies in the table styles from the omega-visuals CSS file and tweaks them for NMU's uses
+ * I'm also overwriting a tbody style from the drupal system-theme.css
+ *
+ */
+
+table {
+  //border: 1px solid #CCC;  //nmu
+  max-width: 100%;
+}
+
+thead th, th {
+  background: #f7f7f7;
+  //border-bottom: 1px solid #ccc;  //nmu
+  color: #333;
+}
+
+#zone-content tbody {
+	border-top:none;  //nmu
+}
+
+td, th {
+  padding: 4px 8px;
+  vertical-align: middle;
+}
+
+th a, th a:link, th a:visited {
+  text-decoration: none;
+}
+
+th a {
+  display: block;
+}
+
+th a img {
+  margin: 0 0 0 5px;
+}
+
+th.active {
+  background: #DDD;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+}
+
+/* Odd & Even Styles */
+tr.even td {
+  background: #F1F5FA;
+}
+
+tr.odd td {
+  background: #fff;
+}
+
+td.active {
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+}
+
+tr.even td.active {
+  background: #e5e9ed;
+}
+
+tr.odd td.active {
+  background: #f2f2f2;
+}
+
+tr:hover td,
+tr.even:hover td.active,
+tr.odd:hover td.active {
+  background: #FFFEEE;
+}
+
+td ul.links {
+  margin-bottom: 0;
+}
+

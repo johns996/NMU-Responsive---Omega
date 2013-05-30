@@ -1,10 +1,6 @@
-NMUWeb
+NMUWeb: NMU-Omega-Theme
 ======
 
-Communications and Marketing repository. This contains a collection of files used on the NMU website.  Branches are used as subfolders to help organize the different projects.
+This branch contains the theme files used in the responsive NMU theme for Drupal 7
 
-Branches  
-  - Admissions-App  
-  - Responsive-NMU - Archive
-  - NMU-Omega-Theme - Drupal 7
-  - Theme-Includes - Drupal 7, Omega-based
+

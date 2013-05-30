@@ -1,0 +1,11 @@
+/* This SCSS file contains styles that will only be used on the NMU homepage
+	anything responsive here will not be shown by IE
+*/
+
+//for the nmu homepage, show the seventh region b/c it contains the budget reporting graphic
+#postscript_region_wrapper .postscript_region_seventh {
+	display:inherit;
+	width:90px;
+	margin:0;
+	float:left;
+}

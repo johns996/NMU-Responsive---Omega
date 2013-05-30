@@ -1,0 +1,244 @@
+/* This file will hold styles for all layouts using the alpha grid (i.e. not the mobile layout). */
+//basically, if the page has the debugging grid, it will use this CSS
+
+@import "base";
+
+//----------------------------------------------header
+#zone-header {
+	height:90px;
+	min-height:90px;  //reset from global
+	background-image:url('../images/header_swoop.jpg');
+	background-repeat:no-repeat;
+	background-position:left bottom;
+}
+
+#header_region_second {
+	text-align:right;  //push the search box and tools to the right side of the screen
+}
+
+#header_search {
+	padding:0;  //reset from global
+	line-height:0;  //reset from global
+	margin:0;  //reset from global
+	display:block;
+	margin:20px 10px 0 0 !important;
+	border-top:none;
+	input[type="text"] {  //style the searchbox
+		width:225px;
+		padding:2px 5px 0;
+	}
+}
+
+#header_tools {
+	display:block;
+	margin-top:5px;
+	font-size:12em / $base-font-size;
+	@include nmu-hover-links(white);
+	.search_tool {
+		padding-left:10px;
+		padding-right:10px;
+		display:inline; //displaying these as a block would require floating them
+	}
+}
+
+//----------------------------------------------branding
+#zone-branding {
+	text-align:right;
+	color:$contrast-color;
+	font-family:$callout-font-family;
+	ul li {
+		display: inline;
+	}
+	@include nmu-hover-links($contrast-color);
+	.main_title {
+		font-size: 26em / $base-font-size;
+		line-height: 20em / $base-font-size;
+
+	}
+	.sub_titles {
+		display:inline;
+		font-size: 16em / $base-font-size;
+		border-left: solid 2px $contrast-color;
+	}
+}
+
+//----------------------------------------------menu
+#zone-menu-wrapper {
+	background-color:$base-color-light;
+	border-bottom: 1px solid white;
+}
+
+#region-menu {
+	font-size:15em / $base-font-size;
+	line-height:22em / $base-font-size;
+	text-align:center;
+	padding:0 5px;
+		ul {
+			float:left;
+			width:100%;
+			li {
+				@include inline-block;
+				//display: inline;
+				padding:2px 10px 1px 10px;
+				border-right:solid 1px #558B71;
+				border-left:solid 1px #558B71;
+				margin-left:-5px;
+				border-bottom:none;
+			}
+			li:first-child {
+				margin-left:0px;
+				//border-left:solid 1px #558B71;
+			}
+			a {
+				display:inline;
+				padding:0;
+			}
+			a:hover {
+				background-color:$base-color-light;
+				color:$contrast-color;
+			}
+		}
+}
+
+//----------------------------------------------sidebars
+#region-sidebar-first {
+	background-color:$base-color-dark;
+	padding:10px 0 20px 0;
+	font-size:13em / $base-font-size;
+	min-width: 0px;
+		ul {
+			padding:0px 0px 10px 0px;
+			a,
+			.nolink {
+				padding:4px 5px 4px 15px;
+			}
+			a:hover {
+				background-color:$base-color;
+			}
+			li {
+				border-top:none;
+				border-bottom:solid 1px $border-color-dark;
+			}
+			li:first-child {
+				color:$contrast-color;
+				padding:8px 5px 4px 10px;
+				font-size:16em / $base-font-size;
+				font-weight:600;
+				display: block;
+			}
+		}
+		.lnav_select_div {
+			padding:5px 10px 5px 14px;
+			border-top:none;
+			border-bottom:solid 1px $border-color-dark;
+		}
+		.lnav_select_box {
+			height:22px;
+		}
+}
+
+#region-sidebar-second {
+	background-color:$background-color-sub;
+	margin:0px;
+	padding:10px;
+	//margin:10px 10px 30px 10px;
+	h2 {
+		@include nmu-h-styling(29em);
+		padding-bottom:15px;
+		text-align:center;
+		color:#005028;
+	}
+	img {
+		margin:5px 0;
+	}
+}
+
+#sidebar_second_events {  //this ID is contained in the region-sidebar-second, so all styles will cascade into it unless overwritten
+	padding:5px 5px 30px 5px;
+	background-color:#fff;
+	margin-bottom:5px;
+	font-size: 12em / $base-font-size;
+	position:relative;
+	h2 {
+		font-size:27em / $base-font-size;
+		color:#000;
+		text-align: left;
+	}
+	.BoxTop {
+		position: relative;
+		padding-bottom:5px;
+	}
+	.BoxRSS {
+		position: absolute;
+		top:0px;
+		right:0px;
+	}
+	.EventBlock {
+		padding-bottom:7px;
+	}
+	.EventDate {
+		padding-bottom:5px;
+		font-weight: bold;
+		font-size:110%;
+	}
+	.EventDesc {
+		font-weight: bold;
+		padding-left:5px;
+	}
+	.EventTimeLoc {
+		padding-left:5px;
+	}
+	.BoxLink {
+		position:absolute;
+		right:7px;
+		bottom:7px;
+	}
+}
+
+
+//----------------------------------------------content
+#zone-content {
+	overflow: hidden;  //this is dubbed the "one true layout" model/hack and it is used to make the left & right column stretch to the length of the middle column.  This includes the aside selector below.
+	aside {
+		margin-bottom: -99999px;
+		padding-bottom: 99999px;
+	}
+}
+
+#region-content {
+	overflow:visible;
+}
+
+
+//----------------------------------------------postscript
+.postscript_region_seventh { //show the seventh block in grid-based layouts
+	display:block;
+}
+
+//----------------------------------------------footer
+#zone-footer {
+}
+
+#footer_region_first,
+#footer_region_second,
+#footer_region_third{
+	text-align:left;
+	font-size: 12em / $base-font-size;
+	line-height:16em / $base-font-size;
+}
+
+//----------------------------------------------classes
+.mobile_hide,
+.mobile_break{
+	display:inline;
+}
+.mobile_only {
+	display:none;
+}
+
+//----------------------------------------------forms
+#zone-content {
+	label {
+		display:inline;  //put form elements back inline since touch is no longer required
+	}
+}

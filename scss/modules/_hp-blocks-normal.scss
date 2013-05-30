@@ -1,0 +1,89 @@
+/* This SCSS file contains module styles for left dept. homepage column.
+	Modules:
+		Divider
+		Top Story
+		Vert Three
+		Horiz. Features
+		Color Boxes
+		Right Buttons
+*/
+
+//----------------------------------------------left blocks
+#zone-content {
+	.content_main_hp1_col {
+		width: 470px;
+		table {
+			width: 460px;
+		}
+		img {
+			max-width: 450px;
+		}
+	}
+}
+
+ //this is overriding the default width of the left column of panel pages that include nav (hp2)
+.panels-flexible-column-student_enrichment-1,
+.panels-flexible-column-admissions_transfer-1 {
+	width:500px;
+}
+
+#zone-content {
+	.content_main_hp2_col {
+		width: 490px;
+		table {
+			width: 480px;
+		}
+		img {
+			max-width: 470px;
+		}
+	}
+}
+
+
+//----------------------------------------------right blocks
+.content_sub_hp1_col {
+	width:245px;
+	table {
+		width: 245px;   //set a table width so the column stays filled with the blocks (done for all sizes)
+	}
+}
+
+//this is overriding the default width of the right column of panel pages that include nav (hp2)
+.panels-flexible-column-student_enrichment-2,
+.panels-flexible-column-admissions_transfer-2 {
+	width:260px;
+}
+
+.content_sub_hp2_col {
+	width:260px;
+	table {
+		width: 260px;
+	}
+
+	.GreenBox,
+	.YellowBox,
+	.RedBox,
+	.BrownBox,
+	.OrangeBox,
+	.BlueBox,
+	.GrayBox,
+	.PurpleBox,
+	.TealBox,
+	.LightBlueBox {
+		float:none;
+		display:block;
+	}
+
+	table.GreenBox,
+	table.YellowBox,
+	table.RedBox,
+	table.BrownBox,
+	table.OrangeBox,
+	table.BlueBox,
+	table.GrayBox,
+	table.PurpleBox,
+	table.TealBox,
+	table.LightBlueBox  {
+		margin-right:0;
+	}
+}

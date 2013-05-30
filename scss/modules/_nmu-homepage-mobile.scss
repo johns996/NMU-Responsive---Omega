@@ -1,0 +1,363 @@
+/* This SCSS file contains module styles for the main NMU homepage.  These are the default, mobile styles.
+	Modules:
+		Main Image
+		What's Happening
+		Upcoming Events
+		News
+		Box A/B
+		Emergency Alert
+*/
+
+//#content_wrapper_blank img {padding:0px;}
+//.clear {clear: both; line-height: 0px;} /* duplicated here for the admin tool */
+
+
+.panels-flexible-nmu_home_panel {
+	margin: 0 auto;  //center the body area
+	width:465px;
+	img {
+		max-width:100%;
+		//width:100%; //this should not be needed on the nmu homepage, if used, it will blow up some stuff
+		height:auto;
+	}
+	@include breakpoint(portrait) {
+		width:305px;
+	}
+}
+
+.panels-flexible-column-nmu_home_panel-11,
+.panels-flexible-column-nmu_home_panel-3,
+.panels-flexible-column-nmu_home_panel-2{
+	max-width:100%;  //this is needed to stop the panels from setting their own size
+}
+
+/* main image component */
+#gallery_container {
+	float:left;
+	width:465px;
+	height:377px;
+	@include breakpoint(portrait) {
+		//stuff that we only want shown on mobile-portrait gird
+		width:305px;
+		height:248px;
+	}
+}
+
+#gallery_main_images { /* 4 pixels are added to image size to accomidate standard image ratio */
+	width:100%;  //600/600
+	height:82.956879%; //404/487
+	background-color:#ccc;
+	position:relative;
+	.gallery_main_image { /* float make the margin consistent on the top */
+		width:98.333334%; //590/600
+		height:97.524752%; //394/404;
+		margin:.9%;  //calculations for this never worked out right so 9% was chosen and found to work
+		float:left;
+	}
+	.hidden {
+		display:none;
+	}
+}
+
+#image_caption {
+	width:96.5%; //580/600 and rounded down a tenth
+	font-weight:600;
+	background-color:#FFF;
+	position:absolute;
+	bottom:1.1%;  //this was 5px, changed to % on trial and error
+	@include breakpoint(portrait) {bottom:1.4%;}
+	left:.9%; //this was 5px, changed to % on trial and error
+	padding:.9%; //this was 5px, changed to % on trial and error
+	@include opacity(0.8);
+	.p_caption {
+		margin:0px;
+		padding:0 0 .9% 0;  //this was 0 0 5px 0, changed to % on trial and error
+		font-size: 11em / $base-font-size;
+		line-height: 16em / $base-font-size;
+	}
+	.h4_caption {
+		letter-spacing: -0.02em;
+		margin:0px;
+		padding:0 0 2px 0;
+		font-size: 14em / $base-font-size;
+		line-height: 18em / $base-font-size;
+	}
+}
+
+#gallery_sub_images {
+	width:100%;  //600/600
+	/* 3 pixels are added to height size to accomidate standard image ratio */
+	height:17.043121%; //83/487
+	background-color:#666;
+	.gallery_sub_image {
+		width:18.333334%; //110/600
+		height:87.951807%; //73/83
+		float:left;
+		margin:.83334%;  //5/600
+		cursor:pointer;
+	}
+	.selected_image {
+		//the white border around selected images has been removed because it did not scale properly with different sizes
+		//border:solid .333334% white;
+		//margin:.5%;  //3/600
+		@include opacity(0.4);
+	}
+}
+
+/* What's Happening */
+#NMUWhatsHappening {
+	width:370px;
+	margin:0px 0px 5px -6px;
+	@include breakpoint(portrait) {
+		width:305px;
+		margin-top:10px;
+	}
+	h2 {
+		@include nmu-h-styling(28em);
+		@include breakpoint(portrait) {font-size:26em/$base-font-size;}
+		line-height:16em / $base-font-size;
+	}
+	ul {
+		margin:0;
+		padding:0;
+		padding:5px 0 0 15px;
+	}
+	strong {
+		font-size:14em / $base-font-size;
+		letter-spacing: -0.02em;
+	}
+
+	.happening_item {
+		font-size:12em / $base-font-size;
+		line-height:16em / $base-font-size;
+		padding: 5px 0;
+		clear:both;
+	}
+	.happening_links {
+		margin:3px 0 0 5px;
+		float:left;
+	}
+	.happening_image {
+		float:left;
+		margin-bottom:5px;
+	}
+	.happening_image_left {
+		float:left;
+		margin:0 5px 5px 0;
+	}
+	.happening_text_wide,
+	.happening_text_100i { /* for images 100x130 */
+		float:right;
+		width:265px;
+		@include breakpoint(portrait) {width:200px;}
+		margin-bottom:5px;
+	}
+	.happening_text_narrow3,
+	.happening_text_145i { /* for images 145x130 */
+		float:right;
+		width:220px;
+		@include breakpoint(portrait) {width:155px;}
+		margin-bottom:5px;
+	}
+	.happening_text_narrow4,
+	.happening_text_160i { /* for images 160x130 */
+		float:right;
+		width:205px;
+		@include breakpoint(portrait) {width:140px;}
+		margin-bottom:5px;
+	}
+	.happening_text_narrow2,
+	.happening_text_180i { /* for images 180x130 */
+		float:right;
+		width:185px;
+		@include breakpoint(portrait) {width:120px;}
+		margin-bottom:5px;
+	}
+	.happening_text_narrow,
+	.happening_text_190i { /* for images 190x130 */
+		float:right;
+		width:175px;
+		@include breakpoint(portrait) {width:110px;}
+		margin-bottom:5px;
+	}
+}
+
+/* homepage poll component */
+#NMUWebPoll {
+	background-color:$contrast-color-light;
+	min-height:100px;
+	width:360px;
+	@include breakpoint(portrait) {
+		width:290px;
+	}
+	padding:10px 7px 0px 8px;
+	margin:10px 0px 5px -6px;
+	float:left;
+	h2 {
+		@include nmu-h-styling(28em);
+		padding:0px;
+		margin-bottom:5px;
+		line-height:10em / $base-font-size;
+	}
+	#Question,
+	#Answer {
+		line-height:16em / $base-font-size;
+	}
+	.Question {
+		font-weight:bold;
+		padding:5px 0 8px 0;
+	}
+	.Answer {
+		width:175px;
+		float:left;
+		padding:0 0 6px 5px;
+		input {
+			float:left;
+			margin:0 5px 10px 0;
+		}
+		input.Percentage {
+			margin-right:25px;
+			width:35px;
+		}
+		label {
+			font-weight:normal;
+		}
+	}
+	.Box {
+		height:90px; // added for IE
+	}
+	.PollClearEven {
+		clear:both;
+	}
+	.PollClearOdd {}
+	.PercentageDiv {
+		float:left
+	}
+	.Percentage {
+		background:none;
+		border:none;
+		width:30px;
+		height:15px;
+		margin:0;
+		text-align:right;
+		margin-top:-2px;
+		padding: 0px 0px 0px 5px;
+	}
+	.PercentageHiddenDiv {
+		width:0px;
+		height:0px;
+		float:left
+	}
+	.PercentageHidden {
+		background:none;
+		border:none;
+		margin:0;
+		padding: 2px 7px 0px 7px;
+	}
+	.PollBar {
+		width:0px;
+		height:10px;
+		background-color:black;
+		float:left
+	}
+	.PollWinner {
+		background-color:red; // this must come after the PollBar class
+	}
+}
+
+/* events and news components */
+#NMUUpcomingEventsHP,
+#NMUFeaturedNews {
+	width:465px;
+	padding-bottom:25px; //give the box links some space
+	position:relative;
+	background-color:$background-color-box;
+	float:left;
+	line-height:17em / $base-font-size;
+	h2 {
+		@include nmu-h-styling(28em);
+		line-height:12em / $base-font-size;
+	}
+	.BoxTitle {
+		float:left;
+	}
+	.BoxRSS {
+		float:right;
+		padding:3px;
+	}
+	.BoxLink {
+		position:absolute;
+		right:10px;
+		bottom:10px;
+	}
+	.BoxWrapper {
+		padding:5px;
+	}
+}
+#NMUUpcomingEventsHP {
+	margin:5px 0px 10px 0px;
+	@include breakpoint(portrait) {
+		width:305px;
+	}
+	.Box {}
+	.EventBlock {
+		padding-left:10px;
+	}
+	.EventDate {
+		font-weight: bold;
+		padding:5px 0 5px 0;
+	}
+	.EventDesc {
+		padding:0 0 2px 10px;
+	}
+	.EventTimeLoc {
+		padding:0 0 5px 10px;
+	}
+
+}
+
+#NMUFeaturedNews {
+	margin:5px 0px 10px -6px;
+	@include breakpoint(portrait) {
+		width:305px;
+	}
+	ul {
+		list-style:none;
+		margin:0px;
+		padding:5px 0 0;
+		li {
+			padding:0 0 10px 10px;
+		}
+	}
+
+}
+
+/* boxes */
+#NMUBoxA,
+#NMUBoxB {
+	width:250px;  //chrome needs dimensions for the boxes to get the right size
+	height:150px;
+	float:left;
+	margin:5px 0px 5px 15px;
+	p {
+		margin:0;
+		padding:0;
+	}
+}
+
+/* emergency alert styling */
+.weather {
+	font-size: 12em / $base-font-size;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FF0000;
+	margin-right:-5px;
+	p {
+		padding:5px;
+		margin:5px 0 0 0;
+	}
+	a:link, a:visited, a:active {
+		color: #FFFFFF;
+		background-color: #FF0000;
+	}
+}

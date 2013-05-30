@@ -1,0 +1,59 @@
+/* This file will hold styles that are loaded using the same media query as the wide grid. */
+
+@import "base";
+
+//For non-responsive browsers and pages set to not use the responsive grid, load the narrow and normal stylesheets
+@import 'omega-nmu-alpha-default-narrow';
+@import 'omega-nmu-alpha-default-normal';
+
+//import modules
+@import 'modules/nmu-homepage-wide';
+@import 'modules/admissions-intro-wide';
+@import 'modules/hp-blocks-wide';
+
+//possibly do an import of the narrow and normal CSS files here to make sure that they are loaded even when the responsive grid is turned off
+
+//----------------------------------------------sidebars
+#region-sidebar-first {
+	width:180px; //default: 180
+}
+
+#region-sidebar-second {
+	width:205px; //default: 280
+}
+
+//----------------------------------------------content
+#zone-content {
+	.grid-7 {  // sidebar-first | content | sidebar-second
+		width:775px; //default: 680
+	}
+	.grid-9 { // content | sidebar-second
+		width: 955px;
+	}
+	.grid-10 { // sidebar-first | content
+		width: 1000px;
+	}
+	.grid-12 { // content
+		width: 1180px;
+	}
+}
+
+//----------------------------------------------postscript
+.postscript_region {
+	margin-left:20px;
+	width:145px;
+}
+
+.postscript_region_first { //this style needs to follow .postscript_region in order for it to overwrite the styles properly
+	margin-left:30px;
+}
+
+//----------------------------------------------footer
+#footer_region_second {
+	margin-left:0px;
+}
+
+#footer_region_third { //move this to the left side of the footer and put it beneath the logo
+	margin-left:80px;
+}
+

@@ -1,0 +1,31 @@
+/* This SCSS file contains module styles for the main NMU homepage in wide view
+	Modules:
+		Main Image
+		What's Happening
+		Upcoming Events
+		News
+		Box A/B
+		Emergency Alert
+*/
+
+.panels-flexible-nmu_home_panel {
+	width:980px;  //this will make the body area of the page smaller than the white body frame, but since it is centered it does not look bad
+}
+
+.panels-flexible-column-nmu_home_panel-2 {
+	width:600px;  //reset to panel defaults
+}
+
+#gallery_container {
+	width:600px;  //this is the default size of the main image piece
+	height:487px;
+}
+
+#image_caption {
+	bottom:1%;
+}
+
+.panels-flexible-column-nmu_home_panel-11,
+#NMUFeaturedNews {
+	width:410px;  //restore the news panel to it's native size
+}

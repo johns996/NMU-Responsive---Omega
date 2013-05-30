@@ -1,0 +1,65 @@
+/* This file will hold styles that are loaded using the same media query as the normal grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
+
+@import "base";
+
+//import modules
+@import 'modules/nmu-homepage-normal';
+@import 'modules/admissions-intro-normal';
+@import 'modules/hp-blocks-normal';
+
+//----------------------------------------------sidebars
+#region-sidebar-first {
+	width:180px; //default: 140
+}
+
+#region-sidebar-second {
+	display:block;
+	width:205px; //default: 220
+}
+
+//----------------------------------------------content
+#zone-content {
+	.grid-7 {  // sidebar-first | content | sidebar-second
+		width: 535px; //default: 540 - add 15 from sidebar-second and subtract 40 from sidebar-first
+	}
+	.grid-9 { // content | sidebar-second
+		width: 715px;
+	}
+	.grid-10 { // sidebar-first | content
+		width: 760px;
+	}
+	.grid-12 { // content
+		width: 940px;
+	}
+}
+
+
+//----------------------------------------------postscript
+.postscript_region {
+	margin-left:10px;
+	width:120px;
+}
+.postscript_region_first {
+	margin-left:30px;
+}
+
+//----------------------------------------------footer
+#zone-footer {
+	height:80px;
+}
+
+#footer_region_first {
+	margin-top:10px;
+}
+
+#footer_region_second {
+	margin-top:17px;
+	margin-left:-40px;
+}
+
+#footer_region_third {
+	margin-left:30px;
+	margin-top:20px;
+}
