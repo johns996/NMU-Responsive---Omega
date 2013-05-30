@@ -36,3 +36,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Project Specific ignores #
+############################
+.sass-cache
+/css
