@@ -2,6 +2,12 @@
  * global NMU javascrips
  */
 
+//stuff to run after the DOM has loaded
+jQuery(document).ready(function ($) {
+	$('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+});
+
+
 //default text & behavior for search box
 function field_focus(field)
 {
@@ -47,4 +53,8 @@ jQuery.fn.equalHeights = function() {
 	});
 	jQuery(this).css('min-height', currentTallest);
 };
+
+
+
+
 

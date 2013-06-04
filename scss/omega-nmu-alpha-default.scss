@@ -140,7 +140,7 @@
 #region-sidebar-second {
 	background-color:$background-color-sub;
 	margin:0px;
-	padding:10px;
+	padding:10px 10px 20px 10px;
 	//margin:10px 10px 30px 10px;
 	h2 {
 		@include nmu-h-styling(29em);
@@ -198,10 +198,11 @@
 
 //----------------------------------------------content
 #zone-content {
-	overflow: hidden;  //this is dubbed the "one true layout" model/hack and it is used to make the left & right column stretch to the length of the middle column.  This includes the aside selector below.
+	//the one true layout cuts off any text above a nested anchor link so it is no longer used.  A JS fix was implemented instead.
+	//overflow: hidden;  //this is dubbed the "one true layout" model/hack and it is used to make the left & right column stretch to the length of the middle column.  This includes the aside selector below.
 	aside {
-		margin-bottom: -99999px;
-		padding-bottom: 99999px;
+		//margin-bottom: -99999px;
+		//padding-bottom: 99999px;
 	}
 }
 

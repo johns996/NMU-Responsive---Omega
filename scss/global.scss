@@ -188,7 +188,6 @@ hr {
 	min-height:400px;
 	min-width:$zone-min-width;
 	word-wrap: break-word;
-	padding-bottom:10px;
 	img {
 		//width:100%;  //this will blow up all images to fit into the content zone and that would be undesired  -- keep this comment
 		max-width:100%;
@@ -218,6 +217,7 @@ hr {
 }
 
 #region-content {  //use the region-level selector so the navigation bars do not scroll in the mobile view
+	padding-bottom:10px;
 	//overflow:scroll;  //this might be the best way to deal with content that is larger than the mobile viewport
 }
 

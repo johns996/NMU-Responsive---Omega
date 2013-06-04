@@ -46,6 +46,10 @@ function responsive_tweaks(theMethod)
 				jQuery(this).css('width', '');
 			});
 
+			//re-determine the column's min height because it will change as the browser is resized.
+			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
+			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+
 			//----------------------------------------------mobile view
 			if(WindowWidth<740-scrollBarWidth)
 			{
