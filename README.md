@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 NMU-Responsive-Omega
 ====================
 
@@ -19,3 +20,9 @@ This project makes use of the following technologies
 
 #### This project was developed by: ####
   - [Eric Johnson](mailto:ericjohn@nmu.edu) - NMU Web Developer
+=======
+NMUWeb: NMU-Omega-Theme
+======
+
+This branch contains the theme files used in the responsive NMU theme for Drupal 7.  This repo is the only one that will be pulled down to Charlie.  Development and testing will take place on the public-facing repo.
+
