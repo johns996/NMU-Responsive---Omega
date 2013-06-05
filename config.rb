@@ -1,8 +1,5 @@
 # First, require any additional compass plugins installed on your system.
 
-# require 'breakpoint'
-
-
 # Toggle this between :development and :production when deploying the CSS to the
 # live server. Development mode will retain comments and spacing from the
 # original Sass source and adds line numbering comments for easier debugging.
@@ -12,7 +9,6 @@ environment = :development
 # In development, we can turn on the FireSass-compatible debug_info.
 # firesass = false
 firesass = false
-
 
 # Location of the your project's resources.
 css_dir         = "css"
