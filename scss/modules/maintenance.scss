@@ -1,0 +1,66 @@
+/* This SCSS file contains module styles for maintenance page
+		these styles are only included on the maintenance template and will not show up on any other page
+
+	The only responsive things that can go in this file (or any module file included by the the template.php file) should be mobile specific styles
+	This requirement is based on the fact that IE8 will not respond to media queries so if you build something from mobile up, IE will show it as a mobile device would
+	Ideally, the pre-created mixins for mobile sizes will be the only responsive styles included.
+	Mixin syntax: @include breakpoint(mobile) { ... }
+	Mixin syntax: @include breakpoint(portrait) { ... }
+*/
+
+@import "base";
+
+body {
+	font-family:$base-font-family;
+	background-color:$base-color;
+}
+h1 {
+	@include nmu-h-styling(22em); //import our default h2 styles and then override things for the page body
+	font-family:$base-font-family;
+	@include breakpoint(mobile) {
+		@include nmu-h-styling(18em);
+		font-family:$base-font-family;
+	}
+}
+p {
+	margin-bottom:13px;
+	margin-top:0px;
+	font-size:12em / $base-font-size;
+}
+
+
+#page {
+	background-color:white;
+	padding:10px;
+	margin:20px auto;
+	width:90%;
+	max-width:960px;
+}
+
+#page_wrapper{
+	margin:40px;
+	@include breakpoint(mobile) {
+		margin:15px;
+	}
+}
+
+#branding {
+	margin:5px;
+	float:right;
+	@include breakpoint(mobile) {
+		margin:5px auto;
+		width:155px;
+		float:none;
+	}
+}
+
+#content {
+	@include breakpoint(mobile) {
+		clear:both;
+		padding-top:10px;
+	}
+	clear:none;
+	padding-top:0;
+}
+
+

@@ -1,0 +1,63 @@
+/* This SCSS file contains module styles for dept. homepages
+	Modules:
+		Divider
+		Top Story
+		Vert Three
+		Horiz. Features
+		Color Boxes
+		Right Buttons
+*/
+
+//----------------------------------------------left blocks
+#zone-content {
+	.content_main_hp1_col {
+		width: 630px;
+		table {
+			width: 620px;
+		}
+		img {
+			max-width: 610px;
+		}
+	}
+}
+
+ //this is overriding the default width of the left column of panel pages that include nav (hp2)
+.panels-flexible-column-student_enrichment-1,
+.panels-flexible-column-admissions_transfer-1 {
+	width:660px;
+}
+
+
+#zone-content {
+	.content_main_hp2_col {
+		width: 650px;
+		table {
+			width: 640px;
+		}
+		img {
+			max-width: 630px;
+		}
+	}
+}
+
+
+//----------------------------------------------right blocks
+.content_sub_hp1_col {
+	width:325px;
+	table {
+		width:325px;
+	}
+}
+
+//this is overriding the default width of the right column of panel pages that include nav (hp2)
+.panels-flexible-column-student_enrichment-2,
+.panels-flexible-column-admissions_transfer-2 {
+	width:340px;
+}
+
+.content_sub_hp2_col {
+	width:340px;
+	table {
+		width:340px;
+	}
+}

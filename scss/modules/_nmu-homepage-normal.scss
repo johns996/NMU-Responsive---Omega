@@ -1,0 +1,59 @@
+/* This SCSS file contains module styles for the main NMU homepage in normal view
+	Modules:
+		Main Image
+		What's Happening
+		Upcoming Events
+		News
+		Box A/B
+		Emergency Alert
+*/
+
+.panels-flexible-nmu_home_panel {
+	width:930px;
+}
+
+.panels-flexible-column-nmu_home_panel-11 {
+	width:360px;  //sizing for the news panel
+}
+
+.panels-flexible-column-nmu_home_panel-2 {
+	width:535px;  //shrink the panel default size to accommodate the smaller main image piece
+}
+
+#gallery_container {
+	width:535px;  //sized down a bit from the default size to allow the what's happening to fit on the same row
+	height:434px;
+}
+
+#image_caption {
+	bottom:1.2%;
+}
+
+#NMUWhatsHappening,
+#NMUWebPoll {
+	margin-left:2px;
+}
+
+/* events and news components */
+#NMUUpcomingEventsHP,
+#NMUFeaturedNews {
+	height:320px;  //set a height because the blocks will be side by side  -default:370 --summer:320
+	overflow:hidden;  //clip any extra text to keep the boxes consistent
+	padding-bottom:0px;  //remove the excess padding
+}
+
+#NMUUpcomingEventsHP {
+	width:300px;
+}
+
+#NMUFeaturedNews {
+	margin-left:5px;
+	width:360px;  //the news block has to be sized down to fit the smaller screen space
+}
+
+#NMUBoxA,
+#NMUBoxB {
+	position: static;
+	width:250px;  //reset the dimensions back to the default size
+	height:150px;
+}

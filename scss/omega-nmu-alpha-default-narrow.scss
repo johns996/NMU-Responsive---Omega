@@ -1,0 +1,70 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the normal and widescreen layouts. You may override these styles in the normal
+ *  and widescreen CSS files as appropriate. */
+
+@import "base";
+
+//import modules
+@import 'modules/nmu-homepage-narrow';
+@import 'modules/admissions-intro-narrow';
+@import 'modules/hp-blocks-narrow';
+
+//----------------------------------------------sidebars
+#region-sidebar-second {
+	display:none;  //always hide the sidebar-second at the narrow width
+	width:0px;  //default: 160px +20px margin
+}
+#region-sidebar-second.jquery_unhide {  //class added by jquery when no sidebar-first is on the page
+	display: block;
+	width: 205px;
+}
+
+#region-sidebar-first {
+	width:180px; //default: 100
+}
+
+//----------------------------------------------content
+#zone-content {  //the zone-level selector is needed to override Omega size defaults
+	.grid-7 {  // sidebar-first | content | sidebar-second
+		width: 520px;
+	}
+	.grid-9{ // content | sidebar-second (hidden)
+		background-image:none;
+		width: 700px;
+	}
+	.grid-9.jquery_unhide { // content | sidebar-second
+		width: 475px;
+	}
+	.grid-10 { // sidebar-first | content
+		width: 520px;
+	}
+	.grid-12 { // content
+		background-image:none;
+		width: 700px;
+	}
+}
+
+//----------------------------------------------postscript
+.postscript_region {
+	width:90px;
+}
+
+//----------------------------------------------footer
+#zone-footer {
+	height:110px;
+}
+
+#footer_region_first {
+	margin:25px 10px 10px;
+}
+
+#footer_region_second {
+	width:450px;
+	margin-left:40px;
+}
+
+#footer_region_third { //move this to the center of the footer and put it beneath the copyright
+	margin-left:-260px;
+	margin-top:65px;
+}

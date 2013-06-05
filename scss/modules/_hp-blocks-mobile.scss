@@ -1,0 +1,221 @@
+/* This SCSS file contains module styles for left dept. homepage column.
+	Modules:
+		Divider
+		Top Story
+		Vert Three
+		Horiz. Features
+		Color Boxes
+		Right Buttons
+
+	The only responsive things that can go in this file (or any module file included by the the template.php file) should be mobile specific styles
+	This requirement is based on the fact that IE8 will not respond to media queries so if you build something from mobile up, IE will show it as a mobile device would
+	Ideally, the pre-created mixins for mobile sizes will be the only responsive styles included.
+	Mixin syntax: @include breakpoint(mobile) { ... }
+	Mixin syntax: @include breakpoint(portrait) { ... }
+*/
+
+
+//----------------------------------------------left blocks
+#zone-content {  //the homepage styles need to be wrapped in this ID to allow them to override global styles
+	.content_main_hp1_col,
+	.content_main_hp2_col {
+		width: 465px;
+		@include breakpoint(portrait) {width: 305px;}
+		table {
+			width: 455px;   //set a table width 10 px smaller than the column width so the column stays filled with the blocks (done for all sizes)
+			@include breakpoint(portrait) {width: 295px;}
+		}
+		img {
+			//a max width of 100% (as set in the global.scss will not scale correctly in table cells, use a specific max-width instead
+			max-width:445px; //images will need to be 20px smaller than the column dimension to account for image padding
+			height:auto !important;  //without this browsers will not scale the main element image correctly
+			//using a portrait max width will correctly scale the main image on all browsers, but the multi-column tables will spill outside of the mobile screen
+			//@include breakpoint(portrait) {max-width: 285px;}
+			//
+
+			//using a %-based max width will allow images in table cells to scale down
+			//this will make them as small as the table cell, if the cell has no width, they will become tiny
+			//this issue is fixed in the td styles below (note that this is only for portrait view)
+			@include breakpoint(portrait) {
+				max-width: 100%;
+				//a width of 100% is needed for firefox to scale images in tables
+				//for this to work, the native width of the images must also be removed using javascript
+				width: 100%;
+			}
+		}
+
+		//this fixes the problem with table divisions without a width, causing images to shrink down to 1px size
+		@include breakpoint(portrait) {
+			td {
+				min-width:80px;
+			}
+		}
+
+	}
+}
+
+.BaseTable,
+.InnerTable {  //standard classes applied to left homepage blocks
+	border:none;
+	table,
+	tbody {
+		border:none;
+	}
+	th,
+	td {
+		vertical-align:top;
+		padding-top:5px;
+		padding-bottom:0px;
+	}
+	tr:hover td,
+	tr.even:hover td.active,
+	tr.odd:hover td.active
+	{
+		background-color:transparent;  //remove omega's hover effect for table divisons on the color boxes
+	}
+	th {
+		background-color:transparent;  //remove omega's th styling
+		border:none;  //remove omega's th styling
+		color: $base-color-light;
+		font-size: 22em / $base-font-size;
+		letter-spacing: -0.02em;  //a sight tweak on omega's h2 styling
+		line-height:16em / $base-font-size;
+		p {
+			margin:0;  //CKEditor will put in a p adding extra space to the th, this removes it
+			//since this style is more specific than the one below, it will override it
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4{
+		color: $base-color-light;
+	}
+	h1 {
+		font-size:(30em / 22);  //the base font size for the heading tags is 22 and not the standard 16 ($base-font-size) because it is reset in the th tag above.
+	}
+	h2 {
+		font-size:(22em / 22);
+	}
+	h3 {
+		font-size:(18em / 22);
+	}
+	h4 {
+		font-size:(16em / 22);
+	}
+	p {
+		margin-bottom:5px;
+		margin-top:5px;
+	}
+}
+
+
+//----------------------------------------------Right Blocks
+
+.content_sub_hp1_col,
+.content_sub_hp2_col {
+	width: 465px;
+	@include breakpoint(portrait) {width: 305px;}
+	margin-left:-5px;
+	table {
+		width: 455px;   //set a table width so the column stays filled with the blocks (done for all sizes)
+		@include breakpoint(portrait) {width: 295px;}
+	}
+	img {
+		//firefox will not scale images in the box column.  this should not be an issue, but if it is, add a width definition here
+	}
+}
+
+.right_col_button {
+	text-align:center;
+}
+.first_right_col_button {
+	padding-top:10px;
+}
+
+
+/* Color Boxes */
+.GreenBox,
+.YellowBox,
+.RedBox,
+.BrownBox,
+.OrangeBox,
+.BlueBox,
+.GrayBox,
+.PurpleBox,
+.TealBox,
+.LightBlueBox {
+	@include border-radius(10px);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border: 1px solid #CCC;
+	border-collapse:separate; //this must be turned off for rounded borders to work
+	margin-bottom: 5px;  //omega sets this to 20px so it is overridden here
+	margin-top: 5px;
+	th {
+		background-color:transparent;  //remove omega's th styling
+		border-bottom:none;  //remove omega's th styling
+		text-align:center;
+		padding-bottom:0px;
+		letter-spacing:-0.02em;
+		h1,
+		h2,
+		h3,
+		h4 {
+			margin:0;
+			font-size:13em / $base-font-size;  //added to stop people from putting h# in the color boxes and blowing up the layout
+			letter-spacing:-0.02em;
+		}
+	}
+	tr:hover td,
+	tr.even:hover td.active,
+	tr.odd:hover td.active{
+		background-color:transparent;  //remove omega's hover effect for table divisons on the color boxes
+	}
+	p {
+		margin-bottom: 12px; //omega sets this to 20px so it is overridden here to keep the boxes more compact
+		margin-top: 5px; //omega sets this to 20px so it is overridden here to keep the boxes more compact
+	}
+}
+
+.GreenBox {
+	border-color: #006633;
+	background-image: url("../images/homepage_boxes/gradient_006633.jpg");
+}
+.BrownBox {
+	border-color: #996600;
+	background-image: url("../images/homepage_boxes/gradient_996600.jpg");
+}
+.YellowBox {
+	border-color: #FFCC33;
+	background-image: url("../images/homepage_boxes/gradient_ffcc33.jpg");
+}
+.RedBox {
+	border-color: #CC6633;
+	background-image: url("../images/homepage_boxes/gradient_cc6633.jpg");
+}
+.OrangeBox {
+	border-color: #CC6633;
+	background-image: url("../images/homepage_boxes/gradient_cc6633.jpg");
+}
+.BlueBox {
+	border-color: #3333CC;
+	background-image: url("../images/homepage_boxes/gradient_3333cc.jpg");
+}
+.GrayBox {
+	border-color: #999999;
+	background-image: url("../images/homepage_boxes/gradient_999999.jpg");
+}
+.PurpleBox {
+	border-color: #666699;
+	background-image: url("../images/homepage_boxes/gradient_666699.jpg");
+}
+.TealBox {
+	border-color: #336666;
+	background-image: url("../images/homepage_boxes/gradient_336666.jpg");
+}
+.LightBlueBox {
+	border-color: #3333cc;
+	background-image: url("../images/homepage_boxes/gradient_3333cc.jpg");
+}
+

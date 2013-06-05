@@ -1,0 +1,81 @@
+//
+// Custom sass mixins
+//
+// To use a mixin in this file, add this line to the top of your .scss file:
+//   @import "base";
+// Then to use a mixin for a particular rule, add this inside the ruleset's
+// curly brackets:
+//   @include mix-in-name;
+
+
+//these mixin styles will not cascade upward so they can be applied freely without the need to reset them at larger sizes
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (max-width: 739px)  { @content; }
+  }
+  @else if $point == portrait {
+    @media (max-width: 479px)  { @content; }
+  }
+}
+
+
+@mixin nmu-hover-links($color) {
+	color:$color;
+	a {
+		color:$color;
+		text-decoration:none;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+}
+
+@mixin region-bottom-boder {
+	border-bottom: solid 1px #fff;
+}
+
+@mixin bootstrap-btn-styling {
+	button.btn, a.btn {
+		 text-decoration: none;
+		 color:$base-color-dark;
+		 font-size:17em / $base-font-size;
+	}
+}
+
+@mixin nmu-h-styling($size) {
+	font-family: $callout-font-family;
+	font-size: $size / $base-font-size;
+	padding-bottom:5px;
+	padding-top:0px;
+	font-weight: 600;
+	margin:0;
+	letter-spacing: -0.02em;
+}
+
+// borrowed from the zen theme (not used anywhere yet)
+// element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}

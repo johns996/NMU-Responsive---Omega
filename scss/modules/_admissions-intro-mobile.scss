@@ -1,0 +1,37 @@
+/* This SCSS file contains module styles for the NMU admissions intro page
+		these styles are only included on the admissions intro page and will not show up elsewhere
+*/
+
+.admissions_main_txt {
+	width:100%;
+	float:none;
+	display:block;
+	margin-right:10px;
+}
+
+.admissions_tile_wrapper {
+	margin:0 auto;
+	max-width:404px;
+	display:block;
+	img {
+		border:2px solid white;
+	}
+	img:hover {
+		border:2px solid #fc3;
+	}
+}
+
+.admissions_tile_second {
+	margin-bottom:10px;
+	max-width:404px;
+}
+
+#inter_image {
+	width:48.6%;
+	float:left;
+}
+
+#vet_image {
+	width:48.6%;
+	margin-top:-18px;
+}

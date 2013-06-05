@@ -1,0 +1,481 @@
+// This file will hold styles for the mobile version of your website (mobile first).
+// This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide.
+
+@import "base";
+@import "compass/css3/opacity";
+
+//keep these imports at the top so they can be overwritten as needed by global styles
+//both of these files were tweaked to use the modernizr .fontface .no-fontface classes
+//add font awesome icons to be used on the site (3.0.2)
+@import 'font-awesome';
+//add bootstrap icons 2.3.1 as a fallback to browsers without @font-face support
+@import 'bootstrap-icons';
+
+//add bootstrap buttons 2.3.1
+//these three styles were downloaded with default settings from twitter bootstrap's site http://twitter.github.com/bootstrap/customize.html
+//they were downloaded as single files in order to toggle them on off for testing purposes
+@import 'bootstrap-buttons';
+
+//replacement for the default omega visuals
+@import 'omega-visuals-custom';
+
+
+//import module CSS
+//module styles are included at the top because they are generally more specific than the global styles and will take precedence due to that specificity
+@import 'modules/drupal-user';
+@import 'modules/nmu-homepage-mobile';
+@import 'modules/admissions-intro-mobile';
+@import 'modules/hp-blocks-mobile';
+
+//----------------------------------------------elements
+body {
+	font-family:$base-font-family;
+	background-color:$base-color;
+}
+h1,h2,h3,h4,h5,h6 {
+	@include nmu-h-styling(22em); //import our default h2 styles and then override things for the page body
+	font-family:$base-font-family;
+}
+h1 {
+	font-size: 30em / $base-font-size;
+}
+h2 {
+	font-size: 22em / $base-font-size;
+}
+h3 {
+	font-size: 18em / $base-font-size;
+}
+h4 {
+	font-size: 16em / $base-font-size;
+}
+
+p {
+	margin-bottom:13px;
+}
+
+hr {
+	background: $base-color;
+}
+
+.node ol,
+.node ul {
+	padding-left:25em / $base-font-size;
+}
+
+//----------------------------------------------header
+#zone-header-wrapper {
+	background-color:$base-color;
+	@include region-bottom-boder;
+}
+
+#zone-header {
+	min-height:130px;
+}
+
+#header_region_first {
+}
+
+#header_logo {
+	margin:12px 10px;
+}
+
+#header_tools {
+	display:none;
+}
+
+#header_search { //js will hide this div by default
+	min-width:290px; //this has to account for the padding
+	line-height:30em / $base-font-size;  //this keeps the text at the middle of the div
+	border-top:1px solid white;
+	margin: 5px -10px 1px -10px !important;
+	padding: 5px 10px 5px 20px;
+	input[type="text"] {  //style the searchbox
+		height:30px;
+		width:84%;
+		font-size: 14em / $base-font-size;
+	}
+	@include bootstrap-btn-styling;
+	.search_txtbox	{
+		display:inline;
+	}
+
+}
+
+#header_mobile_tools {
+	width:245px; //stop the row from collapsing on extremely small screens - it only needs to be 225 for the icons, but then, on an iphone, the fifth icon starts out in a second row before the font is rendered
+	margin:0px 10px;
+	@include bootstrap-btn-styling;
+	a.btn-success {
+		color:#fff;
+	}
+}
+
+//----------------------------------------------branding
+#zone-branding-wrapper {
+	background-color:$base-color-dark;
+	@include region-bottom-boder;
+}
+
+#zone-branding{
+	text-align:left;
+	color:$contrast-color;
+	font-family:$base-font-family;
+	min-width: $zone-min-width;
+	ul{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+		li {
+			padding: 0px 10px 0px 10px;
+		}
+	}
+	.main_title {
+		font-size: 26em / $base-font-size;
+		line-height: 16em / $base-font-size;
+		font-weight:300;
+		margin:5px 0;
+	}
+	.sub_titles {
+		display:none;
+	}
+	#branding_nav_icon {
+		float:right;
+		margin-top:3px;
+		margin-bottom:3px;
+		margin:3px -10px 3px 5px; //the right margin was adjsuted to negate the padding placed on the right size of the region
+		width:15px;
+		font-weight:300;
+		font-size:6.34615385em / $base-font-size;  //in order to keep the two nav buttons the same, i used the calculation 26 (parent font size) X [target] = [desired result] where the result was an arbitrary 165
+	}
+}
+
+//----------------------------------------------top menu
+#zone-menu-wrapper {
+	background-color:$base-color-dark;
+}
+
+#region-menu {
+	font-size:14em / $base-font-size;
+	margin:0;
+	padding:0; //if padding is added here, the hover effect will not cover the entire region
+		ul {
+			margin:0px;
+			padding:0px;
+			list-style:none;
+			li {
+				border-bottom:solid 1px white;
+			}
+			a {
+				display:block;
+				padding:10px 10px 10px 30px;
+				color:#fff;
+				text-decoration:none;
+			}
+			a:hover {
+				background-color:$base-color;
+			}
+		}
+}
+
+
+//----------------------------------------------content
+#zone-content-wrapper{
+	background-color:$background-color-main;
+}
+
+#zone-content {
+	background-color:$background-color-white;
+	min-height:400px;
+	min-width:$zone-min-width;
+	word-wrap: break-word;
+	img {
+		//width:100%;  //this will blow up all images to fit into the content zone and that would be undesired  -- keep this comment
+		max-width:100%;
+		height:auto;
+	}
+	table img {
+		max-width:inherit;  //this is needed for images in tables without fixed sizes.  it stops the images from shrinking down to accommodate the text
+	}
+	table img.gs-image {
+		max-width:100%; //a special case for the google search images otherwise inherit will make them too big
+	}
+	img[align="left"],
+	img[style*="float: left"],
+	img[style*="float:left"]{ //more about attribute selectors: http://css-tricks.com/attribute-selectors/ -and- http://quirksmode.org/css/selectors/selector_attribute.html
+		padding-right:5px;
+	}
+	img[align="right"],
+	img[style*="float: right"],
+	img[style*="float:right"]{
+		padding-left:5px;
+	}
+	table {
+		//width:100%;  //with this option enabled, tables used for image captions take up the whole screen in mobile view  -- keep this comment
+		max-width:100%;
+		margin-bottom:0;  //take out omega's bottom table padding to accommodate for drew's love of tables
+	}
+}
+
+#region-content {  //use the region-level selector so the navigation bars do not scroll in the mobile view
+	padding-bottom:10px;
+	//overflow:scroll;  //this might be the best way to deal with content that is larger than the mobile viewport
+}
+
+
+//----------------------------------------------sidebars
+#sidebar_mobile_header,
+.jquery_sidebar_subhead {
+	color:#fff;
+	background-color:$base-color;
+	padding: 0px 10px 0px 20px;
+	min-width:290px; //this has to account for the padding
+	height:40px;
+	font-size:18em / $base-font-size;
+	font-weight:600;
+	line-height:30em / $base-font-size;  //this keeps the text at the middle of the div
+	#sidebar_nav_icon {
+		float:right;
+		margin-top:7px;
+		width:15px;
+		font-weight:300;
+		font-size:9.16666667em / $base-font-size;  //in order to keep the two nav buttons the same, i used the calculation 18 (parent font size) X [target] = [desired result] where the result was an arbitrary 165 (to figure it out, do 165/18=[target])
+	}
+}
+
+#region-sidebar-first {  //an element that slides out and has padding will get a slight grow effect when jQuery toggles it.  keep padding off to avoid this.
+	margin:0;
+	background-color:$base-color;
+	color:#fff;
+	font-size:14em / $base-font-size;
+	position: relative;
+	min-width: $zone-min-width;
+		ul {
+			margin:0px;
+			padding:0px;
+			list-style:none;
+			li {
+				border-top:solid 1px $background-color-main;
+			}
+			a,
+			.nolink {
+				display:block;
+				padding:10px 10px 10px 30px;
+				color:#fff;
+				text-decoration:none;
+			}
+			.nolink { //used for items in link menus that are not links
+				color:$background-color-sub;
+			}
+			a:hover {
+				background-color:$base-color-dark;
+			}
+			li:first-child {
+				display: none;
+			}
+			li:first-child.jquery_sidebar_subhead {  //unhide the second navigation header using a class applied by jquery
+				display: block;
+			}
+		}
+		.lnav_select_div {
+			padding:5px 10px 5px 25px;
+			border-top:solid 1px $background-color-main;
+		}
+		.lnav_select_box {
+			width:100%;
+			height:35px;
+			@include border-radius(2px);
+		}
+		.lnav_select_box option:first-child {
+			font-weight: bold;
+		}
+}
+
+#region-sidebar-second {
+	display:none;
+}
+
+
+//----------------------------------------------postscript
+#zone-postscript-wrapper {
+	background-color:$base-color-dark;
+	@include region-bottom-boder;
+	border-top: 1px solid white;
+}
+
+#zone-postscript {
+	min-width:$zone-min-width;
+	@include nmu-hover-links(white);
+	font-size: 10em / $base-font-size;
+	line-height: 16em / $base-font-size;
+	ul {
+		list-style:none;
+		padding-left: 0px;
+		li {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	.postscript_region_head { //this must live inside the zone id for the colors to override properly (without needing an !important)
+		font-size:120%;
+		line-height:120%;
+		padding-bottom:2px;
+		font-weight:600;
+		a {
+			color: $contrast-color;
+		}
+	}
+}
+
+.postscript_region {
+	float:left;
+	width:140px;
+	margin-left:10px;
+}
+.postscript_region_seventh { //hide the search column of postscript links so the zone displays in three rows on mobile devices
+	display:none;
+}
+
+//----------------------------------------------footer
+#zone-footer-wrapper {
+	background-color:$base-color;
+	padding:5px 0;
+}
+
+#zone-footer {
+	min-width:$zone-min-width;
+}
+
+#footer_region_first {
+	text-align:center;
+}
+
+#footer_region_second {
+	@include nmu-hover-links(white);
+	text-align:center;
+	font-size: 12em / $base-font-size;
+	line-height:16em / $base-font-size;
+}
+
+#footer_region_third {
+	text-align:center;
+	min-width:262px; //stop the icons from collapsing
+}
+
+
+//----------------------------------------------classes
+.clear {
+	clear:both;
+}
+.mobile_hide { //add this class to elements that should be hidden on mobile devices
+	display:none;
+}
+.mobile_break { //add this class to a span and create a line break that will only show up on small-screen mobile devices
+	display:block;
+}
+.screen_reader_only { //this is for content that should only be displayed to screen readers
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+.pane-title {  //hide any custom pane titles added to blocks by users
+	display:none;
+}
+.Divider {  //green divider used on homepages
+	border-bottom:1px solid $base-color-light;
+	margin-top:-5px;
+	margin-bottom:-5px;
+}
+
+//----------------------------------------------forms
+textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	@include border-radius(2px);  //give all form elements a softer look
+	max-width:100%; //make sure no form elements are too large for the page
+}
+
+#zone-content {
+	textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+		margin-bottom:5px;  //make sure form elements in the body of the page don't sit on top of each other
+	}
+	label {  //revert some omega styles to make labels display correctly
+		display:block; //make form items easier to click on with a finger
+		font-weight:normal;
+	}
+}
+
+.form_indent,
+.form_border_indent {
+	margin-left:10px;
+}
+.form_indent_double,
+.form_border_indent_double {
+	margin-left:30px;
+}
+.form_indent_triple,
+.form_border_indent_triple{
+	margin-left:50px;
+}
+.form_border_indent,
+.form_border_indent_double,
+.form_border_indent_triple
+{
+	padding-left: 5px;
+	border-left:1px dotted #ccc;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+.form_optional {
+	padding-left:10px;
+	border-left:1px dashed #ccc;
+}
+.form_l_float {
+	float:left;
+	padding-right:10px;
+	margin-top:0;
+	margin-bottom:0;
+}
+.form_clear {
+	clear:both;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+.form_field_spaced {
+	width:70px;
+	display:inline-block;
+}
+.form_note {
+	font-size:80%;
+	font-style: italic;
+}
+.form_green_submit {
+	background-color: #063;
+	border: 1px solid #CCCCCC;
+	color: #FFFFFF;
+	cursor: default;
+	font-size: 15px;
+	height: 30px;
+	width: 90px;
+}
+.form_no_indent {
+	margin-left:0px;
+}
+.form_error {  //this class has to be set in the validate plugin as a custom class, otherwise it will just be 'error'
+	float: none;
+	color: red;
+	padding-left: .5em;
+	vertical-align: top;
+	font-style:italic;
+	display:none;
+}
+.form_required_item {
+	color: red;
+	vertical-align: top;
+	font-style:italic;
+	padding-left:2px;
+	padding-right:2px;
+}
+.form_hidden {
+	display:none;
+}
