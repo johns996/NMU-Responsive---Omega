@@ -7,7 +7,7 @@
 environment = :development
 
 # In development, we can turn on the FireSass-compatible debug_info.
-# firesass = true
+firesass = false
 
 # Location of the your project's resources.
 css_dir         = "css"
