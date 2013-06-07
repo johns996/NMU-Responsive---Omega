@@ -48,7 +48,10 @@ function responsive_tweaks(theMethod)
 
 			//re-determine the column's min height because it will change as the browser is resized.
 			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
-			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+			if (jQuery('.region-sidebar-second').is(":visible"))
+				jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+			else
+				jQuery('.region-content, .region-sidebar-first').equalHeights();
 
 			//----------------------------------------------mobile view
 			if(WindowWidth<740-scrollBarWidth)
@@ -90,36 +93,39 @@ function responsive_tweaks(theMethod)
 					jQuery(this).css('width', '');
 				});
 
-			//search box
-			jQuery('#header_search').hide();
-				jQuery('#btn_search').click(function(){
-					jQuery('#header_search').slideToggle();
-					jQuery('#btn_search').toggleClass('btn-success');
+				//search box
+				jQuery('#header_search').hide();
+					jQuery('#btn_search').click(function(){
+						jQuery('#header_search').slideToggle();
+						jQuery('#btn_search').toggleClass('btn-success');
+					});
+
+				//main navigation
+				jQuery('#region-menu').hide();  //this will trigger the menu to hide on screen resize (within the mobile dimensions) and load
+				jQuery('#zone-branding').click(function(){
+					jQuery('#region-menu').slideToggle();
+					jQuery('#branding_nav_icon').toggleClass('btn-success');
 				});
 
-			//main navigation
-			jQuery('#region-menu').hide();  //this will trigger the menu to hide on screen resize (within the mobile dimensions) and load
-			jQuery('#zone-branding').click(function(){
-				jQuery('#region-menu').slideToggle();
-				jQuery('#branding_nav_icon').toggleClass('btn-success');
-			});
+				//create the sidebar navigation label and button
+				var sidebarFirstHead = jQuery('.content_nav_head').html();
+				if(sidebarFirstHead != null) //make sure the sidebar is present
+				{
+					jQuery('#zone-content').prepend('<div id="sidebar_mobile_header" class="jquery_mobile">'+sidebarFirstHead+'<a class="btn btn-small jquery_mobile" id="sidebar_nav_icon"><i class="'+theNavIcon+'"></i></a></div>'); //add the sidebar header and navigation as a new div at the top of the content zone
 
-			//create the sidebar navigation label and button
-			var sidebarFirstHead = jQuery('.content_nav_head').html();
-			if(sidebarFirstHead != null) //make sure the sidebar is present
-			{
-				jQuery('#zone-content').prepend('<div id="sidebar_mobile_header" class="jquery_mobile">'+sidebarFirstHead+'<a class="btn btn-small jquery_mobile" id="sidebar_nav_icon"><i class="'+theNavIcon+'"></i></a></div>'); //add the sidebar header and navigation as a new div at the top of the content zone
+					if(jQuery('.content_nav_head:eq(1)').html() != null)  //look for a second piece of navigation
+						jQuery('.content_nav_head:eq(1)').addClass('jquery_sidebar_subhead');  //add a class to this nav so CSS can show the header in the menu
+				}
 
-				if(jQuery('.content_nav_head:eq(1)').html() != null)  //look for a second piece of navigation
-					jQuery('.content_nav_head:eq(1)').addClass('jquery_sidebar_subhead');  //add a class to this nav so CSS can show the header in the menu
-			}
+				//sidebar-first navigation
+				jQuery('#region-sidebar-first').hide();
+				jQuery('#sidebar_mobile_header').click(function(){
+					jQuery('#region-sidebar-first').slideToggle();
+					jQuery('#sidebar_nav_icon').toggleClass('btn-success');
+				});
 
-			//sidebar-first navigation
-			jQuery('#region-sidebar-first').hide();
-			jQuery('#sidebar_mobile_header').click(function(){
-				jQuery('#region-sidebar-first').slideToggle();
-				jQuery('#sidebar_nav_icon').toggleClass('btn-success');
-			});
+				//min-height not needed on these elements
+				jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');
 
 			}
 			else
