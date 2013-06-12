@@ -54,7 +54,9 @@ jQuery.fn.equalHeights = function() {
 	jQuery(this).css('min-height', currentTallest);
 };
 
-
-
+//check if an element exists on a page
+jQuery.fn.exists = function(){
+	return this.length>0;
+};
 
 

@@ -218,6 +218,7 @@ hr {
 
 #region-content {  //use the region-level selector so the navigation bars do not scroll in the mobile view
 	padding-bottom:10px;
+	min-height:400px;  //make sure the body area of the page does not get too tiny when displayed on a mobile screen (because the nav column is stacked on top of this area, it will count towards the min height sometimes causing the body area to shrink down)
 	//overflow:scroll;  //this might be the best way to deal with content that is larger than the mobile viewport
 }
 
