@@ -162,8 +162,8 @@ function responsive_tweaks(theMethod)
 				jQuery('.jquery_740').remove();
 				jQuery('#region-content, #region-sidebar-second').removeClass('jquery_unhide');
 				//pull out the min heights put in for this view
-				jQuery('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').css('min-height', 'auto');
-				jQuery('#NMUFeaturedNews, #NMUUpcomingEventsHP').css('min-height', 'auto');
+				jQuery('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').css('min-height', '');
+				jQuery('#NMUFeaturedNews, #NMUUpcomingEventsHP').css('min-height', '');
 			}
 
 			/* no tweaks are needed at these sizes
