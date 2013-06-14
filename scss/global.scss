@@ -49,8 +49,15 @@ h4 {
 	font-size: 16em / $base-font-size;
 }
 
-p {
-	margin-bottom:13px;
+p, ul {
+	margin-bottom:8px;
+	margin-top:8px;
+}
+
+ul ul, ol ol {
+	margin-top:1px;
+	margin-bottom:1px;
+	padding-top:0px;
 }
 
 hr {
@@ -311,6 +318,8 @@ hr {
 	ul {
 		list-style:none;
 		padding-left: 0px;
+		margin-top:12px;
+		margin-bottom:12px;
 		li {
 			margin: 0px;
 			padding: 0px;
