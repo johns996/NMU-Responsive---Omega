@@ -2,11 +2,6 @@
  * responsive NMU javascrips
  */
 
-//global scrollBarWidth variable
-var scrollBarWidth = 0;
-if (jQuery.browser.mozilla)
-	scrollBarWidth = window.innerWidth - jQuery("body").width(); //firefox will use the scroll bar when calculating the window width, webkit will not.  this eliminates that discrepancy
-
 jQuery(document).ready(function($){  //run after the DOM has loaded
 	//use the site home link from the title bar to populate the home button for mobile view
 	var mobile_home_link = $('.sub_titles a').attr("href");
@@ -38,12 +33,26 @@ jQuery(window).load(function($){  //run after all images have loaded
 	sidebar_sizer();
 });
 
+function get_width(theType){
+	//we get these dimensions at the function level because they cannot consistently be generated as global variables
+	if(theType == 'window'){
+		var windowWidth = jQuery(window).width();
+		return windowWidth;
+	}
+	if(theType == 'scroll'){
+		var scrollBarWidth = 0;
+		if (jQuery.browser.mozilla)
+			scrollBarWidth = window.innerWidth - jQuery("body").width(); //firefox will use the scroll bar when calculating the window width, webkit will not.  this eliminates that discrepancy
+		return scrollBarWidth;
+	}
+}
 
 function sidebar_sizer(){
-	//define the window width since it changes on resize and can't be global
-	var WindowWidth = jQuery(window).width();
 
-	if(WindowWidth<740-scrollBarWidth)
+	windowWidth = get_width('window');
+	scrollBarWidth = get_width('scroll');
+
+	if(windowWidth<740-scrollBarWidth)
 	{
 		//mobile, remove any min height
 		jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');
@@ -61,8 +70,8 @@ function sidebar_sizer(){
 function responsive_tweaks(theMethod){
 	if(Modernizr.mq('(min-width: 0px)')) //only run the tweaks in browsers that understand the min-width media queries (as defined by modernizr)
 	{
-		//define the window width since it changes on resize and can't be global
-		var WindowWidth = jQuery(window).width();
+		windowWidth = get_width('window');
+		scrollBarWidth = get_width('scroll');
 
 		//pull out the table width for homepage blocks to allow them to follow my CSS rules
 		jQuery('.content_main_hp1_col table, .content_main_hp2_col table').each(function(){
@@ -74,7 +83,7 @@ function responsive_tweaks(theMethod){
 		sidebar_sizer();
 
 		//----------------------------------------------mobile view
-		if(WindowWidth<740-scrollBarWidth)
+		if(windowWidth<740-scrollBarWidth)
 		{
 			jQuery('.jquery_mobile').remove(); //make sure added items only appear once (keep this as the first item)
 
@@ -157,7 +166,7 @@ function responsive_tweaks(theMethod){
 		}
 
 		//----------------------------------------------narrow view
-		if(WindowWidth>740-scrollBarWidth && WindowWidth<980-scrollBarWidth)
+		if(windowWidth>740-scrollBarWidth && windowWidth<980-scrollBarWidth)
 		{
 			jQuery('.jquery_740').remove();
 
@@ -188,17 +197,17 @@ function responsive_tweaks(theMethod){
 
 		/* no tweaks are needed at these sizes
 		//----------------------------------------------normal view
-		if(WindowWidth>980-scrollBarWidth && WindowWidth<1220-scrollBarWidth)
+		if(windowWidth>960-scrollBarWidth && windowWidth<1220-scrollBarWidth)
 		{
-			jQuery('.jquery_980').remove();
+			jQuery('.jquery_960').remove();
 		}
 		else
 		{
-			jQuery('.jquery_980').remove();
+			jQuery('.jquery_960').remove();
 		}
 
 		//----------------------------------------------wide view
-		if(WindowWidth>1220-scrollBarWidth)
+		if(windowWidth>1220-scrollBarWidth)
 		{
 			jQuery('.jquery_1220').remove();
 		}
