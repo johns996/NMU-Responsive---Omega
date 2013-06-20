@@ -9,6 +9,12 @@
 @import 'modules/admissions-intro-normal';
 @import 'modules/hp-blocks-normal';
 
+//----------------------------------------------header
+.header_region_first_foundation {
+	width:650px;  //expand to the full version of the foundation banner
+	overflow:visible;
+}
+
 //----------------------------------------------sidebars
 #region-sidebar-first {
 	width:180px; //default: 140
