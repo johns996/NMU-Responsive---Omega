@@ -82,8 +82,17 @@ hr {
 #header_region_first {
 }
 
+.header_region_first_foundation {
+	width:220px;  //clip the foundation header so only the logo shows at small sizes
+	overflow:hidden;
+}
+
 #header_logo {
-	margin:12px 10px;
+	margin:10px 10px;
+}
+
+#header_logo_foundation {
+	margin:1px 0 0;
 }
 
 #header_tools {
@@ -398,6 +407,10 @@ hr {
 	border-bottom:1px solid $base-color-light;
 	margin-top:-5px;
 	margin-bottom:-5px;
+}
+.overflow-table {  //allow a table to scroll to the left and right in mobile view (this will be placed on a div surrounding the table)
+	width:100%;
+	overflow: auto;
 }
 
 //----------------------------------------------forms
