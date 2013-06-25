@@ -35,8 +35,9 @@ $base-font-family: $arial;
 $font-monospace:   $courier;
 
 // Add a custom Google font to be used in page branding and other callout regions
-@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,600);
-$callout-font-family:			"Crimson Text", serif;
+@import url(//fonts.googleapis.com/css?family=Crimson+Text:400,600);
+//<link href='//fonts.googleapis.com/css?family=Crimson+Text:400,600' rel='stylesheet' type='text/css'>
+$callout-font-family: "Crimson Text", serif;
 
 //
 // Colors, etc.
