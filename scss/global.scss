@@ -229,7 +229,7 @@ hr {
 		//width:100%;  //with this option enabled, tables used for image captions take up the whole screen in mobile view  -- keep this comment
 		max-width:100%;
 		margin-bottom:0;  //take out omega's bottom table padding to accommodate for drew's love of tables
-		table-layout:fixed; //tables at 100% will scale down nicely for mobile view
+		//table-layout:fixed; //tables at 100% will scale down nicely for mobile view
 	}
 }
 
