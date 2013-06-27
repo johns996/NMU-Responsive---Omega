@@ -149,6 +149,8 @@
 .PurpleBox,
 .TealBox,
 .LightBlueBox {
+	display:inline-block;  //help chrome hide the image background on the rounded corners
+	height:100%; //some boxes have a height and with display:inline-block the tabel will not grow to fit the content w/o this style
 	@include border-radius(10px);
 	background-repeat: repeat-x;
 	background-position: left top;
