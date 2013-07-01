@@ -59,6 +59,11 @@ hr {
 	background: $base-color;
 }
 
+object,
+embed {  //this will scale down any flash objects to fit the screen size
+	max-width:100%;
+}
+
 .node ol,
 .node ul {
 	padding-left:25em / $base-font-size;
@@ -407,10 +412,73 @@ hr {
 	width:100%;
 	overflow: auto;
 }
-object,
-embed {  //this will scale down any flash objects to fit the screen size
-	max-width:100%;
+.jquery_iframe {
+	width: 100%;
 }
+
+//----------------------------------------------bios
+#EmployeeBioWrapper {
+	float:left;
+	width: 290px;
+}
+
+.EmployeeBio {
+	padding-top:15px;
+	padding-bottom:15px;
+	clear:both;
+	.EmployeeImage {
+		margin-right:10px;
+		float:left;
+	}
+	.Name {
+		padding:6px 0 12px 0;
+		font-size:18px;
+		font-weight:bold;
+	}
+	.Title1,
+	.Title2,
+	.Title3
+	.EmploymentType,
+	.Deptartment,
+	.Address,
+	.Phone,
+	.Fax,
+	.Email,
+	.Homepage,
+	.Since,
+	.Biography {
+		padding-bottom:5px;
+	}
+	.BiographyTitle {
+		padding-top:15px;
+		font-weight:bold;
+	}
+	.Degrees {
+		padding-top:5px;
+		padding-bottom:5px;
+		 ul {
+		 	margin:0px;
+		 	padding:0px;
+		 }
+		 ul li {
+		 	margin:0px;
+		 	padding-bottom:3px;
+		 	padding-top:0px;
+		 	margin-left:20px;
+		 }
+	}
+	.OtherQualifications {
+		padding-bottom:5px;
+	}
+	.SpecialtiesTitle {
+		padding-top:15px;
+		font-weight:bold;
+	}
+	.Specialties {
+		padding-bottom:5px;
+	}
+}
+
 
 //----------------------------------------------forms
 textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
