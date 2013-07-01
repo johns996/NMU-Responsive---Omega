@@ -122,6 +122,11 @@ function responsive_tweaks(theMethod){
 				jQuery(this).css('width', '');
 			});
 
+			//add a class to iframes so they fit into mobile view
+			jQuery('#zone-content iframe').each(function(){
+				jQuery(this).addClass('jquery_iframe');
+			});
+
 			//search box
 			jQuery('#header_search').hide();
 				jQuery('#btn_search').click(function(){
@@ -160,6 +165,9 @@ function responsive_tweaks(theMethod){
 		else
 		{
 			jQuery('.jquery_mobile').remove(); //make sure items added at this size are removed
+			jQuery('#zone-content iframe').each(function(){  //remove the iframe class added for mobile view
+				jQuery(this).removeClass('jquery_iframe');
+			});
 			if(jQuery('.content_nav_head:eq(1)').html() != null)  //look for a second piece of navigation
 				jQuery('.content_nav_head:eq(1)').removeClass('jquery_sidebar_subhead');  //remove the class used for mobile view
 			jQuery('#region-sidebar-first, #header_search, #region-menu').show();  //make sure the region hidden for the mobile view are displayed when not in mobile view
