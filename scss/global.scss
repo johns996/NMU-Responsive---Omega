@@ -7,7 +7,7 @@
 //keep these imports at the top so they can be overwritten as needed by global styles
 //both of these files were tweaked to use the modernizr .fontface .no-fontface classes
 //add font awesome icons to be used on the site (3.0.2)
-@import 'font-awesome';
+@import 'font-awesome/font-awesome';
 //add bootstrap icons 2.3.1 as a fallback to browsers without @font-face support
 @import 'bootstrap-icons';
 
