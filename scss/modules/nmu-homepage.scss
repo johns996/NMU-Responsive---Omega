@@ -3,6 +3,7 @@
 */
 
 //for the nmu homepage, show the seventh region b/c it contains the budget reporting graphic
+//this file is included using the template.php file and is done so because this style should ONLY apply to the NMU homepage and no other page
 #postscript_region_wrapper .postscript_region_seventh {
 	display:inherit;
 	width:90px;
