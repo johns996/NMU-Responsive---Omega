@@ -481,6 +481,15 @@ embed {  //this will scale down any flash objects to fit the screen size
 
 
 //----------------------------------------------forms
+
+
+select[size], select[multiple] {  //clean up some funky omega styling for select boxes
+	padding: 2px 20px 2px 3px;
+}
+select[size]{  //give a better height to select boxes with size applied to them
+	height: 1.8em;
+}
+
 textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	@include border-radius(2px);  //give all form elements a softer look
 	max-width:100%; //make sure no form elements are too large for the page
