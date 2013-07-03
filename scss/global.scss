@@ -49,6 +49,11 @@ h4 {
 	font-size: 16em / $base-font-size;
 }
 
+th a {
+	display:inline;
+	color:$base-color-light;
+}
+
 ul ul, ol ol {
 	margin-top:1px;
 	margin-bottom:1px;
@@ -481,8 +486,6 @@ embed {  //this will scale down any flash objects to fit the screen size
 
 
 //----------------------------------------------forms
-
-
 select[size], select[multiple] {  //clean up some funky omega styling for select boxes
 	padding: 2px 20px 2px 3px;
 }

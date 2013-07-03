@@ -84,6 +84,18 @@
 			margin:0;  //CKEditor will put in a p adding extra space to the th, this removes it
 			//since this style is more specific than the one below, it will override it
 		}
+			h1 {
+				font-size:(30em / 22);  //the base font size for the heading tags is 22 and not the standard 16 ($base-font-size) because it is reset in the th tag above.
+			}
+			h2 {
+				font-size:(22em / 22);
+			}
+			h3 {
+				font-size:(18em / 22);
+			}
+			h4 {
+				font-size:(16em / 22);
+			}
 	}
 	h1,
 	h2,
@@ -91,17 +103,17 @@
 	h4{
 		color: $base-color-light;
 	}
-	h1 {
-		font-size:(30em / 22);  //the base font size for the heading tags is 22 and not the standard 16 ($base-font-size) because it is reset in the th tag above.
+	h1 {  //these sizes are tweaked a bit from the default to help them fit with the homepage blocks
+		font-size:(30em / 16);
 	}
 	h2 {
-		font-size:(22em / 22);
+		font-size:(22em / 16);
 	}
 	h3 {
-		font-size:(18em / 22);
+		font-size:(18em / 16);
 	}
 	h4 {
-		font-size:(16em / 22);
+		font-size:(16em / 16);
 	}
 	p {
 		margin-bottom:5px;
@@ -164,6 +176,7 @@
 		text-align:center;
 		padding-bottom:0px;
 		letter-spacing:-0.02em;
+		width:460px;  //this helps table headings align to the center when the text is not wide enough to cause the table to fill up the available area (the size is set based on the largest size the box would take)
 		h1,
 		h2,
 		h3,
