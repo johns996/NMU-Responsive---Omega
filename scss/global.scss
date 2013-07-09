@@ -272,6 +272,26 @@ embed {  //this will scale down any flash objects to fit the screen size
 	font-size:14em / $base-font-size;
 	position: relative;
 	min-width: $zone-min-width;
+		//style the configure block widget
+		ul.contextual-links {
+			margin:0;
+			padding:5px;
+			font-size:16px;
+			font-family:$base-font-family;
+			li.block-configure {
+				border-bottom:none;
+			}
+			.block-configure a {
+				padding:0;
+				margin:0;
+				font-size:8em / $base-font-size;
+			}
+			.block-configure a:hover,
+			{
+				background-color: #bfdcee;
+				text-decoration:none;
+			}
+		}
 		ul {
 			margin:0px;
 			padding:0px;
@@ -330,6 +350,28 @@ embed {  //this will scale down any flash objects to fit the screen size
 	@include nmu-hover-links(white);
 	font-size: 10em / $base-font-size;
 	line-height: 16em / $base-font-size;
+
+	//style the configure block widget
+	ul.contextual-links {
+		margin:0;
+		padding:5px;
+		font-size:16px;
+		font-family:$base-font-family;
+		li.block-configure {
+			border-bottom:none;
+		}
+		.block-configure a {
+			padding:0;
+			margin:0;
+			font-size:10em / $base-font-size;
+		}
+		.block-configure a:hover,
+		{
+			background-color: #bfdcee;
+			text-decoration:none;
+		}
+	}
+
 	ul {
 		list-style:none;
 		padding-left: 0px;
@@ -339,6 +381,7 @@ embed {  //this will scale down any flash objects to fit the screen size
 			margin: 0px;
 			padding: 0px;
 		}
+
 	}
 	.postscript_region_head { //this must live inside the zone id for the colors to override properly (without needing an !important)
 		font-size:120%;
@@ -407,6 +450,13 @@ embed {  //this will scale down any flash objects to fit the screen size
 }
 .pane-title {  //hide any custom pane titles added to blocks by users
 	display:none;
+}
+.panel-region .pane-title {  //show pane titles on the panel content screen
+	display:inline-block;
+	margin-top:-2px;
+}
+.panel-pane-collapsible {
+	height:40px;
 }
 .Divider {  //green divider used on homepages
 	border-bottom:1px solid $base-color-light;
