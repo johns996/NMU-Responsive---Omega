@@ -128,11 +128,11 @@ function responsive_tweaks(theMethod){
 			});
 
 			//search box
-			jQuery('#header_search').hide();
-				jQuery('#btn_search').click(function(){
-					jQuery('#header_search').slideToggle();
-					jQuery('#btn_search').toggleClass('btn-success');
-				});
+			theMethod == 'load' ? jQuery('#header_search').hide() : false;  //only hide the search box on page load, not resize
+			jQuery('#btn_search').click(function(){
+				jQuery('#header_search').slideToggle();
+				jQuery('#btn_search').toggleClass('btn-success');
+			});
 
 			//main navigation
 			jQuery('#region-menu').hide();  //this will trigger the menu to hide on screen resize (within the mobile dimensions) and load
