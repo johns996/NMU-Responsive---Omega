@@ -14,6 +14,11 @@ jQuery(document).ready(function($){  //run after the DOM has loaded
 
 	responsive_tweaks('load');
 
+	//any time a user clicks on a page, we check to ensure the sidebars are the correct size.  this is needed to keep the sidebars in sync with toggled elements
+	$(document).click(function(e) {
+		sidebar_sizer();
+	});
+
 	//run the tweaks on page resize (but only if the page actually resizes)
 	var x;
 	var w=$(window).resize(function()
@@ -26,7 +31,6 @@ jQuery(document).ready(function($){  //run after the DOM has loaded
 		}
 		x=newx;
 	});
-
 });
 
 jQuery(window).load(function($){  //run after all images have loaded
@@ -48,7 +52,6 @@ function get_width(theType){
 }
 
 function sidebar_sizer(){
-
 	windowWidth = get_width('window');
 	scrollBarWidth = get_width('scroll');
 
