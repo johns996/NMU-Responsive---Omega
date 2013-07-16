@@ -52,7 +52,6 @@ function get_width(theType){
 }
 
 function sidebar_sizer(){
-	console.log('sized');
 	windowWidth = get_width('window');
 	scrollBarWidth = get_width('scroll');
 
