@@ -148,7 +148,7 @@ function responsive_tweaks(theMethod){
 			var sidebarFirstHead = jQuery('.content_nav_head').html();
 			if(sidebarFirstHead != null) //make sure the sidebar is present
 			{
-				jQuery('#zone-content').prepend('<div id="sidebar_mobile_header" class="jquery_mobile">'+sidebarFirstHead+'<a class="btn btn-small jquery_mobile" id="sidebar_nav_icon"><i class="'+theNavIcon+'"></i></a></div>'); //add the sidebar header and navigation as a new div at the top of the content zone
+				jQuery('#zone-content').prepend('<div id="sidebar_mobile_header" class="jquery_mobile"><div class="sidebar_mobile_title">'+sidebarFirstHead+'</div><a class="btn btn-small jquery_mobile" id="sidebar_nav_icon"><i class="'+theNavIcon+'"></i></a></div>'); //add the sidebar header and navigation as a new div at the top of the content zone
 
 				if(jQuery('.content_nav_head:eq(1)').html() != null)  //look for a second piece of navigation
 					jQuery('.content_nav_head:eq(1)').addClass('jquery_sidebar_subhead');  //add a class to this nav so CSS can show the header in the menu
