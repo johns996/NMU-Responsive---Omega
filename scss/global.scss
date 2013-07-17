@@ -151,7 +151,7 @@ embed {  //this will scale down any flash objects to fit the screen size
 		}
 	}
 	.main_title {
-		font-size: 26em / $base-font-size;
+		font-size: 23.4em / $base-font-size;
 		line-height: 16em / $base-font-size;
 		font-weight:300;
 		margin:5px 0;
@@ -252,7 +252,7 @@ embed {  //this will scale down any flash objects to fit the screen size
 	background-color:$base-color;
 	padding: 0px 10px 0px 20px;
 	min-width:290px; //this has to account for the padding
-	height:40px;
+	min-height:40px;
 	font-size:18em / $base-font-size;
 	font-weight:600;
 	line-height:30em / $base-font-size;  //this keeps the text at the middle of the div
@@ -262,6 +262,11 @@ embed {  //this will scale down any flash objects to fit the screen size
 		width:15px;
 		font-weight:300;
 		font-size:9.16666667em / $base-font-size;  //in order to keep the two nav buttons the same, i used the calculation 18 (parent font size) X [target] = [desired result] where the result was an arbitrary 165 (to figure it out, do 165/18=[target])
+	}
+	.sidebar_mobile_title {
+		width: 248px;
+		display: inline-block;
+		line-height: 1.5em;
 	}
 }
 
