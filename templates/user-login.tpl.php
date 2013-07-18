@@ -25,12 +25,11 @@ $arrBossIPs = array('ejmac.nmu.edu',		//198.110.203.106
 					'aqimac.nmu.edu',		//198.110.203.196
 					'aqbkup.nmu.edu');		//198.110.203.197
 
-if (in_array($hostname, $arrBossIPs))
+if (in_array($hostname, $arrBossIPs) || $_SERVER['HTTP_HOST'] !== 'www.nmu.edu')  //this is going to show the boss login on any server except charlie.  charlie will only show it for the IPs listed above
 {
 	echo '<br /><div class="boss_login">';
 	print $rendered;
 	echo '</div>';
-
 }
 
 ?>
