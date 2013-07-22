@@ -54,19 +54,21 @@ function get_width(theType){
 function sidebar_sizer(){
 	windowWidth = get_width('window');
 	scrollBarWidth = get_width('scroll');
-
+	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
 	if(windowWidth<740-scrollBarWidth)
 	{
-		//mobile, remove any min height
-		jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');
+		return false;
 	}
 	else
 	{
-		jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
-		if (jQuery('.region-sidebar-second').is(":visible"))  //check to see if sidebar second is shown
+		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
 			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
-		else
+		else if(jQuery('.region-sidebar-second').is(":visible"))
+			jQuery('.region-content, .region-sidebar-second').equalHeights();
+		else if(jQuery('.region-sidebar-first').is(":visible"))
 			jQuery('.region-content, .region-sidebar-first').equalHeights();
+		else
+			return false;
 	}
 }
 
@@ -160,9 +162,6 @@ function responsive_tweaks(theMethod){
 				jQuery('#region-sidebar-first').slideToggle();
 				jQuery('#sidebar_nav_icon').toggleClass('btn-success');
 			});
-
-			//tweak sidebars for mobile view (mobile detected in function)
-			sidebar_sizer();
 
 		}
 		else
