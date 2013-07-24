@@ -2,6 +2,9 @@
  * global NMU javascrips
  */
 
+//set up another alias for jQuery to handle pages that include their own jQuery library
+var JQ = jQuery.noConflict();
+
 //default text & behavior for search box
 function field_focus(field)
 {
@@ -36,19 +39,19 @@ function getUrlVars()
     return vars;
 }
 
+
 //make X number of elements and equal height
 //jQuery('.GreenBox, .YellowBox').equalHeights();
-jQuery.fn.equalHeights = function() {
-	var currentTallest = 0;
-	jQuery(this).each(function(){
-		if (jQuery(this).height() > currentTallest) {
-			currentTallest = jQuery(this).height();
-		}
-	});
-	jQuery(this).css('min-height', currentTallest);
+JQ.fn.equalHeights = function() {
+	var tallest = 0;
+	return this.each(function(){
+		var h = JQ(this).height();
+		tallest = h > tallest ? h : tallest;
+	}).css("minHeight", tallest);
 };
 
 //check if an element exists on a page
+//this should use the JQ alias
 jQuery.fn.exists = function(){
 	return this.length>0;
 };

@@ -1,5 +1,6 @@
 /*!
  * responsive NMU javascrips
+ * use JQ instead of jQuery for calls to jQuery that must reference the default library included with drupal
  */
 
 jQuery(document).ready(function($){  //run after the DOM has loaded
@@ -45,7 +46,7 @@ function get_width(theType){
 	}
 	if(theType == 'scroll'){
 		var scrollBarWidth = 0;
-		if (jQuery.browser.mozilla)
+		if (JQ.browser.mozilla)
 			scrollBarWidth = window.innerWidth - jQuery("body").width(); //firefox will use the scroll bar when calculating the window width, webkit will not.  this eliminates that discrepancy
 		return scrollBarWidth;
 	}
@@ -62,11 +63,11 @@ function sidebar_sizer(){
 	else
 	{
 		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
-			jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+			JQ('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
 		else if(jQuery('.region-sidebar-second').is(":visible"))
-			jQuery('.region-content, .region-sidebar-second').equalHeights();
+			JQ('.region-content, .region-sidebar-second').equalHeights();
 		else if(jQuery('.region-sidebar-first').is(":visible"))
-			jQuery('.region-content, .region-sidebar-first').equalHeights();
+			JQ('.region-content, .region-sidebar-first').equalHeights();
 		else
 			return false;
 	}
@@ -181,10 +182,10 @@ function responsive_tweaks(theMethod){
 			jQuery('.jquery_740').remove();
 
 			//make the NMU homepage news/events sections the same height
-			jQuery('#NMUFeaturedNews, #NMUUpcomingEventsHP').equalHeights();
+			JQ('#NMUFeaturedNews, #NMUUpcomingEventsHP').equalHeights();
 
 			//make all of the color boxes on hp2 the same height for this view
-			jQuery('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').equalHeights();
+			JQ('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').equalHeights();
 
 			//where there is no sidebar-first on the page, add a class to show the sidebar second on the narrow view
 			if(jQuery('#region-content').hasClass('grid-9'))
