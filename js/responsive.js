@@ -15,11 +15,6 @@ jQuery(document).ready(function($){  //run after the DOM has loaded
 
 	responsive_tweaks('load');
 
-	//any time a user clicks on a page, we check to ensure the sidebars are the correct size.  this is needed to keep the sidebars in sync with toggled elements
-	$(document).click(function(e) {
-		sidebar_sizer();
-	});
-
 	//run the tweaks on page resize (but only if the page actually resizes)
 	var x;
 	var w=$(window).resize(function()
@@ -33,45 +28,6 @@ jQuery(document).ready(function($){  //run after the DOM has loaded
 		x=newx;
 	});
 });
-
-jQuery(window).load(function($){  //run after all images have loaded
-	sidebar_sizer();
-});
-
-function get_width(theType){
-	//we get these dimensions at the function level because they cannot consistently be generated as global variables
-	if(theType == 'window'){
-		var windowWidth = jQuery(window).width();
-		return windowWidth;
-	}
-	if(theType == 'scroll'){
-		var scrollBarWidth = 0;
-		if (JQ.browser.mozilla)
-			scrollBarWidth = window.innerWidth - jQuery("body").width(); //firefox will use the scroll bar when calculating the window width, webkit will not.  this eliminates that discrepancy
-		return scrollBarWidth;
-	}
-}
-
-function sidebar_sizer(){
-	windowWidth = get_width('window');
-	scrollBarWidth = get_width('scroll');
-	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
-	if(windowWidth<740-scrollBarWidth)
-	{
-		return false;
-	}
-	else
-	{
-		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
-			JQ('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
-		else if(jQuery('.region-sidebar-second').is(":visible"))
-			JQ('.region-content, .region-sidebar-second').equalHeights();
-		else if(jQuery('.region-sidebar-first').is(":visible"))
-			JQ('.region-content, .region-sidebar-first').equalHeights();
-		else
-			return false;
-	}
-}
 
 function responsive_tweaks(theMethod){
 	if(Modernizr.mq('(min-width: 0px)')) //only run the tweaks in browsers that understand the min-width media queries (as defined by modernizr)

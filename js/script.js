@@ -5,6 +5,16 @@
 //set up another alias for jQuery to handle pages that include their own jQuery library
 var JQ = jQuery.noConflict();
 
+//run after all images have loaded
+jQuery(window).load(function(){
+	sidebar_sizer();
+
+	//any time a user clicks on a page, we check to ensure the sidebars are the correct size.  this is needed to keep the sidebars in sync with toggled elements
+	jQuery(document).click(function(e) {
+		sidebar_sizer();
+	});
+});
+
 //default text & behavior for search box
 function field_focus(field)
 {
@@ -57,3 +67,38 @@ jQuery.fn.exists = function(){
 };
 
 
+function get_width(theType){
+	//we get these dimensions at the function level because they cannot consistently be generated as global variables
+	if(theType == 'window'){
+		var windowWidth = jQuery(window).width();
+		return windowWidth;
+	}
+	if(theType == 'scroll'){
+		var scrollBarWidth = 0;
+		if (JQ.browser.mozilla)
+			scrollBarWidth = window.innerWidth - jQuery("body").width(); //firefox will use the scroll bar when calculating the window width, webkit will not.  this eliminates that discrepancy
+		return scrollBarWidth;
+	}
+}
+
+
+function sidebar_sizer(){
+	windowWidth = get_width('window');
+	scrollBarWidth = get_width('scroll');
+	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
+	if(windowWidth<740-scrollBarWidth)
+	{
+		return false;
+	}
+	else
+	{
+		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
+			JQ('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+		else if(jQuery('.region-sidebar-second').is(":visible"))
+			JQ('.region-content, .region-sidebar-second').equalHeights();
+		else if(jQuery('.region-sidebar-first').is(":visible"))
+			JQ('.region-content, .region-sidebar-first').equalHeights();
+		else
+			return false;
+	}
+}
