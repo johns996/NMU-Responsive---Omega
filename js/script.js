@@ -40,7 +40,7 @@ function getUrlVars()
 }
 
 
-//make X number of elements and equal height
+//make X number of elements an equal height
 //jQuery('.GreenBox, .YellowBox').equalHeights();
 JQ.fn.equalHeights = function() {
 	var tallest = 0;
