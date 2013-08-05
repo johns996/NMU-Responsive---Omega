@@ -46,4 +46,24 @@ body.cke_editable
 	img[style*="float:right"]{
 		padding-left:5px;
 	}
+
+	/* custom style helpers */
+	.screen_reader_only {
+		background-color:#cecece;
+	}
+	.screen_reader_only:before {
+		content: "### For Screen Readers Only ###";
+		background-color:#565656;
+		color:#fff;
+	}
+	.ckeditor_form {
+		width:400px;
+		height:50px;
+		background-color:#cecece;
+	}
+	.ckeditor_form:before {
+		content: "### This is the PHP form - do not delete ###";
+		background-color:#565656;
+		color:#fff;
+	}
 }
