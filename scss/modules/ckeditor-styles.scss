@@ -2,6 +2,7 @@
 	it focuses solely on styles that will affect the zone-content area of the page.
 */
 
+
 @import "global";
 
 //all of these are imported in the global
@@ -13,3 +14,36 @@
 	//@import 'modules/nmu-homepage-mobile';
 	//@import 'modules/admissions-intro-mobile';
 	//@import 'modules/hp-blocks-mobile';
+
+//below this line, adjust any global-based styles to configure ckeditor as desired
+body.cke_editable
+{
+	font-size: 13px;
+	background-color: #fff;
+
+	//add other styles within this block to ensure they only apply to ckeditor
+
+	.GreenBox,
+	.YellowBox,
+	.RedBox,
+	.BrownBox,
+	.OrangeBox,
+	.BlueBox,
+	.GrayBox,
+	.PurpleBox,
+	.TealBox,
+	.LightBlueBox {
+		width:325px;
+	}
+
+	img[align="left"],
+	img[style*="float: left"],
+	img[style*="float:left"]{ //more about attribute selectors: http://css-tricks.com/attribute-selectors/ -and- http://quirksmode.org/css/selectors/selector_attribute.html
+		padding-right:5px;
+	}
+	img[align="right"],
+	img[style*="float: right"],
+	img[style*="float:right"]{
+		padding-left:5px;
+	}
+}
