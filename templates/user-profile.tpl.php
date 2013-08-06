@@ -144,6 +144,9 @@ else
 			else
 				$user_button_ga = '';
 
+				echo '<div class="user_msg new_feature"><p>This website has recently been converted to use a new theme.  This theme makes a web site respond to a user\'s screen size allowing an imporved mobile-web experience.</p>';
+				echo '<p>The basic structure of your website and the content within it has not changed.  This theme, however, uses a completely different set of styles to control the look of NMU pages so you may notice some things behaving differently.<p>';
+				echo '<p>We have tested all converted sites to ensure nothing was broken by the new theme.  If you find something that does not look right, please email <a href="mailto:ericjohn@nmu.edu">ericjohn@nmu.edu</a> with the URL of the page, a description of the issue and the browser you were using when you noticed the problem.  If something critical has been broken by the theme, please call Eric Johnson (2313) or the Communications and Marketing office (2720) and we will fix the problem or revert your site to the previous theme while we work on a solution.</p></div>';
 				/*
 				echo '<div class="user_msg new_feature"><p>If you are having problems editing a web page using the CMS, please follow the steps outlined in <a href="http://www.nmu.edu/node/274">this guide</a> to resolve the issue.</p></div>';
 				echo '<div class="user_msg new_feature"><p>Two changes have recently been made to the file manager used by the NMU CMS.  These changes have been made based on user feedback in hopes of improving the usability of the file manager. <span id="read_more_link">Read More</span>
