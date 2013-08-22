@@ -18,6 +18,14 @@
   }
 }
 
+@mixin rem-font-size($size, $state) {
+	font-size: $size + px + $state;
+	font-size: ($size / 10) + rem + $state;
+}
+@mixin rem-line-height($size) {
+  line-height: $size + px;
+  line-height: ($size / 10) + rem;
+}
 
 @mixin nmu-hover-links($color) {
 	color:$color;
