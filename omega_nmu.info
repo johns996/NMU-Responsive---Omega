@@ -56,6 +56,11 @@ css[global.css][name] = Your custom global styles
 css[global.css][description] = This file holds all the globally active custom CSS of your theme.
 css[global.css][options][weight] = 10
 
+css[print.css][name] = Print styles
+css[print.css][description] = This file holds all the print CSS of your theme.
+css[print.css][options][weight] = 20
+css[print.css][options][media] = 'print'
+
 ; OPTIONAL LIBRARIES
 
 libraries[nmu_js][name] = NMU JavaScripts
