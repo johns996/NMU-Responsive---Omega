@@ -27,15 +27,6 @@ $classSqlQuery->SpecifyDB(Const_connLocalhostHost, Const_connLocalhostDrupalDefa
 $QueryUID = $GLOBALS['user']->uid;
 $strBaseURL = $GLOBALS['base_url'];
 
-$hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-$arrBossIPs = array('ejmac.nmu.edu',		//198.110.203.106
-					'ericjohnpc.nmu.edu',	//198.110.203.203
-					'ejimac.nmu.edu',		//198.110.203.107
-					//'ericjohn.nmu.edu',	//198.110.203.105
-					'aquinn.nmu.edu',		//198.110.203.200
-					'aqimac.nmu.edu',		//198.110.203.196
-					'aqbkup.nmu.edu');		//198.110.203.197
-
 //sites a user can access
 function site_access_check($str_uid, $user_name)
 {
@@ -108,7 +99,7 @@ if(!empty($q_SiteName))
 else
 	$SiteName = 'Undefined';
 
-if (in_array($hostname, $arrBossIPs))
+if(INT_ByPassLogin)
 {
 	//boss mode engaged
 	//use this for testing new features without letting the world see them
