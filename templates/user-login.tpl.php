@@ -1,4 +1,6 @@
 <?php
+require_once "/htdocs/cmsphp/Admin/Includes/FunctionsCommon.php";
+
 $strBaseURL = $GLOBALS['base_url'];
 $strURL = $strBaseURL.'/saml_login';
 ?>
@@ -15,21 +17,10 @@ access to a site, please contact <a href="mailto:ericjohn@nmu.edu">Eric Johnson<
 </div>
 
 <?php
-$hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-$arrBossIPs = array('ejmac.nmu.edu',		//198.110.203.106
-					'ericjohnpc.nmu.edu',	//198.110.203.203
-					'ejimac.nmu.edu',		//198.110.203.107
-					//'ericjohn.nmu.edu',	//198.110.203.105 - this was my old lenovo IP address before network issues required that it be changed
-					//'ericjohn.nmu.edu',	//198.110.200.158 - this is my new lenovo IP address
-					'aquinn.nmu.edu',		//198.110.203.200
-					'aqimac.nmu.edu',		//198.110.203.196
-					'aqbkup.nmu.edu');		//198.110.203.197
-
-if (in_array($hostname, $arrBossIPs) || $_SERVER['HTTP_HOST'] !== 'www.nmu.edu')  //this is going to show the boss login on any server except charlie.  charlie will only show it for the IPs listed above
+if(INT_ByPassLogin || $_SERVER['HTTP_HOST'] !== 'www.nmu.edu')
 {
 	echo '<br /><div class="boss_login">';
 	print $rendered;
 	echo '</div>';
 }
-
 ?>
