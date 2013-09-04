@@ -17,7 +17,7 @@ access to a site, please contact <a href="mailto:ericjohn@nmu.edu">Eric Johnson<
 </div>
 
 <?php
-if(INT_ByPassLogin || $_SERVER['HTTP_HOST'] !== 'www.nmu.edu')
+if(INT_ByPassLogin() || $_SERVER['HTTP_HOST'] !== 'www.nmu.edu')
 {
 	echo '<br /><div class="boss_login">';
 	print $rendered;
