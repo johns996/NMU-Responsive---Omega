@@ -440,3 +440,13 @@ embed {  //this will scale down any flash objects to fit the screen size
 
 //----------------------------------------------classes
 @import 'modules/classes';
+
+//classes that are over-written at different screen sizes should be kept in this document
+//and would be considered theme-specific and need to be manually copied into other themes
+
+.mobile_hide { //add this class to elements that should be hidden on mobile devices
+	display:none;
+}
+.mobile_break { //add this class to a span and create a line break that will only show up on small-screen mobile devices
+	display:block;
+}

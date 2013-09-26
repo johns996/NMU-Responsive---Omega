@@ -7,12 +7,6 @@
 .clear {
 	clear:both;
 }
-.mobile_hide { //add this class to elements that should be hidden on mobile devices
-	display:none;
-}
-.mobile_break { //add this class to a span and create a line break that will only show up on small-screen mobile devices
-	display:block;
-}
 .screen_reader_only { //this is for content that should only be displayed to screen readers
 	position:absolute;
 	left:-10000px;
