@@ -72,7 +72,7 @@ function responsive_tweaks(theMethod){
 
 			//pull out the image width from all images in the left column of homepages in mobile view
 			//only applied to firefox
-			jQuery('.firefox .content_main_hp1_col img, .firefox .content_main_hp2_col img,').each(function(){
+			jQuery('.firefox .content_main_hp1_col img, .firefox .content_main_hp2_col img').each(function(){
 				jQuery(this).removeAttr('width');
 				jQuery(this).css('width', '');
 			});
