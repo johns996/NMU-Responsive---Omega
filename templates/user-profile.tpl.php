@@ -133,20 +133,26 @@ else
 				//echo '<div class="user_msg new_feature"><p>A Google Analytics module was recently added to the NMU CMS.  Google Analytics is used on the NMU website to track visitor activity on our web pages.  You can view a one-month summary of collected data by clicking on the orange Google Analytics icon below.  The data presented in the report is updated every three days.</p></div>';
 			}
 			else
+			{
 				$user_button_ga = '';
+			}
 
-				echo '<div class="user_msg new_feature"><p>This website has recently been converted to use a new theme.  This theme makes a web site respond to a user\'s screen size allowing an improved mobile-web experience.</p>';
-				echo '<p>The basic structure of your website and the content within it has not changed.  This theme, however, uses a completely different set of styles to control the look of NMU pages so you may notice some things behaving differently.<p>';
-				echo '<p>We have tested all converted sites to ensure nothing was broken by the new theme.  If you find something that does not look right, please email <a href="mailto:ericjohn@nmu.edu">ericjohn@nmu.edu</a> with the URL of the page, a description of the issue and the browser you were using when you noticed the problem.  If something critical has been broken by the theme, please call Eric Johnson (2313) or the Communications and Marketing office (2720) and we will fix the problem or revert your site to the previous theme while we work on a solution.</p></div>';
-				/*
-				echo '<div class="user_msg new_feature"><p>If you are having problems editing a web page using the CMS, please follow the steps outlined in <a href="http://www.nmu.edu/node/274">this guide</a> to resolve the issue.</p></div>';
-				echo '<div class="user_msg new_feature"><p>Two changes have recently been made to the file manager used by the NMU CMS.  These changes have been made based on user feedback in hopes of improving the usability of the file manager. <span id="read_more_link">Read More</span>
-						<div class="user_msg read_more"><p><strong>1.)</strong> When a file is uploaded into a folder already containing a file with the same name as the one being uploaded, the system will now prompt the user and ask if they want to replace the file on the server with the one being uploaded.  If "yes" is selected, the file will be replaced and all links to the file will now direct users to the updated version.  If "no" is selected, nothing will be uploaded and the file on the server will remain untouched.</p>
-						<p><strong>2.)</strong> The thumbnails options that appear when uploading files have been adjusted to better suit images on NMU web pages.  These thumbnail options, when selected, will create a scaled version of the image being uploaded to the approximate dimension of the thumbnail option selected.  The scaling process will preserve an image\'s aspect ratio and it will never make an image larger than the original.</p></div></p></div>';
-				*/
+			/*
+			echo '<div class="user_msg new_feature"><p>This website has recently been converted to use a new theme.  This theme makes a web site respond to a user\'s screen size allowing an improved mobile-web experience.</p>';
+			echo '<p>The basic structure of your website and the content within it has not changed.  This theme, however, uses a completely different set of styles to control the look of NMU pages so you may notice some things behaving differently.<p>';
+			echo '<p>We have tested all converted sites to ensure nothing was broken by the new theme.  If you find something that does not look right, please email <a href="mailto:ericjohn@nmu.edu">ericjohn@nmu.edu</a> with the URL of the page, a description of the issue and the browser you were using when you noticed the problem.  If something critical has been broken by the theme, please call Eric Johnson (2313) or the Communications and Marketing office (2720) and we will fix the problem or revert your site to the previous theme while we work on a solution.</p></div>';
+			*/
+			/*
+			echo '<div class="user_msg new_feature"><p>If you are having problems editing a web page using the CMS, please follow the steps outlined in <a href="http://www.nmu.edu/node/274">this guide</a> to resolve the issue.</p></div>';
+			echo '<div class="user_msg new_feature"><p>Two changes have recently been made to the file manager used by the NMU CMS.  These changes have been made based on user feedback in hopes of improving the usability of the file manager. <span id="read_more_link">Read More</span>
+					<div class="user_msg read_more"><p><strong>1.)</strong> When a file is uploaded into a folder already containing a file with the same name as the one being uploaded, the system will now prompt the user and ask if they want to replace the file on the server with the one being uploaded.  If "yes" is selected, the file will be replaced and all links to the file will now direct users to the updated version.  If "no" is selected, nothing will be uploaded and the file on the server will remain untouched.</p>
+					<p><strong>2.)</strong> The thumbnails options that appear when uploading files have been adjusted to better suit images on NMU web pages.  These thumbnail options, when selected, will create a scaled version of the image being uploaded to the approximate dimension of the thumbnail option selected.  The scaling process will preserve an image\'s aspect ratio and it will never make an image larger than the original.</p></div></p></div>';
+			*/
 
 			if($q_UserCreated[0] > $str_OneWeekFromToday)  //for a week after the user is created, show the CMS eval message
+			{
 				echo '<div class="user_msg first_timer"><p>It looks like you are new to the NMU CMS.  If that is the case, please take a minute to complete the <a href="http://www.nmu.edu/cmseval">CMS training evaluation survey</a>.  Your feedback will help us improve the training process and is greatly appreciated.</p></div>';
+			}
 
 			echo '<div>',
 			'<a href="https://docs.google.com/document/d/1eK3EtEycdW7Gsmaeift6R2JYxIFQFyRZCfDJRDdPJps/edit" target="_blank"><img src="/sites/all/themes/nmu/images/user_icons/guide.png" width="100" height="120" title="CMS Guide" style="padding-right:5px;" /></a>',
