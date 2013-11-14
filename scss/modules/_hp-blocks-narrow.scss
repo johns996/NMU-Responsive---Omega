@@ -22,7 +22,8 @@
 }
 
 #zone-content {
-	.content_main_hp2_col {
+	.content_main_hp2_col,
+	.content_main_hp3_col {
 		width: 515px;
 		table {
 			width: 505px;
@@ -55,10 +56,11 @@
 	width:auto;
 }
 
-.content_sub_hp2_col {
+.content_sub_hp2_col,
+.content_sub_hp3_col {
 	width:520px;
 	table {
-		width: 245px;   //set a table width so the column stays filled with the blocks (done for all sizes)
+		width: 242px;   //set a table width so the column stays filled with the blocks (done for all sizes)
 	}
 
 	.GreenBox,
@@ -89,5 +91,16 @@
 	}
 
 }
-
-
+//----------------------------------------------GolfCourse
+.sub_buttons {
+	padding-left:2px;
+	padding-right:2px;
+}
+.int_right_col_item {
+	float:left;
+	margin-right:7px;
+}
+.golfcourse_social{
+	clear:both;
+	padding-top:10px;
+}

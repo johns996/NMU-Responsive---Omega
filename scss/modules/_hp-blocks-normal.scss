@@ -28,7 +28,8 @@
 }
 
 #zone-content {
-	.content_main_hp2_col {
+	.content_main_hp2_col,
+	.content_main_hp3_col {
 		width: 490px;
 		table {
 			width: 480px;
@@ -54,7 +55,8 @@
 	width:260px;
 }
 
-.content_sub_hp2_col {
+.content_sub_hp2_col,
+.content_sub_hp3_col {
 	width:260px;
 	table {
 		width: 260px;
@@ -86,4 +88,34 @@
 	table.LightBlueBox  {
 		margin-right:0;
 	}
+}
+
+
+//----------------------------------------------GolfCourse
+.panels-flexible-athletics_sports {
+	width:770px; //override the default size of the content area
+}
+
+.content_sub_hp3_col {
+	padding-left:2px;
+	padding-right:8px;  //these two paddings are different in order to keep the gray column content centered
+	background-color:$background-color-sub;
+	margin-left:10px;  //space needed to make the columns fill up the available space
+
+	//used to make the gray box line up with the bottom of the page
+	padding-bottom:30px;
+	margin-bottom:-10px;
+}
+
+.sub_buttons {
+	padding: 10px 8px 5px 8px;  //revert to padding used on mobile
+}
+
+.int_right_col_item {
+	float:none;  //remove float set in narrow
+	margin-right:0px;  //remove margin set in narrow
+}
+
+.golfcourse_social{
+	padding-top:0px;
 }

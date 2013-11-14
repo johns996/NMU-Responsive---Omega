@@ -18,7 +18,8 @@
 //----------------------------------------------left blocks
 #zone-content {  //the homepage styles need to be wrapped in this ID to allow them to override global styles
 	.content_main_hp1_col,
-	.content_main_hp2_col {
+	.content_main_hp2_col,
+	.content_main_hp3_col {
 		width: 465px;
 		@include breakpoint(portrait) {width: 305px;}
 		table {
@@ -54,6 +55,8 @@
 	}
 }
 
+
+
 .BaseTable,
 .InnerTable {  //standard classes applied to left homepage blocks
 	border:none;
@@ -88,7 +91,7 @@
 				font-size:(30em / 22);  //the base font size for the heading tags is 22 and not the standard 16 ($base-font-size) because it is reset in the th tag above.
 			}
 			h2 {
-				font-size:(22em / 22);
+				font-size:(20em / 22);
 			}
 			h3 {
 				font-size:(18em / 22);
@@ -129,7 +132,8 @@
 //----------------------------------------------Right Blocks
 
 .content_sub_hp1_col,
-.content_sub_hp2_col {
+.content_sub_hp2_col,
+.content_sub_hp3_col{
 	width: 465px;
 	@include breakpoint(portrait) {width: 305px;}
 	margin-left:-5px;
@@ -160,7 +164,8 @@
 .GrayBox,
 .PurpleBox,
 .TealBox,
-.LightBlueBox {
+.LightBlueBox,
+.int_right_col_item{
 	display:inline-block;  //help chrome hide the image background on the rounded corners
 	height:100%; //some boxes have a height and with display:inline-block the tabel will not grow to fit the content w/o this style
 	@include border-radius(10px);
@@ -238,3 +243,25 @@
 	background-image: url("/sites/all/themes/omega_nmu/images/homepage_boxes/gradient_3333cc.jpg");
 }
 
+
+//----------------------------------------------GolfCourse
+.content_sub_hp3_col{
+	margin-left:0px;  //cancel out the negative margin set above
+}
+#zone-content .content_main_hp3_col td.table_horz_border {  //divider for big image element on golfcourse hp
+	width:2px;
+	min-width:1px;
+	padding:0px;
+}
+
+.sub_buttons {
+	padding: 10px 8px 5px 8px;
+	text-align:center;
+}
+.golfcourse_social {
+	text-align:center;
+}
+
+.int_right_col_item {
+	@include border-radius(0px); //reset the styling done on standard boxes
+}
