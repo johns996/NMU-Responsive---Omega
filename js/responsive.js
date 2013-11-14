@@ -72,7 +72,7 @@ function responsive_tweaks(theMethod){
 
 			//pull out the image width from all images in the left column of homepages in mobile view
 			//only applied to firefox
-			jQuery('.firefox .content_main_hp1_col img, .firefox .content_main_hp2_col img').each(function(){
+			jQuery('.firefox .content_main_hp1_col img, .firefox .content_main_hp2_col img, .firefox .content_main_hp3_col img').each(function(){
 				jQuery(this).removeAttr('width');
 				jQuery(this).css('width', '');
 			});
@@ -140,9 +140,6 @@ function responsive_tweaks(theMethod){
 			//make the NMU homepage news/events sections the same height
 			JQ('#NMUFeaturedNews, #NMUUpcomingEventsHP').equalHeights();
 
-			//make all of the color boxes on hp2 the same height for this view
-			JQ('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').equalHeights();
-
 			//where there is no sidebar-first on the page, add a class to show the sidebar second on the narrow view
 			if(jQuery('#region-content').hasClass('grid-9'))
 			{
@@ -158,7 +155,6 @@ function responsive_tweaks(theMethod){
 			jQuery('.jquery_740').remove();
 			jQuery('#region-content, #region-sidebar-second').removeClass('jquery_unhide');
 			//pull out the min heights put in for this view
-			jQuery('.content_sub_hp2_col .GreenBox, .content_sub_hp2_col .YellowBox, .content_sub_hp2_col .RedBox, .content_sub_hp2_col .BrownBox, .content_sub_hp2_col .OrangeBox, .content_sub_hp2_col .BlueBox, .content_sub_hp2_col .GrayBox, .content_sub_hp2_col .PurpleBox, .content_sub_hp2_col .TealBox, .content_sub_hp2_col .LightBlueBox').css('min-height', '');
 			jQuery('#NMUFeaturedNews, #NMUUpcomingEventsHP').css('min-height', '');
 		}
 

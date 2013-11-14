@@ -85,15 +85,18 @@ function get_width(theType){
 function sidebar_sizer(){
 	windowWidth = get_width('window');
 	scrollBarWidth = get_width('scroll');
-	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second').css('min-height', '');  //reset the min-height first
+	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second, .content_sub_hp3_col').css('min-height', '');  //reset the min-height first
 	if(windowWidth<740-scrollBarWidth)
 	{
+		//don't run at mobile sizes
 		return false;
 	}
 	else
 	{
 		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
 			JQ('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
+		else if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth)  //special case used for golfcourse hp
+			JQ('.region-content, .region-sidebar-first, .content_sub_hp3_col').equalHeights();
 		else if(jQuery('.region-sidebar-second').is(":visible"))
 			JQ('.region-content, .region-sidebar-second').equalHeights();
 		else if(jQuery('.region-sidebar-first').is(":visible"))
