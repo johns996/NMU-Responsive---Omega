@@ -20,7 +20,7 @@
 		//width:100%; //this should not be needed on the nmu homepage, if used, it will blow up some stuff
 		height:auto;
 	}
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		width:305px;
 	}
 }
@@ -36,7 +36,7 @@
 	float:left;
 	width:465px;
 	height:377px;
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		//stuff that we only want shown on mobile-portrait gird
 		width:305px;
 		height:248px;
@@ -65,7 +65,7 @@
 	background-color:#FFF;
 	position:absolute;
 	bottom:1.1%;  //this was 5px, changed to % on trial and error
-	@include breakpoint(portrait) {bottom:1.4%;}
+	@include breakpoint($breakpoint-portrait) {bottom:1.4%;}
 	left:.9%; //this was 5px, changed to % on trial and error
 	padding:.9%; //this was 5px, changed to % on trial and error
 	@include opacity(0.8);
@@ -108,13 +108,13 @@
 #NMUWhatsHappening {
 	width:370px;
 	margin:0px 0px 5px -6px;
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		width:305px;
 		margin-top:10px;
 	}
 	h2 {
 		@include nmu-h-styling(28em);
-		@include breakpoint(portrait) {font-size:26em/$base-font-size;}
+		@include breakpoint($breakpoint-portrait) {font-size:26em/$base-font-size;}
 		line-height:16em / $base-font-size;
 	}
 	ul {
@@ -149,35 +149,35 @@
 	.happening_text_100i { /* for images 100x130 */
 		float:right;
 		width:265px;
-		@include breakpoint(portrait) {width:200px;}
+		@include breakpoint($breakpoint-portrait) {width:200px;}
 		margin-bottom:5px;
 	}
 	.happening_text_narrow3,
 	.happening_text_145i { /* for images 145x130 */
 		float:right;
 		width:220px;
-		@include breakpoint(portrait) {width:155px;}
+		@include breakpoint($breakpoint-portrait) {width:155px;}
 		margin-bottom:5px;
 	}
 	.happening_text_narrow4,
 	.happening_text_160i { /* for images 160x130 */
 		float:right;
 		width:205px;
-		@include breakpoint(portrait) {width:140px;}
+		@include breakpoint($breakpoint-portrait) {width:140px;}
 		margin-bottom:5px;
 	}
 	.happening_text_narrow2,
 	.happening_text_180i { /* for images 180x130 */
 		float:right;
 		width:185px;
-		@include breakpoint(portrait) {width:120px;}
+		@include breakpoint($breakpoint-portrait) {width:120px;}
 		margin-bottom:5px;
 	}
 	.happening_text_narrow,
 	.happening_text_190i { /* for images 190x130 */
 		float:right;
 		width:175px;
-		@include breakpoint(portrait) {width:110px;}
+		@include breakpoint($breakpoint-portrait) {width:110px;}
 		margin-bottom:5px;
 	}
 }
@@ -187,7 +187,7 @@
 	background-color:$contrast-color-light;
 	min-height:100px;
 	width:360px;
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		width:290px;
 	}
 	padding:10px 7px 0px 8px;
@@ -296,7 +296,7 @@
 }
 #NMUUpcomingEventsHP {
 	margin:5px 0px 10px 0px;
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		width:305px;
 	}
 	.Box {}
@@ -318,7 +318,7 @@
 
 #NMUFeaturedNews {
 	margin:5px 0px 10px -6px;
-	@include breakpoint(portrait) {
+	@include breakpoint($breakpoint-portrait) {
 		width:305px;
 	}
 	ul {

@@ -10,8 +10,8 @@
 	The only responsive things that can go in this file (or any module file included by the the template.php file) should be mobile specific styles
 	This requirement is based on the fact that IE8 will not respond to media queries so if you build something from mobile up, IE will show it as a mobile device would
 	Ideally, the pre-created mixins for mobile sizes will be the only responsive styles included.
-	Mixin syntax: @include breakpoint(mobile) { ... }
-	Mixin syntax: @include breakpoint(portrait) { ... }
+	Mixin syntax: @include breakpoint($breakpoint-mobile) { ... }
+	Mixin syntax: @include breakpoint($breakpoint-portrait) { ... }
 */
 
 
@@ -21,23 +21,23 @@
 	.content_main_hp2_col,
 	.content_main_hp3_col {
 		width: 465px;
-		@include breakpoint(portrait) {width: 305px;}
+		@include breakpoint($breakpoint-portrait) {width: 305px;}
 		table {
 			width: 455px;   //set a table width 10 px smaller than the column width so the column stays filled with the blocks (done for all sizes)
-			@include breakpoint(portrait) {width: 295px;}
+			@include breakpoint($breakpoint-portrait) {width: 295px;}
 		}
 		img {
 			//a max width of 100% (as set in the global.scss will not scale correctly in table cells, use a specific max-width instead
 			max-width:445px; //images will need to be 20px smaller than the column dimension to account for image padding
 			height:auto !important;  //without this browsers will not scale the main element image correctly
 			//using a portrait max width will correctly scale the main image on all browsers, but the multi-column tables will spill outside of the mobile screen
-			//@include breakpoint(portrait) {max-width: 285px;}
+			//@include breakpoint($breakpoint-portrait) {max-width: 285px;}
 			//
 
 			//using a %-based max width will allow images in table cells to scale down
 			//this will make them as small as the table cell, if the cell has no width, they will become tiny
 			//this issue is fixed in the td styles below (note that this is only for portrait view)
-			@include breakpoint(portrait) {
+			@include breakpoint($breakpoint-portrait) {
 				max-width: 100%;
 				//a width of 100% is needed for firefox to scale images in tables
 				//for this to work, the native width of the images must also be removed using javascript
@@ -46,7 +46,7 @@
 		}
 
 		//this fixes the problem with table divisions without a width, causing images to shrink down to 1px size
-		@include breakpoint(portrait) {
+		@include breakpoint($breakpoint-portrait) {
 			td {
 				min-width:80px;
 			}
@@ -135,11 +135,11 @@
 .content_sub_hp2_col,
 .content_sub_hp3_col{
 	width: 465px;
-	@include breakpoint(portrait) {width: 305px;}
+	@include breakpoint($breakpoint-portrait) {width: 305px;}
 	margin-left:-5px;
 	table {
 		width: 455px;   //set a table width so the column stays filled with the blocks (done for all sizes)
-		@include breakpoint(portrait) {width: 295px;}
+		@include breakpoint($breakpoint-portrait) {width: 295px;}
 	}
 	img {
 		//firefox will not scale images in the box column.  this should not be an issue, but if it is, add a width definition here

@@ -8,16 +8,6 @@
 //   @include mix-in-name;
 
 
-//these mixin styles will not cascade upward so they can be applied freely without the need to reset them at larger sizes
-@mixin breakpoint($point) {
-  @if $point == mobile {
-    @media (max-width: 739px)  { @content; }
-  }
-  @else if $point == portrait {
-    @media (max-width: 479px)  { @content; }
-  }
-}
-
 @mixin rem-font-size($size, $state) {
 	font-size: $size + px + $state;
 	font-size: ($size / 10) + rem + $state;

@@ -60,5 +60,18 @@ $background-color-white: #fff; //white
 
 $zone-min-width: 320px; //set up the smallest width for elements to collapse down to
 
+
+
+//set up some breakpoint sizes to be used when necessary
+//for the most part we will let omega's responsive method handle the different screen size styles (and this is done using different stylesheets
+//however on some project that require an additional CSS file created in the modules directory (sports, admissions slider etc.) we will use breakpoint to handle the media queries
+//be sure to test these styles on non-compliant browsers to make sure they are degrading nicely
+$breakpoint-portrait: max-width 479px; //mobile devices in portrait mode.  these will not apply upwards
+$breakpoint-mobile: max-width 739px;  //mobile devices in landscape OR portrait mode.  these will not apply upwards to other styles BUT will apply downwards.
+$breakpoint-narrow: min-width 740px;  //styles from narrow up will be additive
+$breakpoint-normal: min-width 980px;
+$breakpoint-wide: min-width 1220px;
+
 @import "mixin";
 @import "compass";
+@import "breakpoint";
