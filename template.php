@@ -63,6 +63,13 @@ function omega_nmu_preprocess_html(&$vars)
 			$css = drupal_add_css(); // Rebuild Drupal's css array:
 			$styles = drupal_get_css($css); // Apply that array to the $styles string to be printed in the <head> section of html.tpl.php
 		}
+		// sports css
+		if(strpos($GLOBALS['conf']['syslog_identity'], 'Sports') !== false)  //match any site with Sports in its identity (gateway, rec sports, usoec)
+		{
+			drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/sports.css'); //add a sports css to the start of the styles array
+			$css = drupal_add_css(); // Rebuild Drupal's css array:
+			$styles = drupal_get_css($css); // Apply that array to the $styles string to be printed in the <head> section of html.tpl.php
+		}
 		/*
 		if($GLOBALS['conf']['syslog_identity'] === 'DrupalCommunicationsAndMarketing')  //match any site with C&M in its identity
 		{
