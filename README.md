@@ -16,6 +16,7 @@ This project makes use of the following technologies
   - [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
   - [SASS](http://sass-lang.com/)
   - [Compass](http://compass-style.org)
+  - [Breakpoint](http://breakpoint-sass.com/)
 
 #### This project was developed by: ####
   - [Eric Johnson](mailto:ericjohn@nmu.edu) - NMU Web Developer
