@@ -84,14 +84,6 @@
 	table {
 		width: 260px;
 	}
-	padding-left:2px;
-	padding-right:8px;  //these two paddings are different in order to keep the gray column content centered
-	background-color:$background-color-sub;
-	margin-left:10px;  //space needed to make the columns fill up the available space
-
-	//used to make the gray box line up with the bottom of the page
-	padding-bottom:55px;
-	margin-bottom:-10px;
 }
 
 .sub_buttons {
@@ -103,6 +95,27 @@
 	margin-right:0px;  //remove margin set in narrow
 }
 
-.golfcourse_social{
+.golfcourse_social {
 	padding-top:0px;
+}
+
+
+//----------------------------------------------SportsGateway
+#zone-content {
+	.content_main_hp4_col {
+		width: 910px;
+		table {
+			width: 900px;
+		}
+		img {
+			max-width: 890px;
+		}
+	}
+}
+
+.content_sub_hp4_col {
+	width:260px;  //keep the gray sidebar at it's normal size, too big and the buttons look bad with all the space around them
+	table {
+		width: 260px;
+	}
 }

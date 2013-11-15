@@ -91,6 +91,7 @@
 	}
 
 }
+
 //----------------------------------------------GolfCourse
 .sub_buttons {
 	padding-left:2px;
@@ -103,4 +104,33 @@
 .golfcourse_social{
 	clear:both;
 	padding-top:10px;
+}
+
+//----------------------------------------------SportsGateway
+#zone-content {
+	.content_main_hp4_col {
+		width: 430px;
+		table {
+			width: 420px;
+		}
+		img {
+			max-width: 410px;
+		}
+	}
+}
+
+.content_sub_hp4_col {
+	width:260px;  //keep the gray sidebar at it's normal size, too big and the buttons look bad with all the space around them
+	table {
+		width: 260px;
+	}
+	padding-left:2px;
+	padding-right:8px;  //these two paddings are different in order to keep the gray column content centered
+	background-color:$background-color-sub;
+	margin-left:10px;  //space needed to make the columns fill up the available space
+	margin-right:-10px; //line up the gray bar with the right side of the screen
+
+	//used to make the gray box line up with the bottom of the page
+	padding-bottom:30px;
+	margin-bottom:-10px;
 }

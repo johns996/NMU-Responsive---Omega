@@ -4,30 +4,169 @@
 @import "base";
 
 //these two areas wil be hidden in all views except for mobile
-#zone-branding-wrapper {display:none;}
-#header_region_first {display:none;}
-
+#zone-branding-wrapper,
+#header_region_first {
+	display:none;
+}
 
 //mobile styles will not cascade upwards
 @include breakpoint($breakpoint-mobile) {
 	//these two areas wil be hidden in all views except for mobile
-	#zone-branding-wrapper {display:block;}
-	#header_region_first {display:block;}
+	#zone-branding-wrapper,
+	#header_region_first {
+		display:block;
+	}
 
 	//hide the big image banner from mobile sizes since the NMU logo block is showing
-	.recsports-banner {display:none;}
+	.sports-banner {
+		display:none;
+	}
 }
 
 @include breakpoint($breakpoint-narrow) {
-	.recsports-banner {
+	.sports-banner {
 		width: 720px;
-		padding-top: 25px;
+		padding-top: 25px;  //make room for the search box above the smaller banner
 	}
 }
 
 @include breakpoint($breakpoint-normal) {
-	.recsports-banner {
+	.sports-banner {
 		width: 1000px;
 		padding-top: 0px;
 	}
 }
+
+
+/* Gateway page */
+#gateway_main {
+	ul {
+		padding-left:10px;
+	}
+	li {
+		list-style:none;
+		padding-bottom:5px;
+	}
+	h2 {
+		line-height:(18em / 16);  //rem sizer mixin won't work here since the base has been reset in the hp styles
+		font-size:(26em / 16);
+	}
+}
+
+.gateway_sport {
+	height:220px;
+	padding:10px 10px 25px 10px;
+	margin-bottom:5px;
+	h3 {
+		line-height:(18em / 16);  //rem sizer mixin won't work here since the base has been reset in the hp styles
+		font-size:(26em / 16);
+	}
+}
+
+#gateway_athletics {
+	border-bottom: dotted 1px $background-color-sub;
+	@include breakpoint($breakpoint-mobile) {
+		height:310px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-portrait) {
+		height:270px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-narrow) {
+		height:310px;  //this keeps the outline beneath the list text
+	}
+	h3 {
+		color:$base-color-light;
+		a,
+		a:visited,
+		a:active {
+			color:$base-color-light;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+#gateway_usoec {
+	clear:both;
+	@include breakpoint($breakpoint-mobile) {
+		height:350px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-portrait) {
+		height:305px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-narrow) {
+		height:345px;  //this keeps the outline beneath the list text
+	}
+	border-bottom: dotted 1px $background-color-sub;
+	h3 {
+		color:$other-color-blue;
+		a,
+		a:visited,
+		a:active {
+			color:$other-color-blue;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+#gateway_recreation {
+	clear:both;
+	@include breakpoint($breakpoint-mobile) {
+		height:310px;  //this keeps the outline beneath the list text
+		border-bottom: dotted 1px $background-color-sub;  //add a border in mobile mode to separate the list from the sidebar content
+	}
+	@include breakpoint($breakpoint-portrait) {
+		height:270px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-narrow) {
+		//no height needed here since the border is not showing up at this size
+	}
+	h3 {
+		color:$contrast-color;
+		a,
+		a:visited,
+		a:active {
+			color:$contrast-color;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.gateway_pic_div {
+	float:left;
+	width:360px;
+	height:230px; //needed for the links div to appear below the image in mobile view (no idea why)
+	@include breakpoint($breakpoint-portrait) {
+		height:190px; //needed for the links div to appear below the image in mobile view (no idea why)
+		width:$zone-min-width - 20;  //scale down the width so the containing div fits on the screen
+		img {
+			max-width:280px !important;  //scale down the images
+		}
+	}
+}
+.gateway_links_div {
+	float:left;
+	width:270px;
+}
+
+#SportsAnnouncement {
+	color:$base-color-light;
+	background-color:#fc0;
+	margin:-10px -10px 5px -10px;
+	padding:5px;
+	text-align:center;
+	border-bottom: 1px solid #CCC;
+	a {
+		color:#063;
+		font-weight:bold;
+	}
+}
+

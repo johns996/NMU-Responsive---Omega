@@ -85,7 +85,8 @@ function get_width(theType){
 function sidebar_sizer(){
 	windowWidth = get_width('window');
 	scrollBarWidth = get_width('scroll');
-	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second, .content_sub_hp3_col').css('min-height', '');  //reset the min-height first
+	jQuery('.region-content, .region-sidebar-first, .region-sidebar-second, .content_sub_hp3_col, .content_main_hp4_col, .content_sub_hp4_col ').css('min-height', '');  //reset the min-height first
+
 	if(windowWidth<740-scrollBarWidth)
 	{
 		//don't run at mobile sizes
@@ -93,15 +94,35 @@ function sidebar_sizer(){
 	}
 	else
 	{
-		if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible"))  //check to see if sidebars are shown
+		//golfcourse
+		if (jQuery('.content_main_hp3_col').length){
+			if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth){
+				JQ('.region-content, .region-sidebar-first, .content_sub_hp3_col').equalHeights();
+			}
+		}
+
+		//sports gateway
+		else if (jQuery('.content_main_hp4_col').length){
+			JQ('.content_main_hp4_col, .content_sub_hp4_col').equalHeights();
+		}
+
+		//standard pages
+		else if (jQuery('.region-sidebar-second').is(":visible") && jQuery('.region-sidebar-first').is(":visible")) {  //check to see if sidebars are shown
 			JQ('.region-content, .region-sidebar-first, .region-sidebar-second').equalHeights();
-		else if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth)  //special case used for golfcourse hp
-			JQ('.region-content, .region-sidebar-first, .content_sub_hp3_col').equalHeights();
-		else if(jQuery('.region-sidebar-second').is(":visible"))
+		}
+
+		//pages without left column
+		else if(jQuery('.region-sidebar-second').is(":visible")) {
 			JQ('.region-content, .region-sidebar-second').equalHeights();
-		else if(jQuery('.region-sidebar-first').is(":visible"))
+		}
+
+		//pages without right column
+		else if(jQuery('.region-sidebar-first').is(":visible")) {
 			JQ('.region-content, .region-sidebar-first').equalHeights();
-		else
+		}
+
+		else {
 			return false;
+		}
 	}
 }

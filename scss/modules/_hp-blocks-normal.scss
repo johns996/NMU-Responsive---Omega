@@ -29,7 +29,8 @@
 
 #zone-content {
 	.content_main_hp2_col,
-	.content_main_hp3_col {
+	.content_main_hp3_col,
+	.content_main_hp4_col{
 		width: 490px;
 		table {
 			width: 480px;
@@ -56,7 +57,8 @@
 }
 
 .content_sub_hp2_col,
-.content_sub_hp3_col {
+.content_sub_hp3_col,
+.content_sub_hp4_col{
 	width:260px;
 	table {
 		width: 260px;
@@ -118,4 +120,25 @@
 
 .golfcourse_social{
 	padding-top:0px;
+}
+
+
+//----------------------------------------------SportsGateway
+#zone-content {
+	.content_main_hp4_col {
+		width: 670px;
+		table {
+			width: 660px;
+		}
+		img {
+			max-width: 650px;
+		}
+	}
+}
+
+.content_sub_hp4_col {
+	width:260px;  //keep the gray sidebar at it's normal size, too big and the buttons look bad with all the space around them
+	table {
+		width: 260px;
+	}
 }

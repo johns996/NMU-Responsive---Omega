@@ -19,7 +19,8 @@
 #zone-content {  //the homepage styles need to be wrapped in this ID to allow them to override global styles
 	.content_main_hp1_col,
 	.content_main_hp2_col,
-	.content_main_hp3_col {
+	.content_main_hp3_col,
+	.content_main_hp4_col{
 		width: 465px;
 		@include breakpoint($breakpoint-portrait) {width: 305px;}
 		table {
@@ -133,7 +134,8 @@
 
 .content_sub_hp1_col,
 .content_sub_hp2_col,
-.content_sub_hp3_col{
+.content_sub_hp3_col,
+.content_sub_hp4_col{
 	width: 465px;
 	@include breakpoint($breakpoint-portrait) {width: 305px;}
 	margin-left:-5px;
@@ -264,4 +266,17 @@
 
 .int_right_col_item {
 	@include border-radius(0px); //reset the styling done on standard boxes
+}
+
+
+//----------------------------------------------SportsGateway
+// many gateway-specific styles are in the sports module.  structural styles are contained in these stylesheets
+#zone-content {
+	.content_main_hp4_col {
+		//
+	}
+}
+
+.content_sub_hp4_col {
+	//
 }
