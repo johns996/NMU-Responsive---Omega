@@ -74,6 +74,9 @@
 	@include breakpoint($breakpoint-narrow) {
 		height:310px;  //this keeps the outline beneath the list text
 	}
+	@include breakpoint($breakpoint-normal) {
+		height:230px;  //set the height to the size of the pic
+	}
 	h3 {
 		color:$base-color-light;
 		a,
@@ -98,6 +101,9 @@
 	}
 	@include breakpoint($breakpoint-narrow) {
 		height:345px;  //this keeps the outline beneath the list text
+	}
+	@include breakpoint($breakpoint-normal) {
+		height:230px;  //set the height to the size of the pic
 	}
 	border-bottom: dotted 1px $background-color-sub;
 	h3 {
@@ -126,6 +132,7 @@
 	@include breakpoint($breakpoint-narrow) {
 		//no height needed here since the border is not showing up at this size
 	}
+
 	h3 {
 		color:$contrast-color;
 		a,
@@ -168,5 +175,9 @@
 		color:#063;
 		font-weight:bold;
 	}
+}
+
+#watch_the_game {
+	text-align:center;
 }
 
