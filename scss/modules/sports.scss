@@ -43,6 +43,12 @@
 	}
 }
 
+@include breakpoint($breakpoint-wide){
+	#zone-header #header_search {
+		margin-top:40px !important;  //move the search down a bit for the wide view
+		//the important is needed to override the one set in the default css file
+	}
+}
 
 /* Gateway page */
 #gateway_main {
@@ -187,3 +193,12 @@
 	text-align:center;
 }
 
+table.gateway_teams {
+	th {
+		color:$contrast-color;
+		background-color:$base-color-light;
+	}
+	td {
+		vertical-align: text-top;
+	}
+}
