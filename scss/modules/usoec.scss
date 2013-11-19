@@ -1,0 +1,94 @@
+/* This SCSS file contains styles that will only be used on the NMU USOEC pages
+	this file is included in the CSS array using the template.php file and is not included in any of the standard nmu styles
+*/
+
+@import "base";
+
+html body {
+	background-color:$other-color-blue;
+}
+
+#section-header {
+	#zone-header-wrapper {
+		background-color:$other-color-blue;
+	}
+
+	#zone-menu-wrapper {
+		background-color: $other-color-red;
+	}
+		#region-menu ul li {
+			border-color: #fff;
+		}
+		#region-menu ul a:hover {
+			background-color: $other-color-red;
+			color: $other-color-gray;
+		}
+}
+
+#section-content {
+	#region-sidebar-first {
+		//this region has an odd amount of space the sometimes appears at the bottom and padding is needed to fix it (still don't know why)
+		//padding-bottom: 46px;
+		background-color:$other-color-blue;
+		ul {
+			li:first-child {
+				color: $other-color-gray;
+			}
+			li {
+				border-color: $other-color-gray;
+			}
+			a:hover {
+				background-color: $other-color-red;
+			}
+		}
+	}
+	#sports_headlines {
+		border-right: solid 1px $other-color-blue;
+		float: left;
+		width: 45%;
+		padding-right: 2%;
+		margin-right: 1%;
+		h2 {
+			color:$other-color-blue;
+		}
+		ul	{
+			padding:0;
+			margin:0;
+		}
+		li {
+			padding-bottom:10px;
+			list-style:none;
+		}
+	}
+	#sports_spotlight {
+		float: left;
+		width: 50%;
+		th {
+			text-align:left;
+			color:$other-color-blue;
+		}
+	}
+	.Divider {
+		border-color:$other-color-blue;
+	}
+	th,
+	h1,
+	h2,
+	h3{
+		color:$other-color-blue;
+	}
+}
+
+#section-footer {
+	#zone-postscript-wrapper {
+		background-color: $other-color-red;
+	}
+	#zone-postscript .postscript_region_head a {
+		color: $other-color-gray;
+	}
+
+	#zone-footer-wrapper {
+		background-color: $other-color-blue;
+	}
+}
+

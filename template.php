@@ -70,14 +70,13 @@ function omega_nmu_preprocess_html(&$vars)
 			$css = drupal_add_css(); // Rebuild Drupal's css array:
 			$styles = drupal_get_css($css); // Apply that array to the $styles string to be printed in the <head> section of html.tpl.php
 		}
-		/*
-		if($GLOBALS['conf']['syslog_identity'] === 'DrupalCommunicationsAndMarketing')  //match any site with C&M in its identity
+
+		if($GLOBALS['conf']['syslog_identity'] === 'DrupalSportsUSOEC')  //match any site with USOEC in its identity
 		{
-			drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/Custom/comm_mktg.css');
+			drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/usoec.css');
 			$css = drupal_add_css();
 			$styles = drupal_get_css($css);
 		}
-		*/
 
 	}
 }
