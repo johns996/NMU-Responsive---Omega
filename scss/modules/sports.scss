@@ -9,6 +9,12 @@
 	display:none;
 }
 
+#section-header {
+	#zone-header{
+		background-image:none;  //remove the header swoop image since it is not used on any sports page
+	}
+}
+
 //mobile styles will not cascade upwards
 @include breakpoint($breakpoint-mobile) {
 	//these two areas wil be hidden in all views except for mobile
