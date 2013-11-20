@@ -13,16 +13,36 @@ html body {
 		background-color:$other-color-blue;
 	}
 
+	@include breakpoint($breakpoint-mobile) {
+
+		#region-header-second {
+			//the mobile search tools need some space around them with the usoec banner
+			padding-top:5px;
+			padding-bottom:5px;
+		}
+
+		//color the branding zone, only shown in mobile view, the usoec red color
+		#zone-branding-wrapper {
+			background-color: $other-color-red;
+		}
+		//change the font color from yellow to white to better fit the red
+		#zone-branding {
+			color:white;
+		}
+	}
+
 	#zone-menu-wrapper {
 		background-color: $other-color-red;
 	}
-		#region-menu ul li {
-			border-color: #fff;
-		}
-		#region-menu ul a:hover {
-			background-color: $other-color-red;
-			color: $other-color-gray;
-		}
+	#region-menu ul li {
+		border-color: #fff;
+	}
+	#region-menu ul a:hover {
+		background-color: $other-color-red;
+		color: $other-color-gray;
+	}
+
+
 }
 
 //we want to apply the top margin to all sizes (it is just applied to wide in the sports.scss file)
@@ -39,6 +59,14 @@ html body {
 }
 
 .sports-banner {
+	@include breakpoint($breakpoint-mobile) {
+		display:block;
+		min-width:320px;
+		width:100%;
+		height:auto;
+		padding-top:5px;
+		padding-bottom:5px;
+	}
 	@include breakpoint($breakpoint-narrow) {
 		width: 450px;  //scale down the image to accommodate the search box
 		padding-top:5px;  //remove the extra padding added in for the sports banner and search box
@@ -53,6 +81,15 @@ html body {
 }
 
 #section-content {
+
+	@include breakpoint($breakpoint-mobile) {
+		//these headings are only shown at mobile sizes
+		#sidebar_mobile_header,
+		.jquery_sidebar_subhead {
+			background-color: $other-color-blue;
+		}
+	}
+
 	#region-sidebar-first {
 		//this region will sometimes get space added to the bottom of it, this only happens when logged into drupal
 		//padding-bottom: 46px;
