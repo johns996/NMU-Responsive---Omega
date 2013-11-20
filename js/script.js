@@ -94,10 +94,13 @@ function sidebar_sizer(){
 	}
 	else
 	{
-		//golfcourse
+		//golfcourse & usoec
 		if (jQuery('.content_main_hp3_col').length){
-			if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth){
+			if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth){  //sizes larger than narrow view
 				JQ('.region-content, .region-sidebar-first, .content_sub_hp3_col').equalHeights();
+			}
+			if(jQuery('.region-sidebar-first').is(":visible") && windowWidth>740-scrollBarWidth && windowWidth<980-scrollBarWidth){  //only in narrow view
+				JQ('.region-content, .region-sidebar-first').equalHeights();
 			}
 		}
 

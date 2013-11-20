@@ -25,9 +25,36 @@ html body {
 		}
 }
 
+//we want to apply the top margin to all sizes (it is just applied to wide in the sports.scss file)
+#zone-header #header_search {
+	@include breakpoint($breakpoint-narrow) {
+	margin-top:20px !important; //the important is needed to override the one set in the default css file
+	}
+	@include breakpoint($breakpoint-normal) {
+	margin-top:40px !important;
+	}
+	@include breakpoint($breakpoint-wide) {
+	margin-top:60px !important;
+	}
+}
+
+.sports-banner {
+	@include breakpoint($breakpoint-narrow) {
+		width: 450px;  //scale down the image to accommodate the search box
+		padding-top:5px;  //remove the extra padding added in for the sports banner and search box
+		padding-bottom:5px;
+	}
+	@include breakpoint($breakpoint-normal) {
+		width: 750px;  //scale down the image to accommodate the search box
+	}
+	@include breakpoint($breakpoint-wide) {
+		width: 1000px;  //revert to normal size
+	}
+}
+
 #section-content {
 	#region-sidebar-first {
-		//this region has an odd amount of space the sometimes appears at the bottom and padding is needed to fix it (still don't know why)
+		//this region will sometimes get space added to the bottom of it, this only happens when logged into drupal
 		//padding-bottom: 46px;
 		background-color:$other-color-blue;
 		ul {
@@ -43,11 +70,18 @@ html body {
 		}
 	}
 	#sports_headlines {
-		border-right: solid 1px $other-color-blue;
-		float: left;
-		width: 45%;
-		padding-right: 2%;
-		margin-right: 1%;
+		@include breakpoint($breakpoint-wide) {
+			border-right: solid 1px $other-color-blue;
+			float: left;
+			width: 45%;
+			padding-right: 2%;
+			margin-right: 1%;
+			border-bottom:none;
+			padding-bottom:0;
+		}
+		padding-bottom:20px;
+		border-bottom: solid 1px $other-color-blue;
+
 		h2 {
 			color:$other-color-blue;
 		}
@@ -61,8 +95,10 @@ html body {
 		}
 	}
 	#sports_spotlight {
-		float: left;
-		width: 50%;
+		@include breakpoint($breakpoint-wide) {
+			float: left;
+			width: 50%;
+		}
 		th {
 			text-align:left;
 			color:$other-color-blue;
