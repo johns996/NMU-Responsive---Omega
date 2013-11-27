@@ -49,6 +49,11 @@
 	}
 }
 
+#zone-content .content_sub_hp1_col img {
+	max-width:300px;
+	height: auto !important;
+}
+
 //this is overriding the default width of the right column of panel pages that include nav (hp2)
 .panels-flexible-column-student_enrichment-2,
 .panels-flexible-column-admissions_transfer-2 {

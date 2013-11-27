@@ -49,6 +49,11 @@
 		width: 245px;   //set a table width so the column stays filled with the blocks (done for all sizes)
 	}
 }
+//make sure no images in the right column are wider than the color boxes
+#zone-content .content_sub_hp1_col img {
+	max-width:220px;
+	height: auto !important;
+}
 
 //allow the right block column to fill up the available space
 .panels-flexible-column-student_enrichment-2,
