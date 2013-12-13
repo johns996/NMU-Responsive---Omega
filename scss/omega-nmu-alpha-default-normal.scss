@@ -27,6 +27,21 @@
 
 //----------------------------------------------content
 #zone-content {
+	.grid-reset {
+		.grid-1 {width: 58px;} //12
+		.grid-2 {width: 136px;} //6
+		.grid-3 {width: 215px;} //4
+		.grid-4 {width: 293px;} //3
+		.grid-5 {width: 371px;} //2.4
+		.grid-6 {width: 450px;} //2
+		.grid-7 {width: 532px;} //12/7=1.7 ==> 940/1.7=552 ==> 552-20=532
+		.grid-8 {width: 606px;} //1.5
+		.grid-9 {width: 686px;} //1.33
+		.grid-10 {width: 763px;} //1.2
+		.grid-11 {width: 842px;} //1.09
+		.grid-12 {width: 940px;} //1
+	}
+
 	.grid-7 {  // sidebar-first | content | sidebar-second
 		width: 535px; //default: 540 - add 15 from sidebar-second and subtract 40 from sidebar-first
 	}

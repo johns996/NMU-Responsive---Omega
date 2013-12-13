@@ -24,6 +24,22 @@
 
 //----------------------------------------------content
 #zone-content {
+	//extra grid sizes for non-omega template
+	.grid-reset {
+		.grid-1 {width: 78px;} //12/1=12
+		.grid-2 {width: 175px;} //12/2=6
+		.grid-3 {width: 275px;} //12/3=4
+		.grid-4 {width: 373px;} //12/4=3
+		.grid-5 {width: 471px;} //12/5=2.4
+		.grid-6 {width: 570px;} //12/6=2
+		.grid-7 {width: 674px;} //12/7=1.7 ==> 1180/1.7=694 ==> 694-20=674
+		.grid-8 {width: 766px;} //12/8=1.5
+		.grid-9 {width: 867px;} //12/9=1.33
+		.grid-10 {width: 963px;} //12/10=1.2
+		.grid-11 {width: 1062px;} //12/11=1.09
+		.grid-12 {width: 1180px;} //12/12=1
+	}
+
 	.grid-7 {  // sidebar-first | content | sidebar-second
 		width:775px; //default: 680
 	}
