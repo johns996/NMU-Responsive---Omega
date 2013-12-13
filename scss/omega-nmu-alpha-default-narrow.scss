@@ -26,6 +26,22 @@
 
 //----------------------------------------------content
 #zone-content {  //the zone-level selector is needed to override Omega size defaults
+	.grid-reset {
+		//the formula is (total number of columns) / (grid size) = XX  ==> (total zone width) / XX = YY  ==> YY - (column padding) = ZZ  ==> ZZ is the width of the grid
+		.grid-1 {width: 38px;} //12
+		.grid-2 {width: 96px;} //6
+		.grid-3 {width: 155px;} //4
+		.grid-4 {width: 213px;} //3
+		.grid-5 {width: 271px;} //2.4
+		.grid-6 {width: 330px;} //2
+		.grid-7 {width: 391px;} //12/7=1.7 ==> 940/1.7=411 ==> 411-20=391
+		.grid-8 {width: 446px;} //1.5
+		.grid-9 {width: 506px;} //1.33
+		.grid-10 {width: 563px;} //1.2
+		.grid-11 {width: 622px;} //1.09
+		.grid-12 {width: 700px;} //1
+	}
+
 	.grid-7 {  // sidebar-first | content | sidebar-second
 		width: 520px;
 	}
