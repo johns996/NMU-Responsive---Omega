@@ -94,6 +94,11 @@ function sidebar_sizer(){
 	}
 	else
 	{
+		//exit out early for pages that don't want equal height sidebars
+		if (jQuery('.zone-content-finaidtoolbox').length){
+			return false;
+		}
+
 		//golfcourse & usoec
 		if (jQuery('.content_main_hp3_col').length){
 			if(jQuery('.content_sub_hp3_col').is(":visible") && jQuery('.region-sidebar-first').is(":visible") && windowWidth>980-scrollBarWidth){  //sizes larger than narrow view
