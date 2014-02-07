@@ -4,3 +4,12 @@
 	padding-top:6px !important;
 }
 
+#zone-content {
+	img {
+		//this was needed to allow IE to display images with inline width/height on the style tag instead of width/height attributes
+		//it was turned on on feb. 7 2014 because it started causing issues on homepages with improperly sized images (the images would appear full size)
+		//width:auto !important;
+		//this is a fix for images with a max width 100%.  ie will not show them without this
+		max-width:none;
+	}
+}
