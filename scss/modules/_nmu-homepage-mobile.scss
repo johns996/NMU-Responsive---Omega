@@ -122,7 +122,9 @@
 		padding:0;
 		padding:5px 0 0 15px;
 	}
-	strong {
+	strong,
+	b
+	{
 		font-size:14em / $base-font-size;
 		letter-spacing: -0.02em;
 	}
