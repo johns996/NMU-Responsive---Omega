@@ -442,6 +442,34 @@ embed {  //this will scale down any flash objects to fit the screen size
 	text-align:center;
 	min-width:262px; //stop the icons from collapsing
 }
+	//sprite styles
+	.facebook-ic, .youtube-ic, .gplus-ic, .twitter-ic, .give-ic {
+		background: url("../images/footer-social.png") repeat scroll 0% 0% transparent;
+		width: 33px; /* set the default width and height */
+		height: 33px
+	}
+	.give-ic {
+		background-position: -130px 0px;
+		width: 116px;
+		height: 33px;
+	}
+	.facebook-ic{
+		background-position: 0px 0px;
+	}
+	.twitter-ic {
+		background-position: -33px 0px;
+	}
+	.youtube-ic {
+		background-position: -66px 0px;
+		width: 32px;
+		height: 32px;
+	}
+	.gplus-ic {
+		background-position: -98px 0px;
+		width: 32px;
+		height: 32px;
+	}
+	//end of sprite styles
 
 //----------------------------------------------classes
 @import 'modules/classes';
