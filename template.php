@@ -33,6 +33,19 @@ function omega_nmu_preprocess_user_login(&$variables) {
   $variables['rendered'] = drupal_render_children($variables['form']);
 }
 
+function omega_nmu_preprocess_node(&$var){
+	//add a css and js file to the newhome content type
+	if($var['type'] == 'newhome'){
+		drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/homepage-v2.css');
+		$css = drupal_add_css();
+		$styles = drupal_get_css($css);
+
+		drupal_add_js(drupal_get_path('theme', 'omega_nmu') . '/js/homepage-v2.js');
+		$js = drupal_add_js();
+		$scripts = drupal_get_js($js);
+	}
+}
+
 function omega_nmu_preprocess_html(&$vars)
 {
 	//add a conditional stylesheet for IE8 and under
@@ -67,16 +80,15 @@ function omega_nmu_preprocess_html(&$vars)
 		if(strpos($GLOBALS['conf']['syslog_identity'], 'Sports') !== false)  //match any site with Sports in its identity (gateway, rec sports, usoec)
 		{
 			drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/sports.css'); //add a sports css to the start of the styles array
-			$css = drupal_add_css(); // Rebuild Drupal's css array:
-			$styles = drupal_get_css($css); // Apply that array to the $styles string to be printed in the <head> section of html.tpl.php
+			$css = drupal_add_css();
+			$styles = drupal_get_css($css);
 		}
-
+		// usoec
 		if($GLOBALS['conf']['syslog_identity'] === 'DrupalSportsUSOEC')  //match any site with USOEC in its identity
 		{
 			drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/usoec.css');
 			$css = drupal_add_css();
 			$styles = drupal_get_css($css);
 		}
-
 	}
 }

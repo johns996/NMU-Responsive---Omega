@@ -137,7 +137,7 @@ else
 	echo'<h2>NMU Content Management System</h2>',
 			'<p>Welcome to the NMU Content Management System (CMS).  Use the links across the top of the page to view and edit this site\'s content. The links below will help you use the CMS and report issues with your website. <a href="'.$strBaseURL.'/user/logout">Log Out</a>';
 
-			$q_UserCreated = db_query("SELECT created FROM users WHERE uid = '".$QueryUID."'")->fetchCol();
+			$q_UserCreated = db_query("SELECT created FROM {users} WHERE uid = '".$QueryUID."'")->fetchCol();
 			$str_OneWeekFromToday = time() - (7 * 24 * 60 * 60); //one week from now
 
 			//analytics (only showing for configured sites)
@@ -217,7 +217,7 @@ else
 		$str_cm_users = '';
 		foreach($q_SiteUsers as $key => $val)
 		{
-			$q_UserNames = db_query("SELECT name FROM users WHERE uid = '".$val."'")->fetchCol();
+			$q_UserNames = db_query("SELECT name FROM {users} WHERE uid = '".$val."'")->fetchCol();
 			if(!empty($q_UserNames))
 			{
 				foreach($q_UserNames as $key => $val)
