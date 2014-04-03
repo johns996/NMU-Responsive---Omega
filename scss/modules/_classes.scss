@@ -341,14 +341,14 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 .social_home {
 	width:240px; // 240 to accommodate the 4px of padding and 1px of border
 	h3 {
-		font-size:25px;
+		font-size:25em / $base-font-size;
 	}
 }
 
 .social_sidebar {
 	width: 195px; // 195 to accommodate the 4px of padding and 1px of borde
 	h3 {
-		font-size:20px;
+		font-size:20em / $base-font-size;
 	}
 }
 
@@ -362,7 +362,7 @@ p.social_txt {
 	text-align: right;
 }
 .social_txt a {
-	font-size:10px !important;
+	font-size:10em / $base-font-size !important;
 }
 .fb-like {
 	margin:5px 5px 5px 2px;
