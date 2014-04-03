@@ -323,7 +323,7 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 	border:1px solid #ccc;
 	h3 {
 		color:#82611f;
-		font-family: 'Crimson Text',serif !important;
+		font-family:$callout-font-family !important;
 		font-weight:200;
 		margin-bottom:15px;
 		letter-spacing:.5px;
@@ -332,7 +332,7 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 
 .social_wrapper {
 	background-color:#e0e0e0;
-	background-image:url('/Webb/Images/NMU/bedge_grunge.png');
+	background-image:url('/sites/all/themes/omega_nmu/images/bedge_grunge.png');
 	background-repeat:both;
 	padding:4px;
 	border:1px solid #e5e5e5;
