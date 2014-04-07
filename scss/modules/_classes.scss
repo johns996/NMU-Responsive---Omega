@@ -325,7 +325,7 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 		color:#82611f;
 		font-family:$callout-font-family !important;
 		font-weight:200;
-		margin-bottom:15px;
+		margin-bottom:5px;
 		letter-spacing:.5px;
 	}
 }
@@ -340,8 +340,10 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 
 .social_home {
 	width:240px; // 240 to accommodate the 4px of padding and 1px of border
+	margin-left: 15px;
+	margin-top: 5px;
 	h3 {
-		font-size:25em / $base-font-size;
+		font-size:24em / $base-font-size;
 	}
 }
 
