@@ -3,6 +3,8 @@
 */
 @import "base";
 
+
+//start with global styles and then tweak as necessary for narrow, normal and wide views
 section.main_wrapper {
 	display:none;
 }
@@ -15,14 +17,16 @@ section.main_wrapper {
 	img {
 		padding:5px;
 		float:left;
+		width:63%;
 	}
 }
 
 #custom-caption {
 	height: 360px;
-	width: 335px;
+	//width: 335px;
+	width:34.2%;
 	padding: 5px;
-	float: right;
+	float: left;
 	overflow: hidden;
 	position: relative;
 	p:after {
@@ -39,7 +43,8 @@ section.main_wrapper {
 
 .cycle-pager {
 	text-align: center;
-	width: 335px;
+	//width: 335px;
+	width:34.2%;
 	display: inline-block;
 	span {
 		font-size: 25px;
@@ -107,6 +112,36 @@ section.note_3_wrapper {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+//-- sample styles to be copied above --//
+
+//mobile styles will not cascade upwards
+@include breakpoint($breakpoint-mobile) {
+
+}
+
+//all other styles will cascade upwards
+@include breakpoint($breakpoint-narrow) {
+
+}
+
+@include breakpoint($breakpoint-normal) {
+
+}
+
+@include breakpoint($breakpoint-wide){
+
+}
+
+
 
 
 
