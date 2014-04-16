@@ -20,12 +20,26 @@ section.main_wrapper {
 		width:63%;
 		@include breakpoint($breakpoint-mobile) {
 			width:97.5%;
+			//need to find an answer to the image overflowing the caption area on small size layouts
+			//width:290px;
+		}
+		@include breakpoint($breakpoint-narrow) {
+			width:97.5%;
 		}
 	}
 	@include breakpoint($breakpoint-mobile) {
 		max-width:400px;
 		height:420px;
 		margin:0 auto 10px auto;
+	}
+	@include breakpoint($breakpoint-narrow) {
+
+	}
+	@include breakpoint($breakpoint-normal) {
+		height:312px;
+	}
+	@include breakpoint($breakpoint-wide) {
+		height:410px;
 	}
 }
 
@@ -48,12 +62,23 @@ section.main_wrapper {
 	}
 	@include breakpoint($breakpoint-mobile) {
 		width:100%;
-		max-height:118px;
+		height:185px;
 		margin-top:10px;
+		position:absolute;
+		bottom:0;
 		p {
 			padding:5px;
 			margin-top:5px;
 		}
+	}
+	@include breakpoint($breakpoint-narrow) {
+
+	}
+	@include breakpoint($breakpoint-normal) {
+		height:268px;
+	}
+	@include breakpoint($breakpoint-wide) {
+		height:360px;
 	}
 }
 
@@ -73,11 +98,17 @@ section.main_wrapper {
 		color: #000;
 	}
 	@include breakpoint($breakpoint-mobile) {
-		right: 0;
-		position: absolute;
-		bottom: 125px;
 		width: 100%;
 		text-align: center;
+	}
+	@include breakpoint($breakpoint-narrow) {
+
+	}
+	@include breakpoint($breakpoint-normal) {
+
+	}
+	@include breakpoint($breakpoint-wide) {
+
 	}
 }
 
@@ -96,14 +127,10 @@ section.note_3_wrapper {
 		float:none;
 		width:100%;
 		max-width:400px;
-		border-bottom:1px solid #ccc;
+		border-top:1px solid #ccc;
 		padding-bottom:5px;
-		margin:0 auto 5px auto;
-	}
-}
-section.note_3_wrapper {
-	@include breakpoint($breakpoint-mobile) {
-		border-bottom:none;
+		margin:5px auto;
+		padding-top:5px;
 	}
 }
 
