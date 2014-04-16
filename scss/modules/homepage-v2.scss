@@ -18,6 +18,14 @@ section.main_wrapper {
 		padding:5px;
 		float:left;
 		width:63%;
+		@include breakpoint($breakpoint-mobile) {
+			width:97.5%;
+		}
+	}
+	@include breakpoint($breakpoint-mobile) {
+		max-width:400px;
+		height:420px;
+		margin:0 auto 10px auto;
 	}
 }
 
@@ -38,6 +46,15 @@ section.main_wrapper {
 		height: 40%;
 		@include background-image(linear-gradient(top, rgba(230, 230, 230, 0), #e6e6e6));
 	}
+	@include breakpoint($breakpoint-mobile) {
+		width:100%;
+		max-height:118px;
+		margin-top:10px;
+		p {
+			padding:5px;
+			margin-top:5px;
+		}
+	}
 }
 
 .cycle-pager {
@@ -55,6 +72,13 @@ section.main_wrapper {
 	span.cycle-pager-active {
 		color: #000;
 	}
+	@include breakpoint($breakpoint-mobile) {
+		right: 0;
+		position: absolute;
+		bottom: 125px;
+		width: 100%;
+		text-align: center;
+	}
 }
 
 section.note_1_wrapper,
@@ -68,12 +92,28 @@ section.note_3_wrapper {
 	//background: #e6e6e6;
 	//width:30.5%;
 	//margin:0 .4%;
+	@include breakpoint($breakpoint-mobile) {
+		float:none;
+		width:100%;
+		max-width:400px;
+		border-bottom:1px solid #ccc;
+		padding-bottom:5px;
+		margin:0 auto 5px auto;
+	}
+}
+section.note_3_wrapper {
+	@include breakpoint($breakpoint-mobile) {
+		border-bottom:none;
+	}
 }
 
 .field-name-field-sub-image-1,
 .field-name-field-sub-image-2,
 .field-name-field-sub-image-3 {
 	padding:5px 0;
+	@include breakpoint($breakpoint-mobile) {
+		text-align:center;
+	}
 }
 
 .field-name-field-sub-title-1,
@@ -90,6 +130,7 @@ section.note_3_wrapper {
 
 }
 
+//all note title and text areas are wrapped in an article tag
 .article_wrapper {
 	height:255px;
 	overflow: hidden;
