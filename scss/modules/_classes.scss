@@ -401,3 +401,31 @@ p.social_txt {
 #flickr_badge_uber_wrapper_sb .flickr_badge_image {text-align:center !important; float:left;}
 #flickr_badge_uber_wrapper_sb .flickr_badge_image img {max-width:52px !important; border: 1px solid black !important; padding:0 !important; margin:5px 0px 4px 6.4px;}
 #flickr_badge_uber_wrapper_sb #flickr_www {display:block; padding:0 5px 0 5px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important; text-align:right;}
+
+//footer (and campus sidebar) sprite styles
+#facebook-ic, #youtube-ic, #gplus-ic, #twitter-ic, #give-ic, #instagram-ic {
+	background: url("/sites/all/themes/omega_nmu/images/footer-sprite.png") repeat scroll 0% 0% transparent;
+	width: 33px;
+	height: 33px;
+	display:inline-block;
+}
+#give-ic {
+	background-position: -6px 192px;
+	width: 116px;
+}
+#facebook-ic{
+	background-position: -6px 153px;
+}
+#twitter-ic {
+	background-position: -6px 114px;
+}
+#youtube-ic {
+	background-position: -6px 76px;
+}
+#gplus-ic {
+	background-position: -6px 38px;
+}
+#instagram-ic {
+	background-position: -49px 154px;
+	margin-left:-1px;
+}

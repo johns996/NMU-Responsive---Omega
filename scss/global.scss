@@ -443,34 +443,6 @@ embed {  //this will scale down any flash objects to fit the screen size
 	min-width:262px; //stop the icons from collapsing
 }
 
-//sprite styles
-#facebook-ic, #youtube-ic, #gplus-ic, #twitter-ic, #give-ic, #instagram-ic {
-	background: url("/sites/all/themes/omega_nmu/images/footer-sprite.png") repeat scroll 0% 0% transparent;
-	width: 33px;
-	height: 33px;
-	display:inline-block;
-}
-#give-ic {
-	background-position: -6px 192px;
-	width: 116px;
-}
-#facebook-ic{
-	background-position: -6px 153px;
-}
-#twitter-ic {
-	background-position: -6px 114px;
-}
-#youtube-ic {
-	background-position: -6px 76px;
-}
-#gplus-ic {
-	background-position: -6px 38px;
-}
-#instagram-ic {
-	background-position: -49px 154px;
-	margin-left:-1px;
-}
-
 //----------------------------------------------classes
 @import 'modules/classes';
 
