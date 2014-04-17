@@ -105,27 +105,6 @@ if(INT_ByPassLogin)
 	//use this for testing new features without letting the world see them
 }
 
-//special permission checks for the NMU Dashboard site
-//these are in place because this content is protected and high-level people will access this site and it must be easy for them to use
-if($SiteName == "NMU Dashboard")
-{
-	if(user_access('access content overview'))
-	{
-		//this user should not be redirected
-	}
-	else if(user_access('access content'))
-	{
-		//only redirect on the first visit.  we still want this page to be accessable
-		if ($_SESSION['dashboard-view'] !== 1)
-		{
-			$_SESSION['dashboard-view'] = 1;
-			header('Location: /dashboard');
-		}
-		//session data is set, so don't do the redirect
-	}
-}
-
-
 if (!node_access('update', 'node/1')) //check to see if the user has access to manage this site
 {
 	echo '<h2>NMU Content Management System</h2><p>Welcome to the NMU Content Management System.  This system is used to manage many of Northern Michigan University\'s websites.  A list of the sites that your user ID has been authorized to access is provided below.</p>';
