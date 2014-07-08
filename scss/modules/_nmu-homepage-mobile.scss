@@ -195,6 +195,8 @@
 	padding:10px 7px 0px 8px;
 	margin:10px 0px 5px -6px;
 	float:left;
+	position:relative;
+	padding-bottom:10px; //added so the poll answer has room to fit
 	h2 {
 		@include nmu-h-styling(28em);
 		padding:0px;
@@ -264,6 +266,11 @@
 	}
 	.PollWinner {
 		background-color:red; // this must come after the PollBar class
+	}
+	.CorrectAnswer {
+		position:absolute;
+		bottom:0px;
+		right:5px;
 	}
 }
 

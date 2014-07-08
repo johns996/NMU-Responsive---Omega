@@ -18,6 +18,11 @@ This project makes use of the following technologies
   - [Compass](http://compass-style.org)
   - [Breakpoint](http://breakpoint-sass.com/)
 
+### Compile Notes ###
+Because breakpoint and compass don't play that well together in regards to their newest versions, bundle must be use to make sure the right gemfiles are used.
+
+	bundle exec compass compile --dry-run
+
 #### This project was developed by: ####
   - [Eric Johnson](mailto:ericjohn@nmu.edu) - NMU Web Developer
 

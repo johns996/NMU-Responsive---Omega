@@ -1,0 +1,33 @@
+/* This SCSS file contains styles that will only be used in the Webadmin interface
+*/
+
+@import "base";
+@import "compass/css3/opacity";
+
+//keep these imports at the top so they can be overwritten as needed by global styles
+//both of these files were tweaked to use the modernizr .fontface .no-fontface classes
+//add font awesome icons to be used on the site (3.0.2)
+@import 'font-awesome/font-awesome';
+//add bootstrap icons 2.3.1 as a fallback to browsers without @font-face support
+@import 'bootstrap-icons';
+
+//add bootstrap buttons 2.3.1
+//these three styles were downloaded with default settings from twitter bootstrap's site http://twitter.github.com/bootstrap/customize.html
+//they were downloaded as single files in order to toggle them on off for testing purposes
+@import 'bootstrap-buttons';
+
+//replacement for the default omega visuals
+@import 'omega-visuals-custom';
+
+
+//import module CSS
+//module styles are included at the top because they are generally more specific than the global styles and will take precedence due to that specificity
+@import 'modules/drupal-user';
+@import 'modules/nmu-homepage-mobile';
+@import 'modules/admissions-intro-mobile';
+@import 'modules/hp-blocks-mobile';
+
+@import 'modules/nmu-homepage-narrow';
+@import 'modules/nmu-homepage-normal';
+@import 'modules/nmu-homepage-wide';
+
