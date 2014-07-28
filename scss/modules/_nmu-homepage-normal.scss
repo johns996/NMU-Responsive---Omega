@@ -34,6 +34,12 @@
 	margin-left:2px;
 }
 
+/* Fearless Minds */
+#FearlessMinds {
+	padding-left: 2px;
+	margin:0;
+}
+
 /* events and news components */
 #NMUUpcomingEventsHP,
 #NMUFeaturedNews {
@@ -56,4 +62,9 @@
 	position: static;
 	width:250px;  //reset the dimensions back to the default size
 	height:150px;
+}
+
+.social_home {
+	position: static;
+	width:240px;  //reset the dimensions back to the default size
 }

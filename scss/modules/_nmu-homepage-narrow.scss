@@ -30,6 +30,18 @@
 	bottom:1%;
 }
 
+/* Fearless Minds */
+#FearlessMinds {
+	width: 373px;
+}
+
+.FearlessTopNav {
+	img.FearlessVisit {width:114px;}
+	img.FearlessConnect {width:142px;}
+	img.FearlessApply {width:117px;}
+}
+
+
 /* events and news components */
 #NMUUpcomingEventsHP,
 #NMUFeaturedNews {
@@ -46,10 +58,18 @@
 	height:120px;
 }
 
-#NMUBoxA {
-	bottom: 680px;
+.social_home {
+	position: absolute;
+	left: 380px;
+	width:200px;
 }
 
-#NMUBoxB {
+#NMUBoxA {
+	bottom: 400px;
+}
+
+#NMUBoxB,
+.social_home {
 	bottom: 550px;
 }
+
