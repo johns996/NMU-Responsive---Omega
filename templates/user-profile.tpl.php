@@ -4,18 +4,22 @@ jQuery(document).ready(function($) {
 		$('#show_label').toggle();
 		$("#div_cm_users").toggle('slow');
 	});
-	$("#read_more_link").toggle(function(){
-		$('.read_more').slideDown("slow");},
-		function(){
-		$('.read_more').slideUp("slow");}
-		);
-	$("#view_all_link").toggle(function(){
+
+	$("#read_more_link").click(function(){
+		$('.read_more').slideToggle("slow");
+	});
+
+	function viewAllSites1() {
 		$('#sites_list').slideDown("slow");
-		$('#view_all_link').html("Hide all sites");},
-		function(){
+		$(this).html("Hide all sites");
+		$(this).one("click", viewAllSites2);
+	}
+	function viewAllSites2() {
 		$('#sites_list').slideUp("slow");
-		$('#view_all_link').html("Show all sites");}
-		);
+		$(this).html("Show all sites");
+		$(this).one("click", viewAllSites1);
+	}
+	$("#view_all_link").one("click", viewAllSites1);
 });
 </script>
 <div id="drupal_user_profile">
