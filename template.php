@@ -44,6 +44,11 @@ function omega_nmu_preprocess_node(&$var){
 		$js = drupal_add_js();
 		$scripts = drupal_get_js($js);
 	}
+	if($var['type'] == 'programs_what_s_new_nmu'){
+		drupal_add_css(drupal_get_path('theme', 'omega_nmu') . '/css/modules/alumni-newsletter.css');
+		$css = drupal_add_css();
+		$styles = drupal_get_css($css);
+	}
 }
 
 function omega_nmu_preprocess_html(&$vars)
