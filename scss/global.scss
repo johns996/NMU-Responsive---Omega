@@ -456,3 +456,7 @@ embed {  //this will scale down any flash objects to fit the screen size
 .mobile_break { //add this class to a span and create a line break that will only show up on small-screen mobile devices
 	display:block;
 }
+
+.field-name-field-nav-expand {
+	display:none;
+}

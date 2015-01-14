@@ -1,4 +1,4 @@
-/* This SCSS file contains styles that will only be used on the NMU Sports pages (gateway, rec sports and usoec)
+/* This SCSS file contains styles that will only be used on the NMU Alumni Newsletter pages
 	this file is included in the CSS array using the template.php file and is not included in any of the standard nmu styles
 */
 @import "base";
@@ -88,4 +88,9 @@ div.field-name-field-visitors::after {
 	width:42%;
 	display:inline-block;
 	margin-right:6%;
+}
+
+.fb-comments.fb_iframe_widget {
+	max-height: 400px;
+	overflow: scroll;
 }
