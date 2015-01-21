@@ -19,6 +19,10 @@
 //	padding-top:36px;
 //}
 
+h5 {
+	font-size:1.2em;  //added for the zen conversion
+}
+
 body.cke_ltr {
 	background: transparent;  //this is for the heading pull down box.  without it, it turns green
 }
@@ -73,5 +77,19 @@ body.cke_editable
 		content: "### This is the PHP form - do not delete ###";
 		background-color:#565656;
 		color:#fff;
+	}
+
+	.column-break:after {
+		content: '## column break ##';
+		width: 100%;
+		background-color: rgb(228, 176, 176);
+		padding: 2px;
+	}
+	.callout-text-block {
+		 color:#01754e;
+		 font-size:18px;
+		 line-height:24px;
+		 font-weight:600;
+		 padding:10px;
 	}
 }
