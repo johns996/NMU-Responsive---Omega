@@ -77,6 +77,9 @@ embed {  //this will scale down any flash objects to fit the screen size
 	max-width:100%;
 }
 
+aside {
+	box-sizing: content-box; //make bootstrap play nicely with our sidebars
+}
 .node ol,
 .node ul {
 	padding-left:25em / $base-font-size;
