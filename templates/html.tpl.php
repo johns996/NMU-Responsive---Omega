@@ -1,6 +1,6 @@
 <?php /* this is an exact copy of the omega/templates/html.tpl.php file with the removal of the http: from the html5shiv script refrence */ ?>
 <?php print $doctype; ?>
-<html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf->version . $rdf->namespaces; ?>>
+<html lang="<?php print $language->language; ?>" id="omega_nmu" dir="<?php print $language->dir; ?>"<?php print $rdf->version . $rdf->namespaces; ?>>
 <head<?php print $rdf->profile; ?>>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
