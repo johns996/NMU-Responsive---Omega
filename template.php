@@ -74,9 +74,8 @@ function omega_nmu_preprocess_html(&$vars)
 
 	if(isset($GLOBALS['conf']['syslog_identity']))  //use this area to set site-specific stylesheets
 	{
-		// main NMU
-		if($GLOBALS['conf']['syslog_identity'] === 'Drupal' || $GLOBALS['conf']['syslog_identity'] === 'ResponsiveNMU')  //match the main nmu site only
-		{
+		//look for the presence of jquery update and add in migrate as needed
+		if (module_exists('jquery_update')) {
 			//add in jquery migrate
 			drupal_add_js(drupal_get_path('theme', 'omega_nmu') . '/js/jquery-migrate-1.2.1.min.js');
 			$js = drupal_add_js();
