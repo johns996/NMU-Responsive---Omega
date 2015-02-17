@@ -15,8 +15,6 @@ var slideshowWrapper = '\
 jQuery(document).ready(function($) {
 	//debugger;
 
-   createSlideshow();
-
    function createSlideshow() {
 		$("head").append('<script src="//malsup.github.com/jquery.cycle2.js"></script>\
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>\
@@ -34,4 +32,6 @@ jQuery(document).ready(function($) {
 		images.appendTo('.cycle-slideshow');
 		$('.cycle-pager').show();  //cycle2 takes care of showing the caption, only need to display the pager again
    }
+
+  createSlideshow();
 });
