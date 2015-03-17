@@ -28,6 +28,13 @@
 @import 'modules/hp-blocks-mobile';
 
 //----------------------------------------------elements
+
+#omega_nmu body {
+	font-family: $base-font-family;
+	font-size: 13px;
+	background-color: $base-color;
+}
+
 body {
 	font-family:$base-font-family;
 	background-color:$base-color;
