@@ -314,6 +314,16 @@ textarea, select, input[type="text"], input[type="password"], input[type="dateti
 .forms_radio_label {
 	//added to form builder, no customizations needed yet
 }
+
+.web-form {
+	.checkbox-inline {
+		padding-right:5px;
+		input[type="checkbox"] {
+			margin-left:-15px;
+		}
+	}
+}
+
 //----------------------------------------------Custom Bootstrap Callouts
 /*!
  * copied classes from the bootstrap doc for callouts
