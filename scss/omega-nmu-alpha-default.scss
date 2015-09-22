@@ -32,7 +32,7 @@
 #header_tools {
 	display:block;
 	margin-top:5px;
-	font-size:12em / $base-font-size;
+	font-size:12em / $rem-font-size;
 	@include nmu-hover-links(white);
 	.search_tool {
 		padding-left:10px;
@@ -51,13 +51,13 @@
 	}
 	@include nmu-hover-links($contrast-color);
 	.main_title {
-		font-size: 26em / $base-font-size;
-		line-height: 20em / $base-font-size;
+		font-size: 26em / $rem-font-size;
+		line-height: 20em / $rem-font-size;
 
 	}
 	.sub_titles {
 		display:inline;
-		font-size: 16em / $base-font-size;
+		font-size: 16em / $rem-font-size;
 		border-left: solid 2px $contrast-color;
 	}
 }
@@ -69,8 +69,8 @@
 }
 
 #region-menu {
-	font-size:15em / $base-font-size;
-	line-height:22em / $base-font-size;
+	font-size:15em / $rem-font-size;
+	line-height:22em / $rem-font-size;
 	text-align:center;
 	padding:0 5px;
 		ul {
@@ -104,7 +104,7 @@
 #region-sidebar-first {
 	background-color:$base-color-dark;
 	padding:10px 0 20px 0;
-	font-size:13em / $base-font-size;
+	font-size:13em / $rem-font-size;
 	min-width: 0px;
 		ul {
 			padding:0px 0px 10px 0px;
@@ -122,7 +122,7 @@
 			li:first-child {
 				color:$contrast-color;
 				padding:8px 5px 4px 10px;
-				font-size:16em / $base-font-size;
+				font-size:16em / $rem-font-size;
 				font-weight:600;
 				display: block;
 			}
@@ -157,10 +157,10 @@
 	padding:5px 5px 30px 5px;
 	background-color:#fff;
 	margin-bottom:5px;
-	font-size: 12em / $base-font-size;
+	font-size: 12em / $rem-font-size;
 	position:relative;
 	h2 {
-		font-size:27em / $base-font-size;
+		font-size:27em / $rem-font-size;
 		color:#000;
 		text-align: left;
 	}
@@ -224,8 +224,8 @@
 #footer_region_second,
 #footer_region_third{
 	text-align:left;
-	font-size: 12em / $base-font-size;
-	line-height:16em / $base-font-size;
+	font-size: 12em / $rem-font-size;
+	line-height:16em / $rem-font-size;
 }
 
 //----------------------------------------------classes

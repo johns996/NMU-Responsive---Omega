@@ -81,9 +81,9 @@
 		background-color:transparent;  //remove omega's th styling
 		border:none;  //remove omega's th styling
 		color: $base-color-light;
-		font-size: 22em / $base-font-size;
+		font-size: 22em / $rem-font-size;
 		letter-spacing: -0.02em;  //a sight tweak on omega's h2 styling
-		line-height:16em / $base-font-size;
+		line-height:16em / $rem-font-size;
 		p {
 			margin:0;  //CKEditor will put in a p adding extra space to the th, this removes it
 			//since this style is more specific than the one below, it will override it
@@ -189,7 +189,7 @@
 		h3,
 		h4 {
 			margin:0;
-			font-size:13em / $base-font-size;  //added to stop people from putting h# in the color boxes and blowing up the layout
+			font-size:13em / $rem-font-size;  //added to stop people from putting h# in the color boxes and blowing up the layout
 			letter-spacing:-0.02em;
 		}
 	}

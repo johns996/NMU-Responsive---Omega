@@ -6,6 +6,7 @@
 #zone-header,
 #zone-menu,
 #sidebar_mobile_header,
+#region_sidebar_second,
 #region-sidebar-first,
 #branding_nav_icon,
 #zone-postscript,
@@ -37,7 +38,7 @@ body,
 #zone-branding {
 	color:black;
 	font-family:$callout-font-family;
-	font-size: 18em / $base-font-size;
+	font-size: 18em / $rem-font-size;
 	background-color:white;
 	border-bottom:3px solid #ccc;
 	margin-bottom:10px;

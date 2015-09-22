@@ -44,19 +44,19 @@ h1,h2,h3,h4,h5,h6 {
 	font-family:$base-font-family;
 }
 h1 {
-	font-size: 30em / $base-font-size;
+	font-size: 30em / $rem-font-size;
 	//standard line height is a bit spacious for h1 and h2 but needs research before being adjusted
-	//line-height: 17em / $base-font-size;
+	//line-height: 17em / $rem-font-size;
 }
 h2 {
-	font-size: 22em / $base-font-size;
-	//line-height: 17em / $base-font-size;
+	font-size: 22em / $rem-font-size;
+	//line-height: 17em / $rem-font-size;
 }
 h3 {
-	font-size: 18em / $base-font-size;
+	font-size: 18em / $rem-font-size;
 }
 h4 {
-	font-size: 16em / $base-font-size;
+	font-size: 16em / $rem-font-size;
 }
 h1 + h2,
 h2 + h3,
@@ -89,7 +89,7 @@ aside {
 }
 .node ol,
 .node ul {
-	padding-left:25em / $base-font-size;
+	padding-left:25em / $rem-font-size;
 }
 
 //----------------------------------------------header
@@ -124,14 +124,14 @@ aside {
 
 #header_search { //js will hide this div by default
 	min-width:290px; //this has to account for the padding
-	line-height:30em / $base-font-size;  //this keeps the text at the middle of the div
+	line-height:30em / $rem-font-size;  //this keeps the text at the middle of the div
 	border-top:1px solid white;
 	margin: 5px -10px 1px -10px !important;
 	padding: 5px 10px 5px 20px;
 	input[type="text"] {  //style the searchbox
 		height:30px;
 		width:84%;
-		font-size: 14em / $base-font-size;
+		font-size: 14em / $rem-font-size;
 	}
 	@include bootstrap-btn-styling;
 	.search_txtbox	{
@@ -169,8 +169,8 @@ aside {
 		}
 	}
 	.main_title {
-		font-size: 23.4em / $base-font-size;
-		line-height: 16em / $base-font-size;
+		font-size: 23.4em / $rem-font-size;
+		line-height: 16em / $rem-font-size;
 		font-weight:300;
 		margin:5px 0;
 	}
@@ -184,7 +184,7 @@ aside {
 		margin:3px -10px 3px 5px; //the right margin was adjsuted to negate the padding placed on the right size of the region
 		width:15px;
 		font-weight:300;
-		font-size:6.34615385em / $base-font-size;  //in order to keep the two nav buttons the same, i used the calculation 26 (parent font size) X [target] = [desired result] where the result was an arbitrary 165
+		font-size:6.34615385em / $rem-font-size;  //in order to keep the two nav buttons the same, i used the calculation 26 (parent font size) X [target] = [desired result] where the result was an arbitrary 165
 	}
 }
 
@@ -194,7 +194,7 @@ aside {
 }
 
 #region-menu {
-	font-size:14em / $base-font-size;
+	font-size:14em / $rem-font-size;
 	margin:0;
 	padding:0; //if padding is added here, the hover effect will not cover the entire region
 		ul {
@@ -271,20 +271,20 @@ aside {
 	padding: 0px 10px 0px 20px;
 	min-width:290px; //this has to account for the padding
 	min-height:40px;
-	font-size:18em / $base-font-size;
+	font-size:18em / $rem-font-size;
 	font-weight:600;
-	line-height:30em / $base-font-size;  //this keeps the text at the middle of the div
+	line-height:30em / $rem-font-size;  //this keeps the text at the middle of the div
 	#sidebar_nav_icon {
 		float:right;
 		margin-top:7px;
 		width:15px;
 		font-weight:300;
-		font-size:9.16666667em / $base-font-size;  //in order to keep the two nav buttons the same, i used the calculation 18 (parent font size) X [target] = [desired result] where the result was an arbitrary 165 (to figure it out, do 165/18=[target])
+		font-size:9.16666667em / $rem-font-size;  //in order to keep the two nav buttons the same, i used the calculation 18 (parent font size) X [target] = [desired result] where the result was an arbitrary 165 (to figure it out, do 165/18=[target])
 	}
 	.sidebar_mobile_title {
 		width: 84%;
 		display: inline-block;
-		line-height: 18em / $base-font-size;
+		line-height: 18em / $rem-font-size;
 		padding-top:5px;
 	}
 }
@@ -293,7 +293,7 @@ aside {
 	margin:0;
 	background-color:$base-color;
 	color:#fff;
-	font-size:14em / $base-font-size;
+	font-size:14em / $rem-font-size;
 	position: relative;
 	min-width: $zone-min-width;
 		//style the configure block widget
@@ -308,7 +308,7 @@ aside {
 			.block-configure a {
 				padding:0;
 				margin:0;
-				font-size:8em / $base-font-size;
+				font-size:8em / $rem-font-size;
 			}
 			.block-configure a:hover,
 			{
@@ -372,8 +372,8 @@ aside {
 #zone-postscript {
 	min-width:$zone-min-width;
 	@include nmu-hover-links(white);
-	font-size: 10em / $base-font-size;
-	line-height: 16em / $base-font-size;
+	font-size: 10em / $rem-font-size;
+	line-height: 16em / $rem-font-size;
 
 	//style the configure block widget
 	ul.contextual-links {
@@ -387,7 +387,7 @@ aside {
 		.block-configure a {
 			padding:0;
 			margin:0;
-			font-size:10em / $base-font-size;
+			font-size:10em / $rem-font-size;
 		}
 		.block-configure a:hover,
 		{
@@ -444,8 +444,8 @@ aside {
 #footer_region_second {
 	@include nmu-hover-links(white);
 	text-align:center;
-	font-size: 12em / $base-font-size;
-	line-height:16em / $base-font-size;
+	font-size: 12em / $rem-font-size;
+	line-height:16em / $rem-font-size;
 }
 
 #footer_region_third {

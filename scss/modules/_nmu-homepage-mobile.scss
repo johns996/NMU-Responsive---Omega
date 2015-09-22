@@ -132,15 +132,15 @@
 	.p_caption {
 		margin:0px;
 		padding:0 0 .9% 0;  //this was 0 0 5px 0, changed to % on trial and error
-		font-size: 11em / $base-font-size;
-		line-height: 16em / $base-font-size;
+		font-size: 11em / $rem-font-size;
+		line-height: 16em / $rem-font-size;
 	}
 	.h4_caption {
 		letter-spacing: -0.02em;
 		margin:0px;
 		padding:0 0 2px 0;
-		font-size: 14em / $base-font-size;
-		line-height: 18em / $base-font-size;
+		font-size: 14em / $rem-font-size;
+		line-height: 18em / $rem-font-size;
 	}
 }
 
@@ -219,8 +219,8 @@
 	}
 	h2 {
 		@include nmu-h-styling(28em);
-		@include breakpoint($breakpoint-portrait) {font-size:26em/$base-font-size;}
-		line-height:16em / $base-font-size;
+		@include breakpoint($breakpoint-portrait) {font-size:26em/$rem-font-size;}
+		line-height:16em / $rem-font-size;
 	}
 	ul {
 		margin:0;
@@ -230,13 +230,13 @@
 	strong,
 	b
 	{
-		font-size:14em / $base-font-size;
+		font-size:14em / $rem-font-size;
 		letter-spacing: -0.02em;
 	}
 
 	.happening_item {
-		font-size:12em / $base-font-size;
-		line-height:16em / $base-font-size;
+		font-size:12em / $rem-font-size;
+		line-height:16em / $rem-font-size;
 		padding: 5px 0;
 		clear:both;
 	}
@@ -307,11 +307,11 @@
 		@include nmu-h-styling(28em);
 		padding:0px;
 		margin-bottom:5px;
-		line-height:10em / $base-font-size;
+		line-height:10em / $rem-font-size;
 	}
 	#Question,
 	#Answer {
-		line-height:16em / $base-font-size;
+		line-height:16em / $rem-font-size;
 	}
 	.Question {
 		font-weight:bold;
@@ -388,10 +388,10 @@
 	position:relative;
 	background-color:$background-color-box;
 	float:left;
-	line-height:17em / $base-font-size;
+	line-height:17em / $rem-font-size;
 	h2 {
 		@include nmu-h-styling(28em);
-		line-height:12em / $base-font-size;
+		line-height:12em / $rem-font-size;
 	}
 	.BoxTitle {
 		float:left;
@@ -462,7 +462,7 @@
 
 /* emergency alert styling */
 .weather {
-	font-size: 12em / $base-font-size;
+	font-size: 12em / $rem-font-size;
 	font-weight: bold;
 	color: #FFFFFF;
 	background-color: #FF0000;
