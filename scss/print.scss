@@ -6,15 +6,21 @@
 #zone-header,
 #zone-menu,
 #sidebar_mobile_header,
-#region_sidebar_second,
+#region-sidebar-second,
 #region-sidebar-first,
 #branding_nav_icon,
 #zone-postscript,
 #footer_region_third,
 .print_hide,
 #NMUBoxA,
-#NMUBoxB{
+#NMUBoxB {
 	display:none;
+}
+aside#region-sidebar-second {
+	display:none;
+}
+#zone-content .grid-7 {
+  width:100% !important;
 }
 
 // drupal tabs and toolbars to hide for printers
