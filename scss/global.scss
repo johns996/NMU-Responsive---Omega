@@ -470,3 +470,22 @@ aside {
 .field-name-field-nav-expand {
 	display:none;
 }
+
+//temporary fix for the bootstrap pills being added to rec sports
+ul.nav-pills-nmu {
+	list-style:none;
+	padding-left:0;
+	li {
+		display:inline-block;
+		&:after{
+		margin-right:10px;
+		margin-left:10px;
+			content:" | ";
+		}
+		&:last-child {
+			&:after{
+			content:" ";
+			}
+		}
+	}
+}
